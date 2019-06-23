@@ -1,0 +1,32 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env", {
+        "useBuiltIns": false
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "prismjs", {
+        "languages": [
+          "bash",
+          "batch",
+          "diff",
+          "git",
+          "lisp",
+          "lua",
+          "perl",
+          "scss",
+          "sql",
+          "visual-basic"
+        ],
+        "plugins": [
+          "line-numbers",
+          "line-highlight"
+        ],
+        "css": false
+      }
+    ]
+  ]
+}

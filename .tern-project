@@ -1,0 +1,16 @@
+{
+  "libs": [
+    "browser",
+    "ecmascript",
+    "jquery"
+  ],
+  "dontLoad": [
+    "node_modules/**",
+    "public/**"
+  ],
+  "plugins": {
+    "complete_strings": {},
+    "node": {},
+    "es_modules": {}
+  }
+}
