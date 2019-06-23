@@ -13,7 +13,7 @@ import cssnano from 'cssnano';
 
 export const ghp = () => {
   return gulp.src('./public/**/*')
-    .pipe(gulpIf('loadjsrc.js', replace('./', '//tokunakimochi.github.io/tokunakimochi.blog.jp/')))
+    .pipe(gulpIf('loadjsrc.js', replace('./', 'https://tokunakimochi.github.io/tokunakimochi.blog.jp/')))
     .pipe(ghPages());
 };
 
