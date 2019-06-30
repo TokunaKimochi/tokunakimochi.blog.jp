@@ -1,7 +1,8 @@
 // https://github.com/muicss/loadjs
 'use strict';
 
-loadjs([ 'https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.min.css'
+loadjs([ 'https://cdn.jsdelivr.net/npm/sanitize.css@10.0.0/sanitize.min.css'
+         , 'https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.min.css'
          , 'https://tokunakimochi.github.io/prism/themes/prism-bootstrap.css'
          , 'https://tokunakimochi.github.io/prism/plugins/line-numbers/prism-bootstrap-line-numbers.css'
          , 'https://tokunakimochi.github.io/prism/plugins/line-highlight/prism-bootstrap-line-highlight.css'
