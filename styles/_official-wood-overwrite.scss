@@ -7,7 +7,7 @@
    :release [:revision "1.11"; :created "2013-04-11"];
    :page <http://blogdesign.ldblog.jp/archives/18118411.html>;
    :rights "LINE Corporation".
-   */
+*/
 
 /* 全体のレイアウト
    ----------------------------------------------- */
@@ -18,7 +18,7 @@ body {
   background-position: center top;
   background-color: #38281a;
   color: #333333;
-  font: 14px/1.5 "Apple TP","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Meiryo UI","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font: 14px/1.5 "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Meiryo UI","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 #container {
@@ -327,6 +327,9 @@ dl.common-theme {
         > a {
           &:only-child {
             color: #772a2a;
+          }
+          &:visited {
+            color: #d87296;
           }
         }
       }
