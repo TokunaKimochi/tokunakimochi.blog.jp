@@ -9,7 +9,7 @@ loadjs([ 'https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-bl
 
 loadjs('https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.iife.min.js', 'pre');
 
-loadjs([ 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
+loadjs([ 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'
          , 'https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js'
          , 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' ], 'dep');
 
