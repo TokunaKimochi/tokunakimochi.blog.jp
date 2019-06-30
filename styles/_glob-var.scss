@@ -7,10 +7,10 @@
 
 $container-Width: 960px;
 
-$sidebar-inner-Width: 203px;
+$sidebar-inner-Width: 243px;
 $sidebar-inner-Padding-LR: 20px;
-$sidebar-Width: $sidebar-inner-Width + ( $sidebar-inner-Padding-LR * 2 );
+$sidebar-Width: 243px;
 
 $main-inner-Padding-LR: 40px;
 $main-Width: $container-Width - $sidebar-Width;
-$main-inner-Width: $main-Width - ( $main-inner-Padding-LR * 2 );
+$main-inner-Width: $main-Width;
