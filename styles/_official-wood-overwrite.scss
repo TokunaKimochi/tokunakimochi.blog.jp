@@ -73,6 +73,8 @@ body {
 
     #main-inner {
       padding: 0 40px 26px;
+      /* IE11 対策 */
+      width: $main-Width;
     }
 
     #sidebar {
@@ -88,6 +90,8 @@ body {
 
     #sidebar-inner {
       padding: 0 20px 26px;
+      /* IE11 対策 */
+      width: $sidebar-Width;
     }
   }
 
