@@ -41,12 +41,13 @@ import './em-element-to-another.js';
 import './blockquote-element-to-another.js';
 import './nivo-lightbox-helper.js';
 import './wrap-a-link-around-img.js';
+import './hatena-blogcard-helper.js';
 
 jQuery(function($){
   const selector = ( $('#more').length === 0 ) ? null : '#more > div';
   const divMd = $('div.article-body-inner > div');
   divMd.wrapLinkImg();
-  divMd.prismHelper().bq2another().declareCite().em2another();
+  divMd.prismHelper().bq2another().declareCite().em2another().hatenaBlogcardHelper();
   const anchor = divMd.find('a');
   anchor.aEle2fn(selector).nivolboxHelper('livedoorBlog');
 });
