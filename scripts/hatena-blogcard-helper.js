@@ -6,13 +6,15 @@
       return dom.each(function() {
 
         var jqueryObj = $(this);
-        var txt = jqueryObj.parent().text();
-        var permanentLink = jqueryObj.attr('href');
-        if (txt.trim() === permanentLink.trim()) {
+        var txt = jqueryObj.parent().text().trim();
+        var permanentLink = jqueryObj.attr('href').trim();
+        if (txt === permanentLink) {
           var title = jqueryObj.attr('title') || 'はてなブログカード';
+          var re = /(?:https?:)?\/\/(?:www\.)?(?:[^./]+\.)?hatena/;
+          var classNames = re.test(permanentLink) ? 'hatena-blogcard hbc-for-hatena' : 'hatena-blogcard hbc-for-international';
           permanentLink = encodeURIComponent( permanentLink );
           jqueryObj.replaceWith('<iframe src="https://hatenablog-parts.com/embed?url=' + permanentLink +
-                                '" title="' + title + '" class="hatena-blogcard" scrolling="no" frameborder="0"></iframe>');
+                                '" title="' + title + '" class="' + classNames + '" scrolling="no" frameborder="0"></iframe>');
         }
       });
     };
