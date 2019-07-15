@@ -4666,7 +4666,7 @@ nice-try@^1.0.4:
 
 "nivo-lightbox@https://github.com/TokunaKimochi/Nivo-Lightbox.git#gh-pages":
   version "1.0.0"
-  resolved "https://github.com/TokunaKimochi/Nivo-Lightbox.git#83f852cae6c7633f4dd8ffb11129b35b2b628ad4"
+  resolved "https://github.com/TokunaKimochi/Nivo-Lightbox.git#ec866083f029fae9dcb1aea3f5e5e087b852497a"
 
 node-forge@0.7.5:
   version "0.7.5"
