@@ -32,7 +32,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "jquery-hammerjs": "^2.0.0",
+    "jquery-hammerjs": "https://github.com/TokunaKimochi/jquery.hammer.js.git#alter",
     "markdown-it": "^8.4.2",
     "nivo-lightbox": "https://github.com/TokunaKimochi/Nivo-Lightbox.git#gh-pages",
     "prismjs": "https://github.com/TokunaKimochi/prism.git#gh-pages"

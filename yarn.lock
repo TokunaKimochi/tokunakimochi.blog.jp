@@ -3985,18 +3985,17 @@ istextorbinary@2.2.1:
     editions "^1.3.3"
     textextensions "2"
 
-jquery-hammerjs@^2.0.0:
+"jquery-hammerjs@https://github.com/TokunaKimochi/jquery.hammer.js.git#alter":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/jquery-hammerjs/-/jquery-hammerjs-2.0.0.tgz#08b518fa25fb1e8ce8fe3212c387da53bbe14048"
-  integrity sha1-CLUY+iX7Hozo/jISw4faU7vhQEg=
+  resolved "https://github.com/TokunaKimochi/jquery.hammer.js.git#cc7d133c47ae1c22fb932f0d95190698f1c96996"
   dependencies:
     hammerjs "2.0.x"
-    jquery "2.1.x"
+    jquery "3.4.x"
 
-jquery@2.1.x:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-2.1.4.tgz#228bde698a0c61431dc2630a6a154f15890d2317"
-  integrity sha1-IoveaYoMYUMdwmMKahVPFYkNIxc=
+jquery@3.4.x:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
+  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
 
 js-base64@^2.1.8:
   version "2.5.1"
