@@ -53,6 +53,13 @@
                   score += 50;
                   flag = 't';
                 }
+                // ClassName 追加のオプション群
+                else if (/--scroll-x|-S/.test(splitArr[i])) {
+                  pre.addClass('scroll-x');
+                }
+                else if (/--jp-monospace|-J/.test(splitArr[i])) {
+                  pre.addClass('jp-monospace');
+                }
                 else {
                   if (score % 50 && flag) break;
                   titleArr.push(splitArr[i]);
