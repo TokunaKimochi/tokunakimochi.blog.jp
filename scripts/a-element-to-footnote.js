@@ -4,10 +4,27 @@
 
     var main = function() {
 
+      var escape_m_char = (function(){
+        var character = {
+          '%{': '&#x7b;',
+          '%}': '&#x7d;',
+          "%'": '&#x27;',
+          '%(': '&#x28;',
+          '%)': '&#x29;'
+        };
+        return function(t) {
+          return t.replace(/%[{}'()]/g, function(c) {
+            return character[c];
+          });
+        };
+      }());
+
       var append_li_a = function(target, title, each_index) {
         target.find('ol.footnote').append('<li id="fn' + each_index + '">');
         // title 内の可読性向上インデントを削除
         title = title.replace(/\n\s*/g, '');
+        // 独自メタキャラをエスケープ
+        title = escape_m_char(title);
         // 区切り文字もキャプチャ
         // {テキスト}(URI)
         var splits = title.split(/(\{[^}]+}\([^)]+\))/);
