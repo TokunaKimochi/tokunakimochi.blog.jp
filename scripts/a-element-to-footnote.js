@@ -10,6 +10,7 @@
         // {テキスト}(URI)
         var splits = title.split(/(\{[^}]+}\([^)]+\))/);
         var attr_href, attr_title, text;
+        var tooltip = '';
         for (var i = 0; i < splits.length; i++) {
           if (/^\s*$/.test(splits[i])) {
             continue;
@@ -18,17 +19,21 @@
             attr_href = RegExp.$2;
             attr_title = RegExp.$3;
             text = RegExp.$1;
+            tooltip += text;
             target.find('#fn' + each_index).append('<a class="another-destination" href="' + attr_href + '" title="' + attr_title + '">' + text);
           }
           else if (/\{([^}]+)}\(\s*([^\s)]+)\s*\)/.test(splits[i])) {
             attr_href = RegExp.$2;
             text = RegExp.$1;
+            tooltip += text;
             target.find('#fn' + each_index).append('<a class="another-destination" href="' + attr_href + '">' + text);
           }
           else {
+            tooltip += splits[i];
             target.find('#fn' + each_index).append('<a href="#r' + each_index + '">' + splits[i]);
           }
         }
+        return tooltip;
       };
 
       var fnum = 0;
@@ -42,8 +47,8 @@
               div.append('<hr class="footnote">').append($('<p class="footnote">').append('<ol class="footnote">'));
               fnum = 1;
             }
-            append_li_a(div, title, index);
-            $(this).replaceWith('<sup class="footnote"><a href="#fn' + index + '" id="r' + index + '">' + fnum + '</a></sup>');
+            var tooltip = append_li_a(div, title, index);
+            $(this).replaceWith('<sup class="footnote"><a href="#fn' + index + '" id="r' + index + '" title="' + tooltip + '">' + fnum + '</a></sup>');
             fnum++;
           }
 
@@ -59,8 +64,8 @@
               target.append('<hr class="footnote">').append($('<p class="footnote">').append('<ol class="footnote">'));
               fnum = 1;
             }
-            append_li_a(target, title, index);
-            $(this).replaceWith('<sup class="footnote"><a href="#fn' + index + '" id="r' + index + '">' + fnum + '</a></sup>');
+            var tooltip = append_li_a(target, title, index);
+            $(this).replaceWith('<sup class="footnote"><a href="#fn' + index + '" id="r' + index + '" title="' + tooltip + '">' + fnum + '</a></sup>');
             fnum++;
           }
 
