@@ -6,6 +6,8 @@
 
       var append_li_a = function(target, title, each_index) {
         target.find('ol.footnote').append('<li id="fn' + each_index + '">');
+        // title 内の可読性向上インデントを削除
+        title = title.replace(/\n\s*/g, '');
         // 区切り文字もキャプチャ
         // {テキスト}(URI)
         var splits = title.split(/(\{[^}]+}\([^)]+\))/);
