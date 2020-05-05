@@ -18,7 +18,7 @@ loadjs.ready(['css', 'pre', 'dep'], {
   success: function() {
     WebFont.load({
       google: {
-        families: ['Lobster Two', 'Niconne', 'Vollkorn', 'Roboto Mono']
+        families: ['Lily Script One', 'Niconne', 'Vollkorn', 'Roboto Mono']
       }
     });
     loadjs([ '//parts.blog.livedoor.jp/js/design.js'

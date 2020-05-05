@@ -144,7 +144,7 @@ a {
 #blog-title {
   $blog-title-Color: #966F33;
   color: $blog-title-Color;
-  text-shadow: 0 -1px 0 #000, 0 1px 2px #000;
+  text-shadow: 0 -1px 0 #cbb799, 0 1px 2px #000;
   font-size: 26px;
   font-weight: bold;
   line-height: 1.2;
@@ -156,13 +156,13 @@ a {
 }
 
 #blog-description {
-  color: #fff;
+  color: #e5dbcc;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.4;
 
   a {
-    color: #fff;
+    color: #e5dbcc;
   }
 }
 

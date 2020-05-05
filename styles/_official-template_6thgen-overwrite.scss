@@ -322,7 +322,7 @@ input {
 
           &:before {
             content: '\201C';
-            font-family: "Lobster Two", serif;
+            font-family: 'Lily Script One', serif;
             font-size: 8em;
             left: 8px;
             line-height: 1;
@@ -474,7 +474,7 @@ input {
       /* タグ */
 
       dl.article-tags {
-        font-family: 'Niconne', cursive;
+        font-family: 'Lily Script One', 'YuMincho', 'Yu Mincho', cursive;
         font-size: 105%;
         line-height: 1.3;
         margin: 1em 0;
@@ -1031,7 +1031,7 @@ input {
       }
 
       [class^="plugin-calendar"] {
-        font-family: 'Lobster Two', cursive;
+        font-family: 'Lily Script One', cursive;
 
         a {
           text-decoration: none;
@@ -1074,7 +1074,7 @@ input {
       /* アーカイブ */
 
       [id^="plugin-monthly"] {
-        font-family: 'Lobster Two', cursive;
+        font-family: 'Lily Script One', cursive;
 
         .side {
           font-size: 14px;
@@ -1084,7 +1084,7 @@ input {
       /* タグクラウド */
 
       div.plugin-tag_cloud {
-        font-family: 'Niconne', cursive;
+        font-family: 'Niconne', 'YuMincho', 'Yu Mincho', cursive;
 
         .side ul.tagcloud {
           text-align: left;
