@@ -28,7 +28,8 @@
           "line-numbers",
           "line-highlight"
         ],
-        "css": false
+        "theme": "bootstrap232",
+        "css": true
       }
     ]
   ]
