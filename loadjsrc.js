@@ -7,7 +7,7 @@ loadjs([ 'https://cdn.jsdelivr.net/npm/sanitize.css@10.0.0/sanitize.min.css'
 
 loadjs('https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.iife.min.js', 'pre');
 
-loadjs([ 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'
+loadjs([ 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
          , 'https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js'
          , 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' ], 'dep');
 
