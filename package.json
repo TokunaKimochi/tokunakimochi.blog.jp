@@ -36,6 +36,7 @@
   "dependencies": {
     "jquery-hammerjs": "https://github.com/TokunaKimochi/jquery.hammer.js.git#alter",
     "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "https://github.com/TokunaKimochi/markdown-it-anchor.git#ref-env",
     "nivo-lightbox": "https://github.com/TokunaKimochi/Nivo-Lightbox.git#gh-pages",
     "prismjs": "https://github.com/TokunaKimochi/prism.git#bootstrap232"
   }

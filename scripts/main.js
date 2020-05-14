@@ -1,6 +1,7 @@
 import jQuery from 'jquery';
 import Hammer from 'hammerjs';
 import markdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
 
 const md = new markdownIt('default', {
   html: true,
@@ -23,9 +24,27 @@ const md = new markdownIt('default', {
   }
 });
 
+const mySlugify = (s, env) => {
+  let id = encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+  if (typeof env.mdTxtId === 'string') {
+    id = `${env.mdTxtId}-${id}`;
+  }
+  return id;
+};
+
+md.use(markdownItAnchor, {
+  slugify: mySlugify,
+  permalink: true,
+  permalinkClass: 'md-header-anchor',
+  permalinkSymbol: '\u{1F517}',
+  permalinkBefore: true
+});
+
 jQuery(function($){
   $('textarea.markdown').replaceWith( function() {
-    return $('<div/>').html(md.render(this.value));
+    const env = {};
+    env.mdTxtId = $(this).attr('id');
+    return $('<div/>').html(md.render(this.value, env));
   });
 });
 

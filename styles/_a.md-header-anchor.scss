@@ -1,0 +1,29 @@
+h1, h2, h3, h4, h5, h6 {
+
+  a.md-header-anchor {
+    float: left;
+    padding-right: 0.3em;
+    margin-left: -1.3em;
+    visibility: hidden;
+  }
+
+  &:hover {
+
+    a.md-header-anchor {
+      visibility: visible;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+h3.filename {
+
+  a.md-header-anchor {
+    padding-right: 0;
+    margin-left: 0.3em;
+    margin-right: -1.3em;
+  }
+}

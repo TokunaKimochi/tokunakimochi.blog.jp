@@ -2,19 +2,33 @@
   $.fn.prismHelper = function() {
     'use strict';
 
+    // 子要素を除いたテキストノードを取得
+    var getNodeText = function(elem) {
+      var text = '', i;
+      for (i = 0; i < elem.childNodes.length; i++) {
+        // Node.TEXT_NODE => 3
+        if (elem.childNodes[i].nodeType === 3){
+          text += elem.childNodes[i].data;
+        }
+      }
+      return text;
+    };
+
     var main = function() {
       return dom.each(function(index) {
 
         var jqueryObj = $(this);
         var txtArr = [], splitArr = [], lineNumArr = [], highlightLineArr = [], titleArr = [], codeNoClassArr = [];
-        var numberingClassname, txt, pre, code, specifyLng, i, classname, score, flag, title, codeNoClass;
+        var numberingClassname, txt, anchor, h3Id, pre, code, specifyLng, i, classname, score, flag, title, codeNoClass;
 
         if (jqueryObj.is('h3')) {
           numberingClassname = 'code-No_' + index;
           // 本当に直前の <h3> か pre をチェック！
           pre = jqueryObj.next('pre');
           if (pre.length) {
-            txt = jqueryObj.text();
+            txt = getNodeText(jqueryObj[0]);
+            anchor = jqueryObj.children('a');
+            h3Id = jqueryObj.attr('id');
             // エスケープ
             if (/^\s*'/.test(txt)) {
               txt = txt.slice(1);
@@ -23,7 +37,9 @@
             // 省略記法。タイトルと言語の指定を同時にする
             else if ((txtArr = txt.match(/^\s*\+\+([a-zA-Z0-9]+)\s*$/)) !== null) {
               pre.addClass( numberingClassname );
-              jqueryObj.replaceWith('<h3 class="filename ' + numberingClassname + '">' + txtArr[1] + '</h3>');
+              jqueryObj.replaceWith( function() {
+                return $('<h3 id="' + h3Id + '" class="filename ' + numberingClassname + '">' + txtArr[1] + '</h3>').prepend(anchor);
+              });
               specifyLng = 'language-' + txtArr[1];
               pre.addClass(specifyLng + ' line-numbers');
               code = pre.children('code');
@@ -69,7 +85,9 @@
               }
               if (titleArr.length) {
                 title = titleArr.join(' ');
-                jqueryObj.replaceWith('<h3 class="filename ' + numberingClassname + '">' + title + '</h3>');
+                jqueryObj.replaceWith( function() {
+                  return $('<h3 id="' + h3Id + '" class="filename ' + numberingClassname + '">' + title + '</h3>').prepend(anchor);
+                });
               }
               else {
                 pre.removeClass( numberingClassname );
