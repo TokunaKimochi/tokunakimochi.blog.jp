@@ -9,6 +9,11 @@
   "repository": "ssh://git@github.com/TokunaKimochi/tokunakimochi.blog.jp",
   "author": "TokunaKimochi <tokunakimochi@gmail.com>",
   "license": "MIT",
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11"
+  ],
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
