@@ -16,8 +16,8 @@ loadjs([ 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
 loadjs.ready('ie', {
   success: function() {
     ieBuster({
-      mainText: 'Internet Explorer ではこのページは表示できません',
-      linkText: '今すぐ Microsoft Edge を入手してください',
+      mainText: 'Internet Explorer ではこのページは表示できません。今すぐ Microsoft Edge を入手してください。',
+      linkText: '今すぐ無料で入手',
       linkUrl: 'https://www.microsoft.com/edge'
     });
   }
