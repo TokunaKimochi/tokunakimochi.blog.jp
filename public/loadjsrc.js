@@ -11,7 +11,8 @@ loadjs('./tokunakimochi-blog-jp.iife.min.js', 'pre');
 
 loadjs([ 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
          , 'https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js'
-         , 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' ], 'dep');
+         , 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'
+         , 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/js/all.min.js' ], 'dep');
 
 loadjs.ready('ie', {
   success: function() {

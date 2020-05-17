@@ -36,7 +36,7 @@ md.use(markdownItAnchor, {
   slugify: mySlugify,
   permalink: true,
   permalinkClass: 'md-header-anchor',
-  permalinkSymbol: '\u{1F517}',
+  permalinkSymbol: '<i class="fas fa-link"></i>',
   permalinkBefore: true
 });
 

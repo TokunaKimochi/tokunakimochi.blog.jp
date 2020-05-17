@@ -1,29 +1,78 @@
-h1, h2, h3, h4, h5, h6 {
+div.article-body-inner {
 
-  a.md-header-anchor {
-    float: left;
-    padding-right: 0.3em;
-    margin-left: -1.3em;
-    visibility: hidden;
-  }
-
-  &:hover {
+  h1, h2, h3, h4, h5, h6 {
+    position: relative;
 
     a.md-header-anchor {
-      visibility: visible;
+      display: none;
+      padding-right: 0.4em;
+    }
 
-      &:hover {
-        text-decoration: none;
+    &:hover {
+
+      a.md-header-anchor {
+        color: rgba(0, 0, 0, 0.54);
+        display:inline-block;
+
+        &:hover {
+          text-decoration: none;
+          color: #d87296;
+        }
+
+        svg {
+          fill: currentColor;
+          width: 0.7em;
+          height: 0.7em;
+        }
       }
     }
   }
-}
 
-h3.filename {
+  h1, h2, h3 {
 
-  a.md-header-anchor {
-    padding-right: 0;
-    margin-left: 0.3em;
-    margin-right: -1.3em;
+    &:hover {
+
+      a.md-header-anchor {
+        position: absolute;
+        top: 0.1em;
+        left: -1.05em;
+      }
+    }
+  }
+
+  h4, h5, h6 {
+
+    &:hover {
+
+      a.md-header-anchor {
+        position: absolute;
+        top: -0.1em;
+        left: -1em;
+      }
+    }
+  }
+
+  h3.filename {
+
+    a.md-header-anchor {
+      display: block;
+      margin-left: 0.3em;
+      margin-right: -1.6em;
+      visibility: hidden;
+      float: left;
+
+      svg {
+        width: 0.9em;
+        height: 0.9em;
+      }
+    }
+
+    &:hover {
+
+      a.md-header-anchor {
+        position: static;
+        visibility: visible;
+      }
+    }
   }
 }
