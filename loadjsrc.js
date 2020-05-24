@@ -3,8 +3,7 @@
 
 loadjs('https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js', 'ie');
 
-loadjs([ 'https://cdn.jsdelivr.net/npm/sanitize.css@10.0.0/sanitize.min.css'
-         , 'https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.min.css'
+loadjs([ 'https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.min.css'
          , 'https://tokunakimochi.github.io/Nivo-Lightbox/nivo-lightbox.min.css' ], 'css');
 
 loadjs('https://tokunakimochi.github.io/tokunakimochi.blog.jp/tokunakimochi-blog-jp.iife.min.js', 'pre');
