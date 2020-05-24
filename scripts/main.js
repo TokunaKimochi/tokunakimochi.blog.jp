@@ -1,5 +1,6 @@
 import jQuery from 'jquery';
 import Hammer from 'hammerjs';
+import WebFont from 'webfontloader';
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
 
@@ -69,4 +70,10 @@ jQuery(function($){
   divMd.prismHelper().bq2another().declareCite().em2another().hatenaBlogcardHelper();
   const anchor = divMd.find('a');
   anchor.aEle2fn(selector).nivolboxHelper('livedoorBlog');
+});
+
+WebFont.load({
+  google: {
+    families: ['Lily Script One', 'Niconne', 'Vollkorn', 'Roboto Mono']
+  }
 });

@@ -25,11 +25,6 @@ loadjs.ready('ie', {
 
 loadjs.ready(['css', 'pre', 'dep'], {
   success: function() {
-    WebFont.load({
-      google: {
-        families: ['Lily Script One', 'Niconne', 'Vollkorn', 'Roboto Mono']
-      }
-    });
     loadjs([ '//parts.blog.livedoor.jp/js/design.js'
              , './tokunakimochi-blog-jp.min.js' ]);
   }

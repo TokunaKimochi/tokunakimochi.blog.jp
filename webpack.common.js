@@ -13,7 +13,8 @@ module.exports = {
 
   externals: {
     jquery: 'jQuery',
-    hammerjs: 'Hammer'
+    hammerjs: 'Hammer',
+    webfontloader: 'WebFont',
   },
 
   module: {
