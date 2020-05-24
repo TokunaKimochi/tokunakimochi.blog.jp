@@ -9,6 +9,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import atImport from 'postcss-import';
 
 
 export const ghp = () => {
@@ -31,6 +32,7 @@ export const js0 = () => {
 
 export const css = () => {
   const plugins = [
+    atImport(),
     autoprefixer(),
     cssnano()
   ];
