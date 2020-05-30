@@ -2,13 +2,16 @@ const path = require('path');
 
 module.exports = {
   // エントリーポイントの指定
-  entry: './scripts/main.js',
+  entry: {
+    'tokunakimochi-blog-jp.iife': './scripts/escape-kaomoji.iife.js',
+    'tokunakimochi-blog-jp': './scripts/main.js',
+  },
   // ファイルの出力設定
   output: {
     // 出力先のフォルダー名
     path: path.resolve(__dirname, 'public'),
-    // 出力ファイル名
-    filename: 'tokunakimochi-blog-jp.min.js'
+    // 出力ファイル名 [name] はエントリーのキー
+    filename: '[name].min.js'
   },
 
   externals: {

@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import gulpIf from 'gulp-if';
 import replace from 'gulp-replace';
@@ -23,13 +22,6 @@ export const cp = () => {
     .pipe(gulp.dest('./public'));
 };
 
-export const js0 = () => {
-  return gulp.src('./scripts/escape-kaomoji.iife.js')
-    .pipe(rename('tokunakimochi-blog-jp.iife.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./public'));
-};
-
 export const css = () => {
   const plugins = [
     atImport(),
@@ -45,4 +37,4 @@ export const css = () => {
     .pipe(gulp.dest('./public'));
 };
 
-export default gulp.parallel(cp, js0, css);
+export default gulp.parallel(cp, css);
