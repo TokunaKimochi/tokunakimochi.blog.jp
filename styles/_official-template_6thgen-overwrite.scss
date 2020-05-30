@@ -85,7 +85,6 @@ button, input {
 
 button, input, select {
   vertical-align: baseline;
-  *vertical-align: middle;
 }
 
 button, input, select, textarea {
@@ -96,14 +95,12 @@ button, input, select, textarea {
 
 button {
   cursor: pointer;
-  *overflow: visible;
   -webkit-appearance: button;
 }
 
 input {
   &[type="button"], &[type="reset"], &[type="submit"] {
     cursor: pointer;
-    *overflow: visible;
     -webkit-appearance: button;
   }
 }
@@ -122,8 +119,6 @@ input {
   &[type="checkbox"], &[type="radio"] {
     box-sizing: border-box;
     padding: 0;
-    *height: 13px;
-    *width: 13px;
   }
 
   &[type="search"] {
@@ -532,21 +527,15 @@ input {
 
           li {
             display: inline-block;
-            *display: inline;
-            *zoom: 1;
             margin: 0 !important;
 
             ol {
               display: inline-block;
-              *display: inline;
-              *zoom: 1;
               margin: 0 !important;
             }
 
             a, &.current span {
               display: inline-block;
-              *display: inline;
-              *zoom: 1;
               font-weight: bold;
               line-height: 28px;
               margin: 0 2px;
