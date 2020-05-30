@@ -1,800 +1,934 @@
 <!DOCTYPE html>
 <html lang="ja" itemscope itemtype="http://schema.org/Blog">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!--$ /* HeadSectionCommon */ $-->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://livedoor.blogimg.jp/tokunakimochi/imgs/9/1/favicon.ico" />
-    <link rel="icon" href="http://livedoor.blogimg.jp/tokunakimochi/imgs/9/1/91289307.ico" />
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://tokunakimochi.blog.jp/index.rdf" />
-    <link rel="alternate" type="application/atom+xml" title="Atom" href="http://tokunakimochi.blog.jp/atom.xml" />
-    <link rel="openid.server" href="http://auth.livedoor.com/openid/server" />
-    <link rel="openid.delegate" href="http://profile.livedoor.com/tokunakimochi/" />
-    <link rel="next" href="http://tokunakimochi.blog.jp/?p=2" />
-    <meta name="description" content="Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
-      執筆時、Git + dotfiles の外にあったもの。" />
+<head>
+<!--$ /* HeadSectionCommon */ $-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://tokunakimochi.blog.jp/index.rdf">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="http://tokunakimochi.blog.jp/atom.xml">
+<link rel="openid.server" href="http://auth.livedoor.com/openid/server">
+<link rel="openid.delegate" href="http://profile.livedoor.com/tokunakimochi/">
+<link rel="next" href="http://tokunakimochi.blog.jp/?p=2">
 
-    <meta property="og:type" content="blog" />
-    <meta property="og:title" content="メモときどきマトメも" />
-    <meta property="og:description" content="Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
-      執筆時、Git + dotfiles の外にあったもの。" />
-    <meta property="og:url" content="http://tokunakimochi.blog.jp/" />
-    <meta property="og:site_name" content="メモときどきマトメも" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:image" content="http://parts.blog.livedoor.jp/img/usr/cmn/ogp_image/livedoor.png" />
+<meta name="description" content="Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
+執筆時、Git + dotfiles の外にあったもの。">
 
-    <meta name="twitter:title" content="メモときどきマトメも" />
-    <meta name="twitter:description" content="Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
-      執筆時、Git + dotfiles の外にあったもの。" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image:src" content="http://parts.blog.livedoor.jp/img/usr/cmn/ogp_image/livedoor.png" />
-    <link rel="alternate" media="handheld" type="application/xhtml+xml" href="http://tokunakimochi.m.blog.jp/" />
+<meta property="og:type" content="blog" />
+<meta property="og:title" content="メモときどきマトメも" />
+<meta property="og:description" content="Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
+執筆時、Git + dotfiles の外にあったもの。" />
+<meta property="og:url" content="http://tokunakimochi.blog.jp/" />
+<meta property="og:site_name" content="メモときどきマトメも" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://livedoor.blogimg.jp/tokunakimochi/imgs/8/3/8348c778.png" />
 
-    <title>メモときどきマトメも</title>
-    <!--[if lt IE 9]>
-      <script src="http://parts.blog.livedoor.jp/js/html5.js"></script>
-    <![endif]-->
-    <!-- jquery-1.7.1.min.js と design.js（livedoor 製ガジェット用のJs）の読み込みを off
-         <script src="http://parts.blog.livedoor.jp/js/usr/import.js"></script> -->
+<meta name="twitter:title" content="メモときどきマトメも" />
+<meta name="twitter:description" content="Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
+執筆時、Git + dotfiles の外にあったもの。" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image:src" content="https://livedoor.blogimg.jp/tokunakimochi/imgs/8/3/8348c778.png" />
+<link rel="alternate" media="handheld" type="application/xhtml+xml" href="http://tokunakimochi.m.blog.jp/">
 
+<title>メモときどきマトメも</title>
+<!--[if lt IE 9]>
+<script src="https://parts.blog.livedoor.jp/js/html5.js"></script>
+<![endif]-->
+<!-- jquery-1.7.1.min.js と design.js（livedoor 製ガジェット用のJs）の読み込みを off
+<script src="https://parts.blog.livedoor.jp/js/usr/import.js"></script> -->
+<!-- Add Header Tag // -->
+<link rel="stylesheet" href="./tokunakimochi-blog-jp.min.css">
+<link rel="stylesheet" href="https://tokunakimochi.github.io/Nivo-Lightbox/nivo-lightbox.min.css">
+<script defer src="./tokunakimochi-blog-jp.iife.min.js"></script>
+<script defer src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
+<script defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/loadjs@3.6.1/dist/loadjs.min.js"></script>
+<script defer src="./loadjsrc.js"></script>
 
-  </head>
-  <body class="default_2012 page-index layout-2col"><script type="text/javascript"><!--
-                                                                                   var ld_blog_vars = {
-                                                                                     provider_id : '1',
-                                                                                     provider_name : 'livedoor',
-                                                                                     id : '5916597',
-                                                                                     name : 'tokunakimochi',
-                                                                                     charset : 'utf8',
-                                                                                     url : 'http://tokunakimochi.blog.jp/',
-                                                                                     title : 'メモときどきマトメも',
-                                                                                     blog_design: {
-                                                                                       version: 1
-                                                                                     },
-                                                                                     blog_category: {
-                                                                                       id: '160',
-                                                                                       permalink: 'http://blog.livedoor.com/category/160/',
-                                                                                       name: 'IT・家電(総合) > プログラミング',
-                                                                                       is_adult : 0,
-                                                                                       is_gambling : 0,
-                                                                                       hierarchy: [{ id: '125', name: 'IT・家電(総合)', permalink: 'http://blog.livedoor.com/category/125/' },{ id: '160', name: 'プログラミング', permalink: 'http://blog.livedoor.com/category/160/' }]
-                                                                                     },
-                                                                                     current_page : {
-                                                                                       type : 'index',    page : '1'
-                                                                                     },
-                                                                                     articles : [  ]
-                                                                                   };
-                                                      //-->
-  </script><div id="analyzer_tags" style="display:none">
-    <script type="text/javascript" src="http://parts.blog.livedoor.jp/js/c2.js"></script>
-    <script type="text/javascript">blog_counter('tokunakimochi', 5916597, 'http://tokunakimochi.blog.jp/')</script>
-  </div><script type="text/javascript" src="http://parts.blog.livedoor.jp/js/smartphone.js?v=20131007"></script>
-  <script type="text/javascript" src="http://tokunakimochi.blog.jp/settings/header.js"></script><script type="text/javascript" src="http://tokunakimochi.blog.jp/settings/ad.js"></script>
-  <script type="text/javascript">
-    var palette_src = 'http://parts.blog.livedoor.jp/img/emoji/2/palette.png';
-    if (typeof IMAGE_CACHE == 'object' && IMAGE_CACHE['emoji_palette']) IMAGE_CACHE['emoji_palette'].src = palette_src;
-  </script>
-
-  <!-- Blog Common Header // -->
-  <!-- // Blog Common Header -->
+<!-- // Add Header Tag -->
 
 
-  <div id="wrapper">
+<meta name="referrer" content="always">
+<meta name="referrer" content="unsafe-url">
 
-    <div id="container">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1638469-45"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-      <!-- ブログタイトル、説明 -->
-      <header id="blog-header">
-	      <hgroup>
-		      <h1 id="blog-title"><a href="http://tokunakimochi.blog.jp/">メモときどきマトメも</a></h1>
-		      <h2 id="blog-description">Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
-            執筆時、Git + dotfiles の外にあったもの。</h2>
-	      </hgroup>
-      </header>
-      <!-- /ブログタイトル、説明 -->
+gtag('config', 'UA-1638469-45');
+</script>
 
-      <div id="content">
+</head>
+<body class="default_2012 page-index layout-2col"><script type="text/javascript"><!--
+var ld_blog_vars = {
+  provider_id : '1',
+  provider_name : 'livedoor',
+  id : '5916597',
+  name : 'tokunakimochi',
+  charset : 'utf8',
+  url : 'http://tokunakimochi.blog.jp/',
+  title : 'メモときどきマトメも',
+  blog_design: {
+      version: 1
+  },
+  blog_category: {
+    id: '160',
+    permalink: 'https://blog.livedoor.com/category/160/',
+    name: 'IT・家電(総合) > プログラミング',
+    is_adult : 0,
+    is_gambling : 0,
+    hierarchy: [{ id: '125', name: 'IT・家電(総合)', permalink: 'https://blog.livedoor.com/category/125/' },{ id: '160', name: 'プログラミング', permalink: 'https://blog.livedoor.com/category/160/' }]
+  },
+  current_page : {
+    type : 'index',    page : '1'
+  },
+  articles : [  ]
+};
+//-->
+</script><div id="analyzer_tags" style="display:none">
+<script type="text/javascript" src="https://parts.blog.livedoor.jp/js/c2.js?v=20191010"></script>
+<script type="text/javascript">blog_counter('tokunakimochi', 5916597, 'http://tokunakimochi.blog.jp/')</script>
+</div><script type="text/javascript" src="https://parts.blog.livedoor.jp/js/smartphone.js?v=20131007"></script>
+<script type="text/javascript" src="http://tokunakimochi.blog.jp/settings/header.js?v=20190705"></script><script type="text/javascript" src="http://tokunakimochi.blog.jp/settings/ad.js"></script>
+<script type="text/javascript">
+var palette_src = 'https://parts.blog.livedoor.jp/img/emoji/2/palette.png';
+if (typeof IMAGE_CACHE == 'object' && IMAGE_CACHE['emoji_palette']) IMAGE_CACHE['emoji_palette'].src = palette_src;
+</script>
 
-        <div id="main">
-          <div id="main-inner">
+<!-- Blog Common Header // -->
+<!-- // Blog Common Header -->
+
+
+<div id="wrapper">
+
+<div id="container">
+
+<!-- ブログタイトル、説明 -->
+<header id="blog-header">
+	<hgroup>
+		<h1 id="blog-title"><a href="http://tokunakimochi.blog.jp/">メモときどきマトメも</a></h1>
+		<h2 id="blog-description">Mac と Windows でつまずいたことなどのメモと、将来もう一度役立ちそうな環境構築手順などのまとめ。
+執筆時、Git + dotfiles の外にあったもの。</h2>
+	</hgroup>
+</header>
+<!-- /ブログタイトル、説明 -->
+
+<div id="content">
+
+<div id="main">
+<div id="main-inner">
 
 
 
 
-            <!-- google_ad_section_start -->
+<!-- google_ad_section_start -->
 
-            <script type="text/javascript"><!--
-                                           if (ld_blog_vars) {
-                                             ld_blog_vars.articles.push({
-                                               id : '1074874898',
-                                               permalink : 'http://tokunakimochi.blog.jp/archives/1074874898.html',
-                                               title : 'Spacemacs on WSL を使い易く',
-                                               categories : [ { id:'1267400', name:'Spacemacs', permalink:'http://tokunakimochi.blog.jp/archives/cat_1267400.html' }, { id:'1267317', name:'Windows Subsystem for Linux', permalink:'http://tokunakimochi.blog.jp/archives/cat_1267317.html' } ],
-                                               date : '2019-06-06 21:13:22'
-                                             });
-                                           }
-              //-->
-            </script>
+<script type="text/javascript"><!--
+  if (ld_blog_vars) {
+     ld_blog_vars.articles.push({
+       id : '1077295995',
+       permalink : 'http://tokunakimochi.blog.jp/archives/1077295995.html',
+       title : 'REST API サーバを Express + PostgreSQL で用意する',
+       categories : [ { id:'119801', name:'PostgreSQL', permalink:'http://tokunakimochi.blog.jp/archives/cat_119801.html' }, { id:'1273751', name:'Express', permalink:'http://tokunakimochi.blog.jp/archives/cat_1273751.html' } ],
+       date : '2020-04-18 20:20:56'
+     });
+  }
+//-->
+</script>
 
 
 
-            <!--
-                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-                 <rdf:Description
-                 rdf:about="http://tokunakimochi.blog.jp/archives/1074874898.html"
-                 trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1074874898"
-                 dc:title="Spacemacs on WSL を使い易く"
-                 dc:identifier="http://tokunakimochi.blog.jp/archives/1074874898.html"
-                 dc:subject="Spacemacs,Windows Subsystem for Linux"
-                 dc:description="[前回のエントリー][ 001 ]で導入した Spacemacs on WSL が（非常に遅い以外[ 002 ]）良い感じなので、少しだけブラッシュアップを図ります。### WSL 側で IME を自動で ON`~/.zprofile` に以下の内容を追記します。X サーバが未起動だとトラぶる[ 003 ]様なのでチェック"
-                 dc:creator="tokunakimochi"
-                 dc:date="2019-06-06T21:13:22+09:00" />
-                 </rdf:RDF>
-            -->
-            <div id="ad_rs" class="ad_rs_b"></div>
-            <!-- 記事全体 -->
-            <article class="article first-article" itemscope itemtype="http://schema.org/BlogPosting">
-              <!-- 記事ヘッダー、記事タイトル -->
-              <header class="article-header">
-	              <p class="article-date"><time datetime="2019-06-06T21:13:22+09:00" pubdate="pubdate"><span class="article-date-year">2019</span><span class="article-date-month">Jun</span><span class="article-date-day">6</span></time></p>
-	              <h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1074874898.html" itemprop="url">Spacemacs on WSL を使い易く</a></h1>
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://tokunakimochi.blog.jp/archives/1077295995.html"
+    trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1077295995"
+    dc:title="REST API サーバを Express + PostgreSQL で用意する"
+    dc:identifier="http://tokunakimochi.blog.jp/archives/1077295995.html"
+    dc:subject="PostgreSQL,Express"
+    dc:description="[前回][ 0-01 ]、Redux の学習の際 API サーバとして [JSON Server][ 0-02 ] を利用しました。このツールは、> Get a full fake REST API with zero coding in less than 30 seconds (seriously) >> &#45;&#45; https://github.com/typicode/json-serverと謳っているように RE"
+    dc:creator="tokunakimochi"
+    dc:date="2020-04-18T20:20:56+09:00" />
+</rdf:RDF>
+-->
+<div id="ad_rs" class="ad_rs_b"></div>
+<!-- 記事全体 -->
+<article class="article first-article" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- 記事ヘッダー、記事タイトル -->
+<header class="article-header">
+	<p class="article-date"><time datetime="2020-04-18T20:20:56+09:00" pubdate="pubdate" title="2020-04-18T20:20:56+09:00"><span class="article-date-year">2020</span><span class="article-date-month">Apr</span><span class="article-date-day">18</span></time></p>
+	<h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1077295995.html" itemprop="url">REST API サーバを Express + PostgreSQL で用意する</a></h1>
 
-              </header>
-              <!-- /記事ヘッダー、記事タイトル -->
+</header>
+<!-- /記事ヘッダー、記事タイトル -->
 
-              <!-- 記事本文 -->
-              <div class="article-body">
-	              <div class="article-body-inner">
+<!-- 記事本文 -->
+<div class="article-body">
+	<div class="article-body-inner">
 
-	                <textarea id ="mdp5916597" class="markdown" disabled>
-[前回のエントリー][ 001 ]で導入した Spacemacs on WSL が（非常に遅い以外[ 002 ]）良い感じなので、少しだけブラッシュアップを図ります。
+	<textarea id="mdp1077295995" class="markdown" disabled>
+[前回][ 0-01 ]、Redux の学習の際 API サーバとして [JSON Server][ 0-02 ] を利用しました。
+このツールは、
 
-<http://tokunakimochi.blog.jp/archives/1073947210.html>
-
-[http://tokunakimochi.blog.jp/archives/1073947210.html](http://tokunakimochi.blog.jp/archives/1073947210.html 'Spacemacs on WSL 1')
-
-<http://blog.hatenablog.com/entry/2019/07/09/180058>
-
-# えいち 01
-
-## エイチ 02
-
-### えいち 03
-
-#### エイチ 04
-
-##### えいち 05
-
-###### エイチ 06
-
-### WSL 側で IME を自動で ON
-
-`~/.zprofile` に以下の内容を追記します。X サーバが未起動だとトラぶる[ 003 ]様なのでチェックを入れています。
-
-### += ~/.zprofile ###
-~~~zsh
-if [[ $(/mnt/c/Windows/System32/tasklist.exe | grep vcxsrv | wc -l) ]]; then
-    (fcitx-autostart &gt; /dev/null 2&gt;&amp;1 &amp;)
-fi
-~~~
-
-### Windows から Spacemacs を直接起動
-
-[VBScript][ 004 ] を活用すると、拡張子 `.vbs` で作成したスクリプト・ファイルをダブルクリックするなどして、Spacemacs が（WSL のターミナルを経由せずに）一発で起動可能になります。以下がコードです。上の zsh 同様、X サーバの起動チェックを最初にしています。日本語を含んでいるので、`Shift-JIS` で保存します。
-
-### += 任意の名前.vbs -S -J !:12 ###
-~~~vbs
-Option Explicit
-
-Dim argArr: Set argArr = WScript.Arguments
-Dim xServerName: xServerName = &quot;vcxsrv.exe&quot;
-
-Dim oService: Set oService = CreateObject(&quot;WbemScripting.SWbemLocator&quot;).ConnectServer
-Dim colProcesses: Set colProcesses = oService.ExecQuery(&quot;SELECT * FROM Win32_Process WHERE Name = '&quot; &amp; xServerName &amp; &quot;'&quot;)
-
-Set oService = Nothing
-
-If colProcesses.Count = 0 Then
-    MsgBox &quot;先に X サーバを立ち上げてください。&quot; &amp; vbCrLf &amp; &quot;想定プロセス名は &quot; &amp; xServerName &amp; &quot; です。&quot;
-
-    Set colProcesses = Nothing
-    WScript.Quit(1)
-End If
-
-Set colProcesses = Nothing
-
-Dim oShell: Set oShell = CreateObject(&quot;WScript.Shell&quot;)
-Dim strArgs: strArgs = &quot;wsl zsh -c 'emacs'&quot;
-
-If argArr.Count = 1 Then
-    oShell.CurrentDirectory = argArr(0)
-End If
-
-oShell.Run strArgs, 0, false
-
-Set oShell = Nothing
-~~~
-
-### Windows Explorer の右クリック・メニューに登録
-
-エクスプローラで開いているフォルダをカレント・ディレクトリとして起動するメニューをコンテキスト・メニューに登録します。ただし、*{レジストリ エディター (regedit)}* でレジストリを直接いじります。具体的には `HKEY_CURRENT_USER\Software\Classes\Directory\Background` 以下にキーを３階層追加します。以下は例です。
-
-&gt; `HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\wsl-emacs\command`
+&gt; Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 &gt;
-&gt; -- 追加するキーの例
-
-`\` は階層を表しています。なぜ「例」かと言うと、作成するレジストリ・キーの中に命名の自由を認められたキーがあるからです。以下の表で確認してください。
-
-| 新規キー名                            | 命名規則                | 編集の必要性 |
-|:--------------------------------------:|:------------------------:|:------------------:|
-| ...\\Background\\**shell**       | 規定値。変更不可 | 無し                |
-| ...\\shell\\**wsl-emacs**         | 任意の文字列         | あり               |
-| ...\\wsl-emacs\\**command** | 規定値。変更不可 | あり                |
-
-レジストリ エディターで新規キーを作成するには、左ペインで親キーを右クリック &gt; *|新規(N)|* &gt; *|キー(K)|* と手繰ります。また、表にある編集とは、キーにデータを付加することです。これは、右ペインの *{(既定)}* を右クリック &gt; *|修正(M)...|* をクリックして、出現したダイアログの *{値のデータ(V):}* を編集します。以下にそれぞれの例を示します。
-
-&gt; ### += 値のデータ(V): ###
-&gt; ~~~txt
-&gt; Spacemacsをここで開く
-&gt; ~~~
-&gt;
-&gt; -- wsl-emacs キーの (既定) の「文字列の編集」の例
-
-&gt; ### += 値のデータ(V): ###
-&gt; ~~~cmd
-&gt; wscript.exe &quot;C:\usr\bin\spacemacs.vbs&quot; &quot;%V&quot;
-&gt; ~~~
-&gt;
-&gt; -- command キーの (既定) の「文字列の編集」の例
-
-前者はコンテキスト・メニューに実際に表示される文字列です。後者は上で作成したスクリプト・ファイルの実際の絶対パスに置き換えてください。これで、エクスプローラからカレント・ディレクトリを指定して Spacemacs を起動することができるようになりました。
-
-#### 参考サイト
-
-* WSL 側で IME を自動で ON
-    * [WSLでMozcで日本語入力](http://utimukat55.blogspot.com/2018/11/wslmozc.html &quot;気づいたらガジェ獣&quot;)
-* Windows から Spacemacs を直接起動
-    * [Question: how to create a windows shortcut for a Graphic linux app?](https://github.com/Microsoft/WSL/issues/3404#issuecomment-408094942 &quot;Issue #3404 · microsoft/WSL · GitHub&quot;)
-    * [Some notes on &quot;Configuring a pretty and usable terminal emulator for WSL&quot;](https://gist.github.com/GregRos/7e9c67f150c9dc80843bdf85028f1789 &quot;GitHub&quot;)
-    * [[VBScript] 指定した名前のプロセスが存在するか調べる](https://yozda.exblog.jp/15574326/ &quot;（ どーもボキです ＞ Z_￣∂&quot;)
-* Windows Explorer の右クリック・メニューに登録
-    * [任意のフォルダを右クリックして、Cygtermで開く](http://d.hatena.ne.jp/kkotaro0111/20120521/1337595346 &quot;UTAGEWORKS&quot;)
-    * [［Shift］＋右クリックメニューに「コマンドウィンドウをここで開く」を復活させる方法](https://www.atmarkit.co.jp/ait/articles/1709/15/news025.html &quot;Tech TIPS - ＠IT&quot;)
-    * [コンテキストメニューに任意のアプリケーションを追加する](https://laboradian.com/add-item-to-context-menu/ &quot;ラボラジアン&quot;)
-    * [右クリックからmintty(bash)を開く](http://espresso3389.hatenablog.com/entry/20111001/1317466533 &quot;espresso3389の日記&quot;)
-
-[ 001 ]: http://tokunakimochi.blog.jp/archives/1073947210.html
-[ 002 ]: #f &quot;{WSL 2 が発表された}(https://devblogs.microsoft.com/commandline/announcing-wsl-2/ 'Announcing WSL 2 | Windows Command Line Tools For Developers')ので気長に待ちましょう&quot;
-[ 003 ]: #f &quot;単純に fcitx-autostart を呼ぶと X サーバなしではシェルが立ち上がってこない{タイト%{ル%}}(https://google.com 'ツール%'ちっ%'%(ぷ%)')&quot;
-[ 004 ]: https://msdn.microsoft.com/ja-jp/library/cc392489.aspx &quot;Microsoft Visual Basic Scripting Edition&quot;
-	                </textarea>
-	                <dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/Spacemacs" title="Spacemacs タグの一覧へ">Spacemacs</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Emacs" title="Emacs タグの一覧へ">Emacs</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Fcitx" title="Fcitx タグの一覧へ">Fcitx</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/VBScript" title="VBScript タグの一覧へ">VBScript</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/WSL" title="WSL タグの一覧へ">WSL</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/WSL1" title="WSL1 タグの一覧へ">WSL1</a></dd></dl>
-
-	              </div>
-              </div>
-              <!-- /記事本文 -->
-
-              <!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-              <footer class="article-footer">
-	              <ul class="article-meta">
-
-
-		              <li class="article-category">
-			              <dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1267400.html">Spacemacs</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_1267317.html">Windows Subsystem for Linux</a></dd></dl>
-		              </li>
-
-		              <li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
-	              </ul>
-              </footer>
-              <!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-
-            </article>
-            <!-- /記事全体 -->
-
-            <div id="ad2"></div>
-
-            <script type="text/javascript"><!--
-                                           if (ld_blog_vars) {
-                                             ld_blog_vars.articles.push({
-                                               id : '1073947210',
-                                               permalink : 'http://tokunakimochi.blog.jp/archives/1073947210.html',
-                                               title : 'Spacemacs on Windows Subsystem for Linux',
-                                               categories : [ { id:'1267400', name:'Spacemacs', permalink:'http://tokunakimochi.blog.jp/archives/cat_1267400.html' }, { id:'1267317', name:'Windows Subsystem for Linux', permalink:'http://tokunakimochi.blog.jp/archives/cat_1267317.html' } ],
-                                               date : '2019-03-31 20:17:53'
-                                             });
-                                           }
-              //-->
-            </script>
-
-
-
-            <!--
-                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-                 <rdf:Description
-                 rdf:about="http://tokunakimochi.blog.jp/archives/1073947210.html"
-                 trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1073947210"
-                 dc:title="Spacemacs on Windows Subsystem for Linux"
-                 dc:identifier="http://tokunakimochi.blog.jp/archives/1073947210.html"
-                 dc:subject="Spacemacs,Windows Subsystem for Linux"
-                 dc:description="### 動機以前から興味のあった WSL の導入ですが、[NTEmacs @ ウィキ][ 01 ]のトップページの言及> 今の所、Windows で emacs を使うには WSL's emacs on VcXsrv がベストな選択だと思っています。  > （中略）  > WSL 上で emacs を使う場合の不便な点は概ね解消されて"
-                 dc:creator="tokunakimochi"
-                 dc:date="2019-03-31T20:17:53+09:00" />
-                 </rdf:RDF>
-            -->
-
-            <!-- 記事全体 -->
-            <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
-              <!-- 記事ヘッダー、記事タイトル -->
-              <header class="article-header">
-	              <p class="article-date"><time datetime="2019-03-31T20:17:53+09:00" pubdate="pubdate"><span class="article-date-year">2019</span><span class="article-date-month">Mar</span><span class="article-date-day">31</span></time></p>
-	              <h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1073947210.html" itemprop="url">Spacemacs on Windows Subsystem for Linux</a></h1>
-
-              </header>
-              <!-- /記事ヘッダー、記事タイトル -->
-
-              <!-- 記事本文 -->
-              <div class="article-body">
-	              <div class="article-body-inner">
-
-	                <textarea class="markdown" disabled>
-### 動機
-
-以前から興味のあった WSL の導入ですが、[NTEmacs @ ウィキ][ 01 ]のトップページの言及
-&gt; 今の所、Windows で emacs を使うには WSL's emacs on VcXsrv がベストな選択だと思っています。
-&gt; （中略）
-&gt; WSL 上で emacs を使う場合の不便な点は概ね解消されていると思います。
-&gt;
-&gt; -- [NTEmacs @ ウィキ - 【お知らせ】][ 01 ]
-
-と、[coLinux][ 02 ] の導入に逡巡している間に開発休止してしまったという苦い記憶から重い腰を上げてみました、、
-
-環境は
-
-* システムの種類
-    * 64 ビット オペレーティング システム、x64 ベース プロセッサ
-* エディション
-    * Windows 10 Home
-* バージョン
-    * 1809
-* ローカル アカウント
-* [Scoop][ 03 ]、[Cmder][ 04 ] インストール済み
-* モニター
-    * BenQ X2200W
-        * ２２インチ
-        * 1680 × 1050 ドット  (-。－；) [ 05 ]
-
-です
-
-[ 01 ]: https://www49.atwiki.jp/ntemacs/ &quot;NTEmacs @ ウィキ - アットウィキ&quot;
-[ 02 ]: http://www.colinux.org/ &quot;Cooperative Linux&quot;
-[ 03 ]: https://scoop.sh/ &quot;A command-line installer for Windows&quot;
-[ 04 ]: http://cmder.net/ &quot;Portable console emulator for Windows&quot;
-[ 05 ]: #f &quot;２００８年１月３０日発売{らしい}(https://pc.watch.impress.co.jp/docs/2008/0123/benq.htm 'PC Watch')です。。。&quot;
-	                </textarea><span class="article-continue"><a href="http://tokunakimochi.blog.jp/archives/1073947210.html#more">続きを読む</a></span>
-	                <dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/Spacemacs" title="Spacemacs タグの一覧へ">Spacemacs</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Ubuntu" title="Ubuntu タグの一覧へ">Ubuntu</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/VcXsrv" title="VcXsrv タグの一覧へ">VcXsrv</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Mozc" title="Mozc タグの一覧へ">Mozc</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/urxvt" title="urxvt タグの一覧へ">urxvt</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Homebrew" title="Homebrew タグの一覧へ">Homebrew</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Emacs" title="Emacs タグの一覧へ">Emacs</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/WSL" title="WSL タグの一覧へ">WSL</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/WSL1" title="WSL1 タグの一覧へ">WSL1</a></dd></dl>
-
-	              </div>
-              </div>
-              <!-- /記事本文 -->
-
-              <!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-              <footer class="article-footer">
-	              <ul class="article-meta">
-
-
-		              <li class="article-category">
-			              <dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1267400.html">Spacemacs</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_1267317.html">Windows Subsystem for Linux</a></dd></dl>
-		              </li>
-
-		              <li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
-	              </ul>
-              </footer>
-              <!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-
-            </article>
-            <!-- /記事全体 -->
-
-
-
-            <script type="text/javascript"><!--
-                                           if (ld_blog_vars) {
-                                             ld_blog_vars.articles.push({
-                                               id : '1072112558',
-                                               permalink : 'http://tokunakimochi.blog.jp/archives/1072112558.html',
-                                               title : 'spacemacs コマンド メモ',
-                                               categories : [ { id:'1267400', name:'Spacemacs', permalink:'http://tokunakimochi.blog.jp/archives/cat_1267400.html' }, { id:'119797', name:'macOS', permalink:'http://tokunakimochi.blog.jp/archives/cat_119797.html' } ],
-                                               date : '2018-07-29 11:45:22'
-                                             });
-                                           }
-              //-->
-            </script>
-
-
-
-            <!--
-                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-                 <rdf:Description
-                 rdf:about="http://tokunakimochi.blog.jp/archives/1072112558.html"
-                 trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1072112558"
-                 dc:title="spacemacs コマンド メモ"
-                 dc:identifier="http://tokunakimochi.blog.jp/archives/1072112558.html"
-                 dc:subject="Spacemacs,macOS"
-                 dc:description="#### helm-swoop & iedit ####![Spacemacs][ spacemacs ]1. 置き換えたい単語にカーソルを合わせて `SPC s S` で helm-swoop へ2. `C-c C-e` で編集モードへ3. 同じくカーソルを合わせて `SPC s e` で iedit へ4. _[I]_ などでインサート・ステートへ5. 編集6. `C-g`"
-                 dc:creator="tokunakimochi"
-                 dc:date="2018-07-29T11:45:22+09:00" />
-                 </rdf:RDF>
-            -->
-
-            <!-- 記事全体 -->
-            <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
-              <!-- 記事ヘッダー、記事タイトル -->
-              <header class="article-header">
-	              <p class="article-date"><time datetime="2018-07-29T11:45:22+09:00" pubdate="pubdate"><span class="article-date-year">2018</span><span class="article-date-month">Jul</span><span class="article-date-day">29</span></time></p>
-	              <h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1072112558.html" itemprop="url">spacemacs コマンド メモ</a></h1>
-
-              </header>
-              <!-- /記事ヘッダー、記事タイトル -->
-
-              <!-- 記事本文 -->
-              <div class="article-body">
-	              <div class="article-body-inner">
-
-	                <textarea id="mdp1072112558" class="markdown" disabled>
-#### helm-swoop &amp; iedit ####
-![Spacemacs][ spacemacs ]
-
-1. 置き換えたい単語にカーソルを合わせて `SPC s S` で helm-swoop へ
-2. `C-c C-e` で編集モードへ
-3. 同じくカーソルを合わせて `SPC s e` で iedit へ
-4. _[I]_ などでインサート・ステートへ
-5. 編集
-6. `C-g` で iedit 終了
-7. `C-x C-s` でバッファに反映 helm-swoop 終了
-
-[ spacemacs ]: https://cldup.com/znsZc-QvYJ.gif &quot;#dl {lbox:'検索・置き換え'}&quot;
-	                </textarea>
-	                <dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/Spacemacs" title="Spacemacs タグの一覧へ">Spacemacs</a></dd></dl>
-
-	              </div>
-              </div>
-              <!-- /記事本文 -->
-
-              <!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-              <footer class="article-footer">
-	              <ul class="article-meta">
-
-
-		              <li class="article-category">
-			              <dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1267400.html">Spacemacs</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_119797.html">macOS</a></dd></dl>
-		              </li>
-
-		              <li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
-	              </ul>
-              </footer>
-              <!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-
-            </article>
-            <!-- /記事全体 -->
-
-
-
-            <script type="text/javascript"><!--
-                                           if (ld_blog_vars) {
-                                             ld_blog_vars.articles.push({
-                                               id : '1067487469',
-                                               permalink : 'http://tokunakimochi.blog.jp/archives/1067487469.html',
-                                               title : 'GitHub SSH',
-                                               categories : [ { id:'119797', name:'macOS', permalink:'http://tokunakimochi.blog.jp/archives/cat_119797.html' }, { id:'119805', name:'設定', permalink:'http://tokunakimochi.blog.jp/archives/cat_119805.html' } ],
-                                               date : '2017-08-27 12:02:09'
-                                             });
-                                           }
-              //-->
-            </script>
-
-
-
-            <!--
-                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-                 <rdf:Description
-                 rdf:about="http://tokunakimochi.blog.jp/archives/1067487469.html"
-                 trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1067487469"
-                 dc:title="GitHub SSH"
-                 dc:identifier="http://tokunakimochi.blog.jp/archives/1067487469.html"
-                 dc:subject="macOS,設定"
-                 dc:description="macOS Sierra をクリーン・インストールした MacBook Pro でこのブログの js css 関連を管理している [GitHub のリポジトリ][ 01 ]をクローンしようと思い`ghq get -p TokunaKimochi/tokunakimochi.blog.jp` [ 02 ]したところ### += :4 ###~~~sh...Permission denied (p"
-                 dc:creator="tokunakimochi"
-                 dc:date="2017-08-27T12:02:09+09:00" />
-                 </rdf:RDF>
-            -->
-
-            <!-- 記事全体 -->
-            <article class="article" itemscope itemtype="http://schema.org/BlogPosting">
-              <!-- 記事ヘッダー、記事タイトル -->
-              <header class="article-header">
-	              <p class="article-date"><time datetime="2017-08-27T12:02:09+09:00" pubdate="pubdate"><span class="article-date-year">2017</span><span class="article-date-month">Aug</span><span class="article-date-day">27</span></time></p>
-	              <h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1067487469.html" itemprop="url">GitHub SSH</a></h1>
-
-              </header>
-              <!-- /記事ヘッダー、記事タイトル -->
-
-              <!-- 記事本文 -->
-              <div class="article-body">
-	              <div class="article-body-inner">
-
-	                <textarea class="markdown" disabled>
-macOS Sierra をクリーン・インストールした MacBook Pro でこのブログの js css 関連を管理している [GitHub のリポジトリ][ 01 ]をクローンしようと思い`ghq get -p TokunaKimochi/tokunakimochi.blog.jp` [ 02 ]したところ
-
-### += :4 ###
-~~~sh
-...
-Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-     error /usr/bin/git: exit status 128
-~~~
-
-と言われてしまいました。。
-つい、数週間前には何の問題もなかったはずなのですが、、
-試しに`ssh -T git@github.com`してみても
-
-~~~sh
-Permission denied (publickey).
-~~~
-
-と冷たい返事。
-で、ググってみたところ[こんな記事][ 03 ]が、、
-そのもの、ズバリ！の内容だったので`~/.ssh/config`を以下のように改変しました。
-
-~~~diff
-$ diff -u config.old config
---- config.old      2017-08-27 11:48:25.000000000 +0900
-+++ config          2017-08-27 11:49:15.000000000 +0900
-@@ -1,4 +1,4 @@
--Host github
-+Host github github.com
-   HostName github.com
-   User git
-   AddKeysToAgent yes
-~~~
-
-感謝！！
-
-
-[ 01 ]: https://github.com/TokunaKimochi/tokunakimochi.blog.jp
-[ 02 ]: #f &quot;{ghq}(https://github.com/motemen/ghq) は {Go}(http://golang.org) のお作法でリポジトリを管理する為のツール&quot;
-[ 03 ]: http://qiita.com/shizuma/items/9906c3d45548c3319fa5 &quot;ssh -T git@github.com で Permission denied (publickey).&quot;
-	                </textarea>
-	                <dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/GitHub" title="GitHub タグの一覧へ">GitHub</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/SSH" title="SSH タグの一覧へ">SSH</a></dd></dl>
-
-	              </div>
-              </div>
-              <!-- /記事本文 -->
-
-              <!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-              <footer class="article-footer">
-	              <ul class="article-meta">
-
-
-		              <li class="article-category">
-			              <dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_119797.html">macOS</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_119805.html">設定</a></dd></dl>
-		              </li>
-
-		              <li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
-	              </ul>
-              </footer>
-              <!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-
-            </article>
-            <!-- /記事全体 -->
-
-
-
-            <script type="text/javascript"><!--
-                                           if (ld_blog_vars) {
-                                             ld_blog_vars.articles.push({
-                                               id : '1067318883',
-                                               permalink : 'http://tokunakimochi.blog.jp/archives/1067318883.html',
-                                               title : 'GUI iTunes で取り込んだ CD を Windows CUI で整理',
-                                               categories : [ { id:'1246745', name:'Windows', permalink:'http://tokunakimochi.blog.jp/archives/cat_1246745.html' }, { id:'', name:'', permalink:'' } ],
-                                               date : '2017-08-14 15:51:17'
-                                             });
-                                           }
-              //-->
-            </script>
-
-
-
-            <!--
-                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
-                 xmlns:dc="http://purl.org/dc/elements/1.1/">
-                 <rdf:Description
-                 rdf:about="http://tokunakimochi.blog.jp/archives/1067318883.html"
-                 trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1067318883"
-                 dc:title="GUI iTunes で取り込んだ CD を Windows CUI で整理"
-                 dc:identifier="http://tokunakimochi.blog.jp/archives/1067318883.html"
-                 dc:subject="Windows"
-                 dc:description="定額ストリーミング・サービス全盛の昨今ですが Pioneer 製 BDD 搭載 Windows 10 機もまだ現役と言う事で、バッチファイルを書いてみました。Windows での dotfile(?) の運用法は未だに決まらないのでブログに貼っておきます。### += Rar.exe 最大強度で圧縮 ###~~~bat:"
-                 dc:creator="tokunakimochi"
-                 dc:date="2017-08-14T15:51:17+09:00" />
-                 </rdf:RDF>
-            -->
-
-            <!-- 記事全体 -->
-            <article class="article last-article" itemscope itemtype="http://schema.org/BlogPosting">
-              <!-- 記事ヘッダー、記事タイトル -->
-              <header class="article-header">
-	              <p class="article-date"><time datetime="2017-08-14T15:51:17+09:00" pubdate="pubdate"><span class="article-date-year">2017</span><span class="article-date-month">Aug</span><span class="article-date-day">14</span></time></p>
-	              <h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1067318883.html" itemprop="url">GUI iTunes で取り込んだ CD を Windows CUI で整理</a></h1>
-
-              </header>
-              <!-- /記事ヘッダー、記事タイトル -->
-
-              <!-- 記事本文 -->
-              <div class="article-body">
-	              <div class="article-body-inner">
-
-	                <textarea id="mdp1067318883" class="markdown" disabled>
-定額ストリーミング・サービス全盛の昨今ですが Pioneer 製 BDD 搭載 Windows 10 機もまだ現役と言う事で、バッチファイルを書いてみました。
-Windows での dotfile(?) の運用法は未だに決まらないのでブログに貼っておきます。
-
-### += Rar.exe 最大強度で圧縮 ###
-~~~bat
-:: シフトJIS CRLF
-:: デスクトップに作成
-:: 再帰的
-@echo off
-for /f &quot;usebackq delims=&quot; %%I in (`dir &quot;%USERPROFILE%\Music\iTunes\iTunes Media\Music&quot; /b /ad /s ^| iconv -f cp932 -t utf-8 ^| peco ^| iconv -f utf-8  -t cp932`) do (
-    rar a -ep1 -r -m5 -k &quot;%USERPROFILE%\Desktop\%%~nI.rar&quot; &quot;%%I\&quot;
+&gt; -- https://github.com/typicode/json-server
+
+と謳っているように REST[ 0-03 ] API サーバをデータベース込で提供します。ただし、それは簡易的なものです。
+
+そこで、本番環境における候補の一つになるであろう [Express][ 0-04 ] + [PostgreSQL][ 0-05 ] 構成で REST API サーバを作ってみます。
+
+今回は勉強というよりは各ツールの使い方メモといったところです。
+
+#### 環境
+
+* Windows 10 Home バージョン 1909[ 0-06 ]
+    * node v12.16.2
+    * yarn 1.22.4
+    * curl 7.55.1 (Windows) libcurl/7.55.1 WinSSL
+
+#### 参考記事
+
+1. [Setting up a RESTful API with Node.js and PostgreSQL - LogRocket Blog](
+       https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
+   )
+2. [Designing a RESTful API with Node and Postgres](
+       https://mherman.org/blog/designing-a-restful-api-with-node-and-postgres/
+   )
+
+PostgreSQL （ psql を含む）は予めインストールしておいてください。
+Windows の場合はインストーラが用意されています。自分はローケル _{C}_ でインストールしました[ 0-07 ]。
+
+* 参考画像[壱][ img-01 ]・[弐][ img-02 ]・[三][ img-03 ]
+
+&lt;https://www.postgresql.org/download/&gt;
+
+
+[ img-01 ]: https://cldup.com/kfgkzZ2mDR.png &quot;{lbox: [], title: 'インストールウィザード 01'}&quot;
+[ img-02 ]: https://cldup.com/H9yEJA3pW9.png &quot;{lbox: [], title: 'インストールウィザード 02'}&quot;
+[ img-03 ]: https://cldup.com/lCgHp7MfyQ.png &quot;{lbox: [], title: 'インストールウィザード 03'}&quot;
+
+[ 0-01 ]: http://tokunakimochi.blog.jp/archives/1077052416.html &quot;非同期に CRUD する React/Redux アプリの学習（前編） : メモときどきマトメも&quot;
+[ 0-02 ]: https://github.com/typicode/json-server &quot;GitHub - typicode/json-server: Get a full fake REST API with zero coding in less than 30 seconds (seriously)&quot;
+[ 0-03 ]: #f &quot;Representational State Transfer (REST) は、ウェブのような分散ハイパーメディアシステムのためのソフトウェアアーキテクチャのスタイルのひとつである。{ウィキペディア}(https://ja.wikipedia.org/wiki/Representational_State_Transfer 'Representational State Transfer - Wikipedia')&quot;
+[ 0-04 ]: https://expressjs.com/ &quot;Express - Node.js web application framework&quot;
+[ 0-05 ]: https://www.postgresql.org/ &quot;PostgreSQL: The world's most advanced open source database&quot;
+[ 0-06 ]: #f &quot;`Enterprise エディション' や `Education エディション' はバージョンが古い可能性もあり、その場合は後述する `curl' が含まれていないかもしれません。{参考１}(
+             https://docs.microsoft.com/en-us/virtualization/community/team-blog/2017/20171219-tar-and-curl-come-to-windows 'Tar and Curl Come to Windows! | Microsoft Docs')・{参考２}(
+             https://support.microsoft.com/ja-jp/help/13853/windows-lifecycle-fact-sheet 'Windows ライフサイクルのファクト シート - Windows Help')・{参考３}(
+             https://docs.microsoft.com/ja-jp/windows/release-information/ 'Windows 10 - リリース情報 | Microsoft Docs')&quot;
+[ 0-07 ]: #f &quot;「管理者として実行(A)」することに留意。詳細は各配布元の資料を参照。
+              例えば EnterpriseDB 社が提供するバージョン 12.x の Windows 向け
+              インストーラのドキュメントは{こちら}(https://www.enterprisedb.com/edb-docs/d/postgresql/installation-getting-started/installation-guide-installers/12/invoking_the_graphical_installer.html 'Invoking the Graphical Installer — PostgreSQL Installation Guide 12.0 documentation')&quot;
+
+	</textarea><span class="article-continue"><a href="http://tokunakimochi.blog.jp/archives/1077295995.html#more">続きを読む</a></span>
+	<dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/REST" title="REST タグの一覧へ">REST</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/Express" title="Express タグの一覧へ">Express</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/PostgreSQL" title="PostgreSQL タグの一覧へ">PostgreSQL</a></dd></dl>
+
+	</div>
+</div>
+<!-- /記事本文 -->
+
+<!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+<footer class="article-footer">
+	<ul class="article-meta">
+
+
+		<li class="article-category">
+			<dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_119801.html">PostgreSQL</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_1273751.html">Express</a></dd></dl>
+		</li>
+
+		<li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
+	</ul>
+</footer>
+<!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+
+</article>
+<!-- /記事全体 -->
+
+<div id="ad2"></div>
+
+<script type="text/javascript"><!--
+  if (ld_blog_vars) {
+     ld_blog_vars.articles.push({
+       id : '1077159677',
+       permalink : 'http://tokunakimochi.blog.jp/archives/1077159677.html',
+       title : '非同期に CRUD する React/Redux アプリの学習（後編）',
+       categories : [ { id:'1270790', name:'JavaScript', permalink:'http://tokunakimochi.blog.jp/archives/cat_1270790.html' }, { id:'1273560', name:'React', permalink:'http://tokunakimochi.blog.jp/archives/cat_1273560.html' } ],
+       date : '2020-03-28 12:46:40'
+     });
+  }
+//-->
+</script>
+
+
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://tokunakimochi.blog.jp/archives/1077159677.html"
+    trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1077159677"
+    dc:title="非同期に CRUD する React/Redux アプリの学習（後編）"
+    dc:identifier="http://tokunakimochi.blog.jp/archives/1077159677.html"
+    dc:subject="JavaScript,React"
+    dc:description="前後編の後編です。引き続き、以下の参考記事・環境で課題に取り組みます。#### 課題* 以下に示す記事を実践すると完成する非同期処理を含んだ React のいわゆる CRUD アプリを Redux 化する事を通じて Redux の設計思想の概要と関連モジュールの基本的な使用方法を"
+    dc:creator="tokunakimochi"
+    dc:date="2020-03-28T12:46:40+09:00" />
+</rdf:RDF>
+-->
+
+<!-- 記事全体 -->
+<article class="article" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- 記事ヘッダー、記事タイトル -->
+<header class="article-header">
+	<p class="article-date"><time datetime="2020-03-28T12:46:40+09:00" pubdate="pubdate" title="2020-03-28T12:46:40+09:00"><span class="article-date-year">2020</span><span class="article-date-month">Mar</span><span class="article-date-day">28</span></time></p>
+	<h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1077159677.html" itemprop="url">非同期に CRUD する React/Redux アプリの学習（後編）</a></h1>
+
+</header>
+<!-- /記事ヘッダー、記事タイトル -->
+
+<!-- 記事本文 -->
+<div class="article-body">
+	<div class="article-body-inner">
+
+	<textarea id="mdp1077159677" class="markdown" disabled>
+前後編の後編です。
+
+&lt;http://tokunakimochi.blog.jp/archives/1077052416.html&gt;
+
+引き続き、以下の参考記事・環境で課題に取り組みます。
+
+#### 課題
+
+* 以下に示す記事を実践すると完成する非同期処理を含んだ React のいわゆる CRUD アプリを Redux 化する事を通じて Redux の設計思想の概要と関連モジュールの基本的な使用方法を理解せよ
+
+#### 元記事
+
+* [【初心者向け】非同期にCRUDするReactアプリケーションを作る - Qiita](
+      https://qiita.com/t12u/items/2be73956b788c745048f
+  )
+
+#### 参考記事
+
+1. [Redux/react-reduxチートシート - Qiita](https://qiita.com/morrr/items/2e284ae691af513edacc)
+2. [ReactのRedux非同期処理がサルでも分かる超解説 - Qiita](https://qiita.com/jabba/items/5ebea8d19809a4e0f8c6)
+3. [Where and When to Fetch Data With Redux](https://daveceddia.com/where-fetch-data-redux/)
+
+##### 環境
+
+* Windows 10
+    * nodejs-lts 12.16.1
+    * yarn 1.22.1
+
+##### 完成時のディレクトリ構造
+
+![完成時に撮ったスクリーンショット](
+    https://cldup.com/_0iX8IL9Gp.png &quot;#dl {lbox:[]}&quot;
 )
-exit /b
+	</textarea><span class="article-continue"><a href="http://tokunakimochi.blog.jp/archives/1077159677.html#more">続きを読む</a></span>
+	<dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/json-server" title="json-server タグの一覧へ">json-server</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/redux" title="redux タグの一覧へ">redux</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/react-redux" title="react-redux タグの一覧へ">react-redux</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/redux-thunk" title="redux-thunk タグの一覧へ">redux-thunk</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/react" title="react タグの一覧へ">react</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/CRUD" title="CRUD タグの一覧へ">CRUD</a></dd></dl>
+
+	</div>
+</div>
+<!-- /記事本文 -->
+
+<!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+<footer class="article-footer">
+	<ul class="article-meta">
+
+
+		<li class="article-category">
+			<dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1270790.html">JavaScript</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_1273560.html">React</a></dd></dl>
+		</li>
+
+		<li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
+	</ul>
+</footer>
+<!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+
+</article>
+<!-- /記事全体 -->
+
+
+
+<script type="text/javascript"><!--
+  if (ld_blog_vars) {
+     ld_blog_vars.articles.push({
+       id : '1077052416',
+       permalink : 'http://tokunakimochi.blog.jp/archives/1077052416.html',
+       title : '非同期に CRUD する React/Redux アプリの学習（前編）',
+       categories : [ { id:'1270790', name:'JavaScript', permalink:'http://tokunakimochi.blog.jp/archives/cat_1270790.html' }, { id:'1273560', name:'React', permalink:'http://tokunakimochi.blog.jp/archives/cat_1273560.html' } ],
+       date : '2020-03-28 12:45:42'
+     });
+  }
+//-->
+</script>
+
+
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://tokunakimochi.blog.jp/archives/1077052416.html"
+    trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1077052416"
+    dc:title="非同期に CRUD する React/Redux アプリの学習（前編）"
+    dc:identifier="http://tokunakimochi.blog.jp/archives/1077052416.html"
+    dc:subject="JavaScript,React"
+    dc:description="今回は珍しく勉強ネタです。（更新も珍しいですが）お題はこちら、#### 課題* 以下に示す記事を実践すると完成する非同期処理を含んだ [React][ 0-01 ] のいわゆる CRUD[ 0-02 ] アプリを [Redux][ 0-03 ] 化する事を通じて Redux の設計思想の概要と関連モジュールの基"
+    dc:creator="tokunakimochi"
+    dc:date="2020-03-28T12:45:42+09:00" />
+</rdf:RDF>
+-->
+
+<!-- 記事全体 -->
+<article class="article" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- 記事ヘッダー、記事タイトル -->
+<header class="article-header">
+	<p class="article-date"><time datetime="2020-03-28T12:45:42+09:00" pubdate="pubdate" title="2020-03-28T12:45:42+09:00"><span class="article-date-year">2020</span><span class="article-date-month">Mar</span><span class="article-date-day">28</span></time></p>
+	<h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1077052416.html" itemprop="url">非同期に CRUD する React/Redux アプリの学習（前編）</a></h1>
+
+</header>
+<!-- /記事ヘッダー、記事タイトル -->
+
+<!-- 記事本文 -->
+<div class="article-body">
+	<div class="article-body-inner">
+
+	<textarea id="mdp1077052416" class="markdown" disabled>
+今回は珍しく勉強ネタです。（更新も珍しいですが）お題はこちら、
+
+#### 課題
+
+* 以下に示す記事を実践すると完成する非同期処理を含んだ [React][ 0-01 ] のいわゆる CRUD[ 0-02 ] アプリを [Redux][ 0-03 ] 化する事を通じて Redux の設計思想の概要と関連モジュールの基本的な使用方法を理解せよ
+
+#### 元記事
+
+* [【初心者向け】非同期にCRUDするReactアプリケーションを作る - Qiita](
+      https://qiita.com/t12u/items/2be73956b788c745048f
+  )
+
+この記事は解説が丁寧で非常にわかりやすく、[React 公式のチュートリアル][ 0-04 ]の次に挑戦する記事として非常に適していると思います。
+
+さて、かく言う私もこの記事にチャレンジしてみたのですが、元記事では React のコーディーング部分が `src/App.js` の __App コンポーネント__ として１ファイル・１コンポーネントにまとめられています。これをいくつかに分割してみたところ __「これが噂に聞く props のバケツリレーか」__ という状況になりました。
+
+この流れで次に向かう先は Redux だと思います。[公式サイト][ 0-03 ]やググって見つけた日本語の解説記事を見ながら [CodeSandbox][ 0-05 ] などにいくつも上がっている入門者用とされるサンプル[ 0-06 ]をいくつか解読しようとしたのですが、、
+
+__「Redux ... さっぱりわやや！！[ 0-07 ]」 orz__
+
+もっとも、私自身の JavaScript 理解度が極めて低く、[初めてのJavaScript 第3版][ 0-08 ]も読書進捗率 25%[ 0-09 ] で放置している状況なので、当然といえば当然の結果です。
+
+そこで、ようやく見つけた良記事、下記３本を参考に元記事の Redux 化を経て、ごくごく基本的な理解を得ようという計画です。
+
+#### 参考記事
+
+1. [Redux/react-reduxチートシート - Qiita](https://qiita.com/morrr/items/2e284ae691af513edacc)
+2. [ReactのRedux非同期処理がサルでも分かる超解説 - Qiita](https://qiita.com/jabba/items/5ebea8d19809a4e0f8c6)
+3. [Where and When to Fetch Data With Redux](https://daveceddia.com/where-fetch-data-redux/)
+
+##### 環境
+
+* Windows 10
+    * nodejs-lts 12.16.1
+    * yarn 1.22.1
+
+今回は記事が長くなることも予想されるので、前後編の２部に分けてみようと思います。
+
+この前編では、必要モジュールのインストールなどの下準備を済ませ、元記事の[入力フォームからデータを取得する][ 0-10 ]に対応する部分をピンポイントで先に作り、作る上で必要になった Redux の要素を公式サイトのドキュメントを中心にまとめていこうと思います。
+これだけで、非同期処理を除くかなりの部分をフォロー出来る筈です。
+ただし、何の力も借りずにこれをやると、一体何が起こっているのか分からないので以下の Firefox[ 0-11 ] のアドオンの力を借りて内部で起こっている事の可視化をします。
+
+&lt;https://addons.mozilla.org/ja/firefox/addon/reduxdevtools/&gt;
+
+&gt; &amp;&gt;|JavaScript のパッケージマネージャについて|
+&gt;
+&gt; 今回は React アプリと言うこともあり、同じ Facebook 発の _{Yarn}_ を使用しましたが、、
+&gt;
+&gt; &lt;https://forest.watch.impress.co.jp/docs/news/1241272.html&gt;
+&gt;
+&gt; 先週こんなビッグニュースもあったので、バージョン管理するようなプロジェクトは将来 _{npm}_ で運用した方が良くなるかもしれません。
+
+前置きは以上です。それでは、始めます。
+
+[ 0-01 ]: https://reactjs.org/ &quot;React – A JavaScript library for building user interfaces&quot;
+[ 0-02 ]: #f &quot;【クラッド】の説明は{ウィキペディアへ}(https://ja.wikipedia.org/wiki/CRUD 'CRUD - Wikipedia')&quot;
+[ 0-03 ]: https://redux.js.org/ &quot;Redux - A predictable state container for JavaScript apps. | Redux&quot;
+[ 0-04 ]: https://ja.reactjs.org/tutorial/tutorial.html &quot;チュートリアル：React の導入 – React&quot;
+[ 0-05 ]: https://codesandbox.io/ &quot;CodeSandbox: Online IDE for Rapid Web Development&quot;
+[ 0-06 ]: #f &quot;例えば{公式のサンプル}(https://codesandbox.io/s/9on71rvnyo 'Todo App with Redux - CodeSandbox')&quot;
+[ 0-07 ]: #f &quot;関西人ではありません&quot;
+[ 0-08 ]: https://www.oreilly.co.jp/books/9784873117836/ &quot;初めてのJavaScript 第3版  ――ES2015以降の最新ウェブ開発&quot;
+[ 0-09 ]: #f &quot;Kindle Paperwhite の判定&quot;
+[ 0-10 ]: https://qiita.com/t12u/items/2be73956b788c745048f#%E5%85%A5%E5%8A%9B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%8B%E3%82%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B &quot;【初心者向け】非同期にCRUDするReactアプリケーションを作る - Qiita&quot;
+[ 0-11 ]: #f &quot;Sleipnir のソースコード物理盗難事件以降 Mozilla 贔屓です&quot;
+
+	</textarea><span class="article-continue"><a href="http://tokunakimochi.blog.jp/archives/1077052416.html#more">続きを読む</a></span>
+	<dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/json-server" title="json-server タグの一覧へ">json-server</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/redux" title="redux タグの一覧へ">redux</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/react-redux" title="react-redux タグの一覧へ">react-redux</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/redux-thunk" title="redux-thunk タグの一覧へ">redux-thunk</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/react" title="react タグの一覧へ">react</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/CRUD" title="CRUD タグの一覧へ">CRUD</a></dd></dl>
+
+	</div>
+</div>
+<!-- /記事本文 -->
+
+<!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+<footer class="article-footer">
+	<ul class="article-meta">
+
+
+		<li class="article-category">
+			<dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1270790.html">JavaScript</a></dd><dd class="article-category2"><a href="http://tokunakimochi.blog.jp/archives/cat_1273560.html">React</a></dd></dl>
+		</li>
+
+		<li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
+	</ul>
+</footer>
+<!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+
+</article>
+<!-- /記事全体 -->
+
+
+
+<script type="text/javascript"><!--
+  if (ld_blog_vars) {
+     ld_blog_vars.articles.push({
+       id : '1075803917',
+       permalink : 'http://tokunakimochi.blog.jp/archives/1075803917.html',
+       title : 'jQuery 小ネタメモ',
+       categories : [ { id:'1270790', name:'JavaScript', permalink:'http://tokunakimochi.blog.jp/archives/cat_1270790.html' }, { id:'', name:'', permalink:'' } ],
+       date : '2019-09-22 20:04:52'
+     });
+  }
+//-->
+</script>
+
+
+
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://tokunakimochi.blog.jp/archives/1075803917.html"
+    trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1075803917"
+    dc:title="jQuery 小ネタメモ"
+    dc:identifier="http://tokunakimochi.blog.jp/archives/1075803917.html"
+    dc:subject="JavaScript"
+    dc:description="### お題: 店舗一覧ページから住所録登録用の CSV を生成ブラウザで名前を付けて保存した単独 html ファイル `./maruetsu.html` を [node][ 01 ] で解析します。送り先を羅列したファイル `./destination.txt` に載っている店舗のみ書き出します。[jquery][ 02 ] 以外は"
+    dc:creator="tokunakimochi"
+    dc:date="2019-09-22T20:04:52+09:00" />
+</rdf:RDF>
+-->
+
+<!-- 記事全体 -->
+<article class="article" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- 記事ヘッダー、記事タイトル -->
+<header class="article-header">
+	<p class="article-date"><time datetime="2019-09-22T20:04:52+09:00" pubdate="pubdate" title="2019-09-22T20:04:52+09:00"><span class="article-date-year">2019</span><span class="article-date-month">Sep</span><span class="article-date-day">22</span></time></p>
+	<h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1075803917.html" itemprop="url">jQuery 小ネタメモ</a></h1>
+
+</header>
+<!-- /記事ヘッダー、記事タイトル -->
+
+<!-- 記事本文 -->
+<div class="article-body">
+	<div class="article-body-inner">
+
+	<textarea id="mdp1075803917" class="markdown" disabled>
+### お題: 店舗一覧ページから住所録登録用の CSV を生成
+
+ブラウザで名前を付けて保存した単独 html ファイル `./maruetsu.html` を [node][ 01 ] で解析します。
+送り先を羅列したファイル `./destination.txt` に載っている店舗のみ書き出します。
+[jquery][ 02 ] 以外は標準モジュールの [fs][ 03 ]、jquery の動作で必要な [jsdom][ 04 ]、CSV 書き出し用の [csv-writer][ 05 ] を使っています。
+動作確認は Windows 10 の `cmd.exe` で行いました。
+
+html の構造は下のスクショを見てください。
+
+![開発ツールのスクショ][ maruetsu.html ]
+
+以下が、コードです。
+
+### += index.js ###
+~~~js
+'use strict';
+
+const fs = require('fs');
+const { JSDOM } = require('jsdom');
+const jquery = require('jquery');
+const createCsvWriter = require('csv-writer').createArrayCsvWriter;
+
+const csvWriter = createCsvWriter({
+  header: ['店舗名', '郵便番号', '住所_1', '住所_2', '電話番号'],
+  path: './file.csv',
+  recordDelimiter: '\r\n'
+});
+
+function pushStr( arr, countdown, name, message, str, len ){
+  // =&gt; /^(.{888})(.+)$/
+  const strLenRegex = new RegExp('^(.{' + len + '})(.+)$');
+  countdown--;
+  if ( str.length &lt;= len ) {
+    arr.push( str );
+    if ( countdown &gt; 0 ) {
+      return pushStr( arr, countdown, name, message, '', len );
+    }
+    return; // =&gt; undefined
+  } else if ( strLenRegex.test( str ) ) {
+    const str_1 = RegExp.$1, str_2 = RegExp.$2;
+    arr.push( str_1 );
+    if ( countdown &gt; 0 ) {
+      return pushStr( arr, countdown, name, message, str_2, len );
+    }
+    console.log( name, message );
+    return true;
+  }
+}
+
+try{
+  const main = ( htmlFile, destFile ) =&gt; {
+    // エンコードを指定すると文字列が返る
+    const html = fs.readFileSync( htmlFile, 'utf8' );
+    // jquery には window オブジェクトが必要
+    const $ = jquery( new JSDOM( html ).window );
+    // 送り先店舗名の羅列を読み込み
+    const destination = fs.readFileSync( destFile, 'utf8' );
+
+    const table = [];
+    const nameRegex = /^(マルエツ|リンコス|魚悦)/;
+    $('#storeListBox &gt; ul.storeList &gt; li').each( ( i, elem ) =&gt; {
+
+      const row = [];
+      let name = $( elem ).find('div.storeList_Name dt').text();
+      const subName = name.replace( /[\s()（）　]/g, '' ).replace( /マルエツプチ|リンコス|魚悦|鮮魚専門店/g, '' ).replace( /店$/, '' );
+      const subNameRegex = new RegExp( subName );
+
+      if ( name.match( nameRegex ) === null ) {
+        name = 'マルエツ ' + name;
+      }
+      // 店舗名をプッシュ。溢れたら、continue
+      if ( pushStr( row, 1, name, ' =&gt; 文字数オーバー', name, 30 ) ) return true;
+
+      const detail = $( elem ).find('div.storeList_Detail &gt; ul.clearfix');
+      const address = $( detail ).find('li:nth-child(1) dd').text().replace( /^〒/, '' );
+
+      if ( /([0-9-]+)\s*(\S.*)$/.test( address ) ) {
+        // 郵便番号をプッシュ
+        row.push( RegExp.$1 );
+        const addr_1 = RegExp.$2;
+        // 住所をプッシュ。溢れたら、continue
+        if ( pushStr( row, 2, name, ' =&gt; 住所_2: 文字数オーバー', addr_1, 30 ) ) return true;
+      } else {
+        console.log( name, ' =&gt; 住所解析失敗' );
+        // continue
+        return true;
+      }
+
+      const tel = $( detail ).find('li:nth-child(2) dd').text();
+      // 電話番号をプッシュ
+      row.push( tel );
+
+      // 送り先リストにあればプッシュ
+      if ( destination.match( subNameRegex ) !== null ){
+        table.push( row );
+      }
+
+    });
+
+    csvWriter.writeRecords( table )
+      .then( () =&gt; {
+        console.log('...Done');
+      });
+  };
+
+  main('./maruetsu.html', './destination.txt');
+}catch( err ){
+  console.log('error!');
+}
+
 ~~~
 
-### += qaac デフォルト設定で AIFF → AAC ###
-~~~bat
-:: シフトJIS CRLF
-:: ディスクトップに作成
-:: 非再帰的 単階層のみ対応
-@echo off
-set PREV_WORK_DIR=%CD%
-for /f &quot;usebackq delims=&quot; %%I in (`dir &quot;%USERPROFILE%\Music\iTunes\iTunes Media\Music&quot; /b /ad /s ^| findstr /r &quot;%USERPROFILE%\\Music\\iTunes\\iTunes Media\\Music\\[^\\]*\\[^\\]*&quot; ^| iconv -f cp932 -t utf-8 ^| peco ^| iconv -f utf-8  -t cp932`) do (
-	cd &quot;%%I&quot;
-	if not exist &quot;%USERPROFILE%\Desktop\%%~nI\*&quot; mkdir &quot;%USERPROFILE%\Desktop\%%~nI&quot;
-    qaac *.aif -d &quot;%USERPROFILE%\Desktop\%%~nI&quot;
-)
-cd &quot;%PREV_WORK_DIR%&quot;
-exit /b
+### += ./destination.txt ###
+~~~txt
+両国亀沢店
+魚悦糀谷店（鮮魚専門店）
+マルエツ プチ 赤坂店
+マルエツ プチ 飯田橋店
+リンコス 九段店
+リンコス 六本木ヒルズ店
+魚悦浦和大久保店
+小山店
+岩井店
+天王町店
 ~~~
-	                </textarea>
-
-
-	              </div>
-              </div>
-              <!-- /記事本文 -->
-
-              <!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
-              <footer class="article-footer">
-	              <ul class="article-meta">
 
+この場合の出力は以下になります。
+
+### += file.csv ###
+~~~csv
+店舗名,郵便番号,住所_1,住所_2,電話番号
+マルエツ 両国亀沢店,130-0014,東京都墨田区亀沢3-2-14,,03-3621-8791
+魚悦糀谷店（鮮魚専門店）,144-0047,東京都大田区萩中1-6-14,,03-5705-3291
+マルエツ プチ 赤坂店,107-0052,東京都港区赤坂2-14-27,,03-3588-8751
+マルエツ プチ 飯田橋店,162-0824,東京都新宿区揚場町2-20島田ビル,,03-5225-4688
+リンコス 九段店,102-0073,東京都千代田区九段北4-1-3,,03-3221-7226
+リンコス 六本木ヒルズ店,106-0032,東京都港区六本木6-11-1,,03-3478-1665
+マルエツ 天王町店,240-0004,神奈川県横浜市保土ヶ谷区岩間町1-1-5天王町ハイタウン10,1,045-337-0545
+魚悦浦和大久保店,338-0824,埼玉県さいたま市桜区大字上大久保作田982-1,,048-854-2321
+マルエツ 小山店,323-0826,栃木県小山市西城南6-5-1,,0285-28-6363
+マルエツ 岩井店,306-0632,茨城県坂東市辺田1517,,0297-35-8301
+~~~
+
+プログラムの実行が一度きりなら、ローカルにページを保存したほうが楽ですね。
+`Shift_JIS` の csv が必要なら、１ファイルですし、テキストエディタで保存し直し[ 06 ]ましょう。
+
+[ maruetsu.html ]: https://cldup.com/HGQ6iraykO.png &quot;#dl {lbox:'ページのソース'}&quot;
+
+[ 01 ]: https://nodejs.org/ja/ &quot;Node.js&quot;
+[ 02 ]: https://www.npmjs.com/package/jquery &quot;jquery - npm&quot;
+[ 03 ]: https://nodejs.org/dist/latest-v12.x/docs/api/fs.html &quot;File System | Node.js v12.10.0 Documentation&quot;
+[ 04 ]: https://www.npmjs.com/package/jsdom &quot;jsdom - npm&quot;
+[ 05 ]: https://www.npmjs.com/package/csv-writer &quot;csv-writer - npm&quot;
+[ 06 ]: #f &quot;メモ帳の Shift-JIS は日本語 Windows では ANSI (CP932) !!!&quot;
+	</textarea>
+	<dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/javascript" title="javascript タグの一覧へ">javascript</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/node" title="node タグの一覧へ">node</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/jquery" title="jquery タグの一覧へ">jquery</a></dd></dl>
+
+	</div>
+</div>
+<!-- /記事本文 -->
+
+<!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+<footer class="article-footer">
+	<ul class="article-meta">
+
+
+		<li class="article-category">
+			<dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1270790.html">JavaScript</a></dd></dl>
+		</li>
+
+		<li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
+	</ul>
+</footer>
+<!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+
+</article>
+<!-- /記事全体 -->
+
+
+
+<script type="text/javascript"><!--
+  if (ld_blog_vars) {
+     ld_blog_vars.articles.push({
+       id : '1075319574',
+       permalink : 'http://tokunakimochi.blog.jp/archives/1075319574.html',
+       title : 'PATH 可読性向上ワンライナー',
+       categories : [ { id:'119795', name:'Perl', permalink:'http://tokunakimochi.blog.jp/archives/cat_119795.html' }, { id:'', name:'', permalink:'' } ],
+       date : '2019-07-25 14:57:55'
+     });
+  }
+//-->
+</script>
 
-		              <li class="article-category">
-			              <dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_1246745.html">Windows</a></dd></dl>
-		              </li>
 
-		              <li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
-	              </ul>
-              </footer>
-              <!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
 
-            </article>
-            <!-- /記事全体 -->
+<!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description
+    rdf:about="http://tokunakimochi.blog.jp/archives/1075319574.html"
+    trackback:ping="http://trackback.blogsys.jp/livedoor/tokunakimochi/1075319574"
+    dc:title="PATH 可読性向上ワンライナー"
+    dc:identifier="http://tokunakimochi.blog.jp/archives/1075319574.html"
+    dc:subject="Perl"
+    dc:description="いつも忘れるのでメモ。#### *nix~~~sh$ echo $PATH | perl -ple 's/:/\n/g'~~~#### cmd.exe + [Strawberry Perl][ 01 ] (windows)~~~cmd> echo %PATH% | perl -ple "s/;/\n/g"~~~* Perl オプション    * `-e`        * 引数の文字列を perl のコードとして"
+    dc:creator="tokunakimochi"
+    dc:date="2019-07-25T14:57:55+09:00" />
+</rdf:RDF>
+-->
 
+<!-- 記事全体 -->
+<article class="article last-article" itemscope itemtype="http://schema.org/BlogPosting">
+<!-- 記事ヘッダー、記事タイトル -->
+<header class="article-header">
+	<p class="article-date"><time datetime="2019-07-25T14:57:55+09:00" pubdate="pubdate" title="2019-07-25T14:57:55+09:00"><span class="article-date-year">2019</span><span class="article-date-month">Jul</span><span class="article-date-day">25</span></time></p>
+	<h1 class="article-title" itemprop="name"><a href="http://tokunakimochi.blog.jp/archives/1075319574.html" itemprop="url">PATH 可読性向上ワンライナー</a></h1>
 
+</header>
+<!-- /記事ヘッダー、記事タイトル -->
+
+<!-- 記事本文 -->
+<div class="article-body">
+	<div class="article-body-inner">
+
+	<textarea id="mdp1075319574" class="markdown" disabled>
+いつも忘れるのでメモ。
 
+#### *nix
 
+~~~sh
+$ echo $PATH | perl -ple 's/:/\n/g'
+~~~
 
-            <!-- google_ad_section_end -->
+#### cmd.exe + [Strawberry Perl][ 01 ] (windows)
+
+~~~cmd
+&gt; echo %PATH% | perl -ple &quot;s/;/\n/g&quot;
+~~~
+
+* Perl オプション
+    * `-e`
+        * 引数の文字列を perl のコードとして解釈
+    * `-l`
+        * print の強制改行及び、強制 chomp
+    * `-p`
+        * 一行づつ処理して print
+
+##### 参考
+
+&lt;http://blog.livedoor.jp/dankogai/archives/51026593.html&gt;
+
+[ 01 ]: http://strawberryperl.com/
+	</textarea>
+	<dl class="article-tags"><dt>タグ ：</dt><dd><a href="http://tokunakimochi.blog.jp/tag/Perl" title="Perl タグの一覧へ">Perl</a></dd><dd><a href="http://tokunakimochi.blog.jp/tag/%E3%83%AF%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC" title="ワンライナー タグの一覧へ">ワンライナー</a></dd></dl>
+
+	</div>
+</div>
+<!-- /記事本文 -->
+
+<!-- 記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+<footer class="article-footer">
+	<ul class="article-meta">
+
+
+		<li class="article-category">
+			<dl><dt>カテゴリ:</dt><dd class="article-category1"><a href="http://tokunakimochi.blog.jp/archives/cat_119795.html">Perl</a></dd></dl>
+		</li>
+
+		<li class="article-author">by <span itemprop="author">tokunakimochi</span></li>
+	</ul>
+</footer>
+<!-- /記事フッター、カテゴリ、コメント、ソーシャルボタン -->
+
+</article>
+<!-- /記事全体 -->
+
+
+
+
+
+<!-- google_ad_section_end -->
+
+<!-- ページ送り -->
+<div class="pager">
+      <div class="pager-inner"><div class="index-navigator-outer nextpage"><ul class="index-navigator"><li class="paging-number"><ol class="paging-number"><li class="current" title="現在の表示ページ"><span>1</span></li><li><a href="http://tokunakimochi.blog.jp/?p=2" title="2ページ目へ">2</a></li><li><a href="http://tokunakimochi.blog.jp/?p=3" title="3ページ目へ">3</a></li><li><a href="http://tokunakimochi.blog.jp/?p=4" title="4ページ目へ">4</a></li><li><a href="http://tokunakimochi.blog.jp/?p=5" title="5ページ目へ">5</a>...</li></ol></li><li class="paging-last"><a href="http://tokunakimochi.blog.jp/?p=6" title="最後のページへ">6</a></li><li class="paging-next"><a rel="next" href="http://tokunakimochi.blog.jp/?p=2" title="次のページへ">&raquo;</a></li></ul></div></div>
+</div>
+
+<!-- /ページ送り -->
 
-            <!-- ページ送り -->
-            <div class="pager">
-              <div class="pager-inner"><div class="index-navigator-outer nextpage"><ul class="index-navigator"><li class="paging-number"><ol class="paging-number"><li class="current" title="現在の表示ページ"><span>1</span></li><li><a href="http://tokunakimochi.blog.jp/?p=2" title="2ページ目へ">2</a></li><li><a href="http://tokunakimochi.blog.jp/?p=3" title="3ページ目へ">3</a></li><li><a href="http://tokunakimochi.blog.jp/?p=4" title="4ページ目へ">4</a></li></ol></li><li class="paging-next"><a rel="next" href="http://tokunakimochi.blog.jp/?p=2" title="次のページへ">&raquo;</a></li></ul></div></div>
-            </div>
+<!-- /#main-inner --></div>
+<!-- /#main --></div>
 
-            <!-- /ページ送り -->
+<!-- サイドバー -->
+<aside id="sidebar" class="column">
+<div id="sidebar-inner">
 
-            <!-- /#main-inner --></div>
-            <!-- /#main --></div>
 
-            <!-- サイドバー -->
-            <aside id="sidebar" class="column">
-              <div id="sidebar-inner">
 
 
+<div class="plugin-search_internal sidewrapper">
+<div class="sidetitlebody">
+<div class="sidetitle">Search</div>
+</div>
+<div class="sidetop"></div>
+<div class="side">
+ <form action="http://tokunakimochi.blog.jp/search" method="GET" style="padding:0;margin:0px;">
+ <input type="TEXT" name="q" class="sf">
+ <input type="SUBMIT" value="検索" class="sfbtn">
+ </form>
+</div>
+<div class="sidebottom"></div>
+</div><!-- // plugin-search_internal -->
+<script type="text/javascript" src="https://parts.blog.livedoor.jp/plugin/ldblog_calendar_plugin.js"></script>
+<script type="text/javascript">var calendar_url_pattern_hash_176156='3367761713'</script>
+<script type="text/html" id="ldblog_calendar_default_template-176156">
+<% month_names = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; %>
+<% month_names_long = ['','January','February','March','April','May','June','July','August','September','October','November','December']; %>
+<% wdays = ['S','M','T','W','T','F','S']; %>
+<% month_format = function(year, month){ return(month_names_long[month]+" "+year.toString()); }; %>
+<div class="calendarheadbody"><div class="calendarhead" id="calendarhead-176156">
+  &nbsp;&nbsp;<%= month_format(year, month) %>&nbsp;&nbsp;
+</div></div>
+<div class="caltop"></div>
+<div class="calbody">
+<table cellpadding="0" cellspacing="0" border="0" class="caltbl calendartable">
+<tr>
+  <td width="100%" class="caltblwkbg calendarwd">
+    <table cellpadding="2" cellspacing="0" width="100%" border="0" class="caltblwk">
+      <tr>
+      <% for ( var i = 0; i < 7; i++ ) { %>
+        <td width="14%" align="center" class="<% if (i == 0) { %>sun<% } else if (i == 6) { %>sat<% } else { %>weekday<% } %>"><span class="calendarweek"><%= wdays[i] %><span></td>
+      <% } %>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td width="100%" class="caltbldaybg">
+    <table cellpadding="2" cellspacing="0" width="100%" border="0" class="caltblday">
+      <% for ( var i = 0; i < cal.length; i++ ) { %>
+      <tr class="<% if (i % 2) { %>even<% } else { %>odd<% } %>">
+        <% for ( var j = 0; j < cal[i].length; j++) { %>
+        <td width="14%" align="center" class="caloff calendard"><span class="calendar"<% if (cal[i][j] > 0) { %> id="calendar-176156-day-<%= cal[i][j]%>"<% } %>><%= cal[i][j] %></span></td>
+        <% } %>
+      </tr>
+    <% } %>
+  </table></td>
+</tr>
+</table>
+</div>
+<div class="calbottom"></div>
+</script>
 
+<div class="plugin-calendar_default sidewrapper" id="calendarplugin-176156">
+<script type="text/javascript">(function () { var ldcal = new ldBlogCalendarPlugin(176156); ldcal.init(); })();</script>
+</div><!-- // plugin-calendar_default -->
 
-                <script type="text/javascript" src="http://parts.blog.livedoor.jp/plugin/ldblog_calendar_plugin.js"></script>
-                <script type="text/javascript">var calendar_url_pattern_hash_176156='3367761713'</script>
-                <script type="text/html" id="ldblog_calendar_default_template-176156">
-                  <% month_names = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; %>
-                  <% month_names_long = ['','January','February','March','April','May','June','July','August','September','October','November','December']; %>
-                  <% wdays = ['S','M','T','W','T','F','S']; %>
-                  <% month_format = function(year, month){ return(month_names_long[month]+" "+year.toString()); }; %>
-                  <div class="calendarheadbody"><div class="calendarhead" id="calendarhead-176156">
-                    &nbsp;&nbsp;<%= month_format(year, month) %>&nbsp;&nbsp;
-                  </div></div>
-                  <div class="caltop"></div>
-                  <div class="calbody">
-                    <table cellpadding="0" cellspacing="0" border="0" class="caltbl calendartable">
-                      <tr>
-                        <td width="100%" class="caltblwkbg calendarwd">
-                          <table cellpadding="2" cellspacing="0" width="100%" border="0" class="caltblwk">
-                            <tr>
-                              <% for ( var i = 0; i < 7; i++ ) { %>
-                              <td width="14%" align="center" class="<% if (i == 0) { %>sun<% } else if (i == 6) { %>sat<% } else { %>weekday<% } %>"><span class="calendarweek"><%= wdays[i] %><span></td>
-                                <% } %>
-                            </tr>
-                          </table>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="100%" class="caltbldaybg">
-                          <table cellpadding="2" cellspacing="0" width="100%" border="0" class="caltblday">
-                            <% for ( var i = 0; i < cal.length; i++ ) { %>
-                            <tr class="<% if (i % 2) { %>even<% } else { %>odd<% } %>">
-                              <% for ( var j = 0; j < cal[i].length; j++) { %>
-                              <td width="14%" align="center" class="caloff calendard"><span class="calendar"<% if (cal[i][j] > 0) { %> id="calendar-176156-day-<%= cal[i][j]%>"<% } %>><%= cal[i][j] %></span></td>
-                              <% } %>
-                            </tr>
-                            <% } %>
-                          </table></td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="calbottom"></div>
-                </script>
+<div class="plugin-recent_articles sidewrapper">
+<div class="sidetitlebody">
+<div class="sidetitle">最新記事</div>
+</div>
+<div class="sidetop"></div>
+<div class="side">
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1077295995.html">REST API サーバを Express + PostgreSQL で用意する</a></div>
 
-                <div class="plugin-calendar_default sidewrapper" id="calendarplugin-176156">
-                  <script type="text/javascript">(function () { var ldcal = new ldBlogCalendarPlugin(176156); ldcal.init(); })();</script>
-                </div><!-- // plugin-calendar_default -->
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1077159677.html">非同期に CRUD する React/Redux アプリの学習（後編）</a></div>
 
-                <div class="plugin-recent_articles sidewrapper">
-                  <div class="sidetitlebody">
-                    <div class="sidetitle">最新記事</div>
-                  </div>
-                  <div class="sidetop"></div>
-                  <div class="side">
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1074874898.html">Spacemacs on WSL を使い易く</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1077052416.html">非同期に CRUD する React/Redux アプリの学習（前編）</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1073947210.html">Spacemacs on Windows Subsystem for Linux</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1075803917.html">jQuery 小ネタメモ</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1072112558.html">spacemacs コマンド メモ</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1075319574.html">PATH 可読性向上ワンライナー</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1067487469.html">GitHub SSH</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1075219098.html">リッチリンク VS ブログカード</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1067318883.html">GUI iTunes で取り込んだ CD を Windows CUI で整理</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1074874898.html">Spacemacs on WSL を使い易く</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1058199396.html">Windows 10 クリティカル ダメージ（追憶編）</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1073947210.html">Spacemacs on Windows Subsystem for Linux</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1041810019.html">`exec-path-from-shell` が微妙・・</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1072112558.html">spacemacs コマンド メモ</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1019187584.html">OS X Yosemite へアップグレード</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1067487469.html">GitHub SSH</a></div>
+</div>
+<div class="sidebottom"></div>
+</div><!-- // plugin-recent_articles -->
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1013201581.html">Windows 7 再インストール</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/1011283176.html">スクリーンショット メモ</a></div>
-                  </div>
-                  <div class="sidebottom"></div>
-                </div><!-- // plugin-recent_articles -->
 
 
 
@@ -802,260 +936,382 @@ exit /b
 
 
 
+<div class="plugin-monthly sidewrapper" id="plugin-monthly-176158">
+<div class="sidetitlebody">
+<div class="sidetitle">アーカイブ</div>
+</div>
+<div class="sidetop"></div>
+<div class="side">
 
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2020-04.html">April 2020</a></div>
 
-                <div class="plugin-monthly sidewrapper" id="plugin-monthly-176158">
-                  <div class="sidetitlebody">
-                    <div class="sidetitle">アーカイブ</div>
-                  </div>
-                  <div class="sidetop"></div>
-                  <div class="side">
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2020-03.html">March 2020</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2019-06.html">June 2019</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2019-09.html">September 2019</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2019-03.html">March 2019</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2019-07.html">July 2019</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2018-07.html">July 2018</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2019-06.html">June 2019</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2017-08.html">August 2017</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2019-03.html">March 2019</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2016-06.html">June 2016</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2018-07.html">July 2018</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2015-10.html">October 2015</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2017-08.html">August 2017</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2015-02.html">February 2015</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2016-06.html">June 2016</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-11.html">November 2014</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2015-10.html">October 2015</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-10.html">October 2014</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2015-02.html">February 2015</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-07.html">July 2014</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-11.html">November 2014</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-04.html">April 2014</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-10.html">October 2014</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-03.html">March 2014</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-07.html">July 2014</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-01.html">January 2014</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-04.html">April 2014</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2013-12.html">December 2013</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-03.html">March 2014</a></div>
 
-                    <div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2013-10.html">October 2013</a></div>
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2014-01.html">January 2014</a></div>
 
-                  </div>
-                  <div class="sidebottom"></div>
-                </div><!-- // plugin-monthly -->
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2013-12.html">December 2013</a></div>
 
-                <div class="plugin-categorize sidewrapper" id="plugin-categorize-176159">
-                  <div class="sidetitlebody">
-                    <div class="sidetitle">カテゴリー</div>
-                  </div>
-                  <div class="sidetop"></div>
-                  <div class="side">
+<div class="sidebody"><a href="http://tokunakimochi.blog.jp/archives/2013-10.html">October 2013</a></div>
 
+</div>
+<div class="sidebottom"></div>
+</div><!-- // plugin-monthly -->
 
+<div class="plugin-categorize sidewrapper" id="plugin-categorize-176159">
+    <div class="sidetitlebody">
+        <div class="sidetitle">カテゴリー</div>
+    </div>
+    <div class="sidetop"></div>
+    <div class="side">
 
 
 
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_39235.html">blog設定 (1)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_39235.html">blog設定 (2)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_48542.html">Markdown (1)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_48542.html">Markdown (1)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_119794.html">プログラミング (1)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_119794.html">プログラミング (6)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-child"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_119795.html">Perl (1)</a>
 
-                    </div>
+        <div class="sidebody category-child"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_119795.html">Perl (2)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_119797.html">macOS (5)</a>
 
-                    </div>
+        <div class="sidebody category-child"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_1270790.html">JavaScript (3)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_119800.html">データベース (1)</a>
 
-                    </div>
+        <div class="sidebody category-child"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_1273560.html">React (2)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-child"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_119801.html">PostgreSQL (1)</a>
 
-                    </div>
+        <div class="sidebody category-child"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_1273751.html">Express (1)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_119805.html">設定 (4)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_119797.html">macOS (5)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_234030.html">Emacs (5)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_119800.html">データベース (2)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-child"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_1267400.html">Spacemacs (3)</a>
 
-                    </div>
+        <div class="sidebody category-child"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_119801.html">PostgreSQL (2)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-parent"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_1246745.html">Windows (5)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_119805.html">設定 (4)</a>
 
+        </div>
 
 
-                    <div class="sidebody category-child"
 
-                    ><a href="http://tokunakimochi.blog.jp/archives/cat_1267317.html">Windows Subsystem for Linux (2)</a>
 
-                    </div>
+        <div class="sidebody category-parent"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_234030.html">Emacs (5)</a>
 
+        </div>
 
 
-                  </div>
-                  <div class="sidebottom"></div>
-                </div><!-- // plugin-categorize -->
 
-                <div class="plugin-tag_cloud sidewrapper">
-                  <div class="sidetitlebody">
-                    <div class="sidetitle">タグクラウド</div>
-                  </div>
-                  <div class="sidetop"></div>
-                  <div class="side">
-                    <ul class="tagcloud">
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/.zshenv" title=".zshenv タグの一覧へ">.zshenv</a></li>
-                      <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/App::cpanminus" title="App::cpanminus タグの一覧へ">App::cpanminus</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/DBD::Pg" title="DBD::Pg タグの一覧へ">DBD::Pg</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/el-get" title="el-get タグの一覧へ">el-get</a></li>
-                      <li class="tag-weight-4 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Emacs" title="Emacs タグの一覧へ">Emacs</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Fcitx" title="Fcitx タグの一覧へ">Fcitx</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Font" title="Font タグの一覧へ">Font</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/FontForge" title="FontForge タグの一覧へ">FontForge</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/GitHub" title="GitHub タグの一覧へ">GitHub</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/google-code-prettify" title="google-code-prettify タグの一覧へ">google-code-prettify</a></li>
-                      <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Homebrew" title="Homebrew タグの一覧へ">Homebrew</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Markdown" title="Markdown タグの一覧へ">Markdown</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/marked" title="marked タグの一覧へ">marked</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Mozc" title="Mozc タグの一覧へ">Mozc</a></li>
-                      <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/OSX" title="OSX タグの一覧へ">OSX</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/percol" title="percol タグの一覧へ">percol</a></li>
-                      <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Perl" title="Perl タグの一覧へ">Perl</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/pip" title="pip タグの一覧へ">pip</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Plack" title="Plack タグの一覧へ">Plack</a></li>
-                      <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/PostgreSQL" title="PostgreSQL タグの一覧へ">PostgreSQL</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/PSGI" title="PSGI タグの一覧へ">PSGI</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/python" title="python タグの一覧へ">python</a></li>
-                      <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Spacemacs" title="Spacemacs タグの一覧へ">Spacemacs</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/ssh" title="ssh タグの一覧へ">ssh</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/SSH" title="SSH タグの一覧へ">SSH</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Ubuntu" title="Ubuntu タグの一覧へ">Ubuntu</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/urxvt" title="urxvt タグの一覧へ">urxvt</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/VBScript" title="VBScript タグの一覧へ">VBScript</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/VcXsrv" title="VcXsrv タグの一覧へ">VcXsrv</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Windows" title="Windows タグの一覧へ">Windows</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Windows10" title="Windows10 タグの一覧へ">Windows10</a></li>
-                      <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/WSL" title="WSL タグの一覧へ">WSL</a></li>
-                      <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/WSL1" title="WSL1 タグの一覧へ">WSL1</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Xcode" title="Xcode タグの一覧へ">Xcode</a></li>
-                      <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Yosemite" title="Yosemite タグの一覧へ">Yosemite</a></li>
-                      <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/zsh" title="zsh タグの一覧へ">zsh</a></li>
-                    </ul>
-                  </div>
-                  <div class="sidebottom"></div>
-                </div><!-- // plugin-tag_cloud -->
 
+        <div class="sidebody category-child"
 
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_1267400.html">Spacemacs (3)</a>
 
+        </div>
 
 
-              </div>
 
 
-            </aside>
-            <!-- /サイドバー -->
+        <div class="sidebody category-parent"
 
-            <p class="to-pagetop"><a href="#"><img src="http://parts.blog.livedoor.jp/img/usr/default_2012/common/to_pagetop.png" width="70" height="70" alt="このページのトップヘ" /></a></p>
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_1246745.html">Windows (5)</a>
 
-            <!-- /#content --></div>
-      <!-- /#container --></div>
+        </div>
 
-    <!-- ブログのフッター -->
-            <footer id="blog-footer">
-              <!-- Blog Common Footer // --><div id="footer"><p>Powered by <a href="http://blog.livedoor.com/" title="ライブドアブログ">ライブドアブログ</a></p></div><!-- // Blog Common Footer -->
-            </footer>
-            <!-- /ブログのフッター -->
 
-            <!-- /#wrapper --></div>
 
 
-  <!-- Add Body Tag // -->
-            <script defer src="https://cdn.jsdelivr.net/npm/loadjs@3.6.1/dist/loadjs.min.js"></script>
-            <script defer src="./loadjsrc.js"></script>
-            <script type="text/javascript">
-              (function(){
-                var traq = document.createElement('script'); traq.type = 'text/javascript'; traq.async = true;
-                traq.src = 'http://t.blog.livedoor.jp/u.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(traq, s);
-              })();
-            </script>
-            <noscript>
-              <img src="http://t.blog.livedoor.jp/u.gif" alt="traq">
-            </noscript>
-            <!-- // Add Body Tag -->
+        <div class="sidebody category-child"
 
-  </body>
+          ><a href="http://tokunakimochi.blog.jp/archives/cat_1267317.html">Windows Subsystem for Linux (2)</a>
+
+        </div>
+
+
+
+
+    </div>
+    <div class="sidebottom"></div>
+</div><!-- // plugin-categorize -->
+
+<div class="plugin-tag_cloud sidewrapper">
+<div class="sidetitlebody">
+<div class="sidetitle">タグクラウド</div>
+</div>
+<div class="sidetop"></div>
+<div class="side">
+<ul class="tagcloud">
+  <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/.zshenv" title=".zshenv タグの一覧へ">.zshenv</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/App::cpanminus" title="App::cpanminus タグの一覧へ">App::cpanminus</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/CRUD" title="CRUD タグの一覧へ">CRUD</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/DBD::Pg" title="DBD::Pg タグの一覧へ">DBD::Pg</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/el-get" title="el-get タグの一覧へ">el-get</a></li>
+   <li class="tag-weight-4 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Emacs" title="Emacs タグの一覧へ">Emacs</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Express" title="Express タグの一覧へ">Express</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Fcitx" title="Fcitx タグの一覧へ">Fcitx</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Font" title="Font タグの一覧へ">Font</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/FontForge" title="FontForge タグの一覧へ">FontForge</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/GitHub" title="GitHub タグの一覧へ">GitHub</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/google-code-prettify" title="google-code-prettify タグの一覧へ">google-code-prettify</a></li>
+   <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Homebrew" title="Homebrew タグの一覧へ">Homebrew</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/javascript" title="javascript タグの一覧へ">javascript</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/jquery" title="jquery タグの一覧へ">jquery</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/json-server" title="json-server タグの一覧へ">json-server</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Markdown" title="Markdown タグの一覧へ">Markdown</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/marked" title="marked タグの一覧へ">marked</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Mozc" title="Mozc タグの一覧へ">Mozc</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/node" title="node タグの一覧へ">node</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/OSX" title="OSX タグの一覧へ">OSX</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/PATH" title="PATH タグの一覧へ">PATH</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/percol" title="percol タグの一覧へ">percol</a></li>
+   <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Perl" title="Perl タグの一覧へ">Perl</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/pip" title="pip タグの一覧へ">pip</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Plack" title="Plack タグの一覧へ">Plack</a></li>
+   <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/PostgreSQL" title="PostgreSQL タグの一覧へ">PostgreSQL</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/PSGI" title="PSGI タグの一覧へ">PSGI</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/python" title="python タグの一覧へ">python</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/react" title="react タグの一覧へ">react</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/react-redux" title="react-redux タグの一覧へ">react-redux</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/redux" title="redux タグの一覧へ">redux</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/redux-thunk" title="redux-thunk タグの一覧へ">redux-thunk</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/REST" title="REST タグの一覧へ">REST</a></li>
+   <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Spacemacs" title="Spacemacs タグの一覧へ">Spacemacs</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/ssh" title="ssh タグの一覧へ">ssh</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/SSH" title="SSH タグの一覧へ">SSH</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Ubuntu" title="Ubuntu タグの一覧へ">Ubuntu</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/urxvt" title="urxvt タグの一覧へ">urxvt</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/VBScript" title="VBScript タグの一覧へ">VBScript</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/VcXsrv" title="VcXsrv タグの一覧へ">VcXsrv</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Windows" title="Windows タグの一覧へ">Windows</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Windows10" title="Windows10 タグの一覧へ">Windows10</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/WSL" title="WSL タグの一覧へ">WSL</a></li>
+   <li class="tag-weight-1 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/WSL1" title="WSL1 タグの一覧へ">WSL1</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Xcode" title="Xcode タグの一覧へ">Xcode</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/Yosemite" title="Yosemite タグの一覧へ">Yosemite</a></li>
+   <li class="tag-weight-2 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/zsh" title="zsh タグの一覧へ">zsh</a></li>
+   <li class="tag-weight-0 tag-lifetime-4"><a href="http://tokunakimochi.blog.jp/tag/%E3%83%AF%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC" title="ワンライナー タグの一覧へ">ワンライナー</a></li>
+ </ul>
+</div>
+<div class="sidebottom"></div>
+</div><!-- // plugin-tag_cloud -->
+
+
+
+
+
+</div>
+
+
+</aside>
+<!-- /サイドバー -->
+
+<p class="to-pagetop"><a href="#"><img src="https://parts.blog.livedoor.jp/img/usr/default_2012/common/to_pagetop.png" width="70" height="70" alt="このページのトップヘ"></a></p>
+
+<!-- /#content --></div>
+<!-- /#container --></div>
+
+<!-- ブログのフッター -->
+<footer id="blog-footer">
+<!-- Blog Common Footer // --><div id="footer"><p>Powered by <a href="http://blog.livedoor.com/" title="ライブドアブログ">ライブドアブログ</a></p></div><!-- // Blog Common Footer -->
+</footer>
+<!-- /ブログのフッター -->
+
+<!-- /#wrapper --></div>
+
+
+<!-- Add Body Tag // --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src="./tokunakimochi-blog-jp.min.js"></script>
+<script defer src="https://parts.blog.livedoor.jp/js/design.js"></script>
+<script type="text/javascript">
+(function(){
+  var traq = document.createElement('script'); traq.type = 'text/javascript'; traq.async = true;
+  traq.src = 'https://t.blog.livedoor.jp/u.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(traq, s);
+})();
+</script>
+<noscript>
+<img src="https://t.blog.livedoor.jp/u.gif" alt="traq">
+</noscript>
+<!-- // Add Body Tag -->
+
+<script>
+(function($) {
+  var cookieName = 'livedoor-blog-gdpr-agreed';
+  $(document).ready(function() {
+    if (navigator.userAgent.match(/https?:\/\//)) {
+      // UA に http:// or https:// があればスルー
+      return;
+    }
+
+    var agreed = document.cookie.indexOf(cookieName) >= 0;
+    if (agreed) {
+      // 同意済み Cookie があればスルー
+      return;
+    }
+
+    var banner = $('<div>');
+    banner.attr('id', 'gdpr-banner');
+    var label = $('<p>');
+    label.html('\
+      ライブドアブログでは広告のパーソナライズや効果測定のためクッキー(cookie)を使用しています。<br>\
+      このバナーを閉じるか閲覧を継続することでクッキーの使用を承認いただいたものとさせていただきます。<br>\
+      また、お客様は当社パートナー企業における所定の手続きにより、クッキーの使用を管理することもできます。<br>\
+      詳細は<a href="http://www.livedoor.com/rules/" target="_blank" style="color:#023780;text-decoration:underline;">ライブドア利用規約</a>をご確認ください。\
+    ');
+    banner.append(label);
+
+    var closeButton = $('<button>');
+    closeButton.attr('type', 'button');
+    closeButton.html('閉じる');
+    closeButton.on('click', function() {
+      $('#gdpr-banner').hide();
+      document.cookie = cookieName + '="1";expires=Tue, 31-Dec-2037 00:00:00 GMT;path=/;';
+    });
+    banner.append(closeButton);
+
+    banner.css({
+      'position': 'fixed',
+      'left': '0',
+      'right': '0',
+      'bottom': '0',
+      'background': '#dcdcdc',
+      'color': '#000',
+      'padding': '20px',
+      'text-align': 'center',
+      'box-shadow': '0 -2px 2px rgba(102, 102, 102, 0.86)',
+      'z-index': '2147483647',
+    });
+    label.css({
+      'display': 'inline-block',
+      'text-align': 'left',
+      'font-size': '14px',
+      'color': '#000',
+      'vertical-align': 'middle',
+      'line-height': '1.5',
+    });
+    closeButton.css({
+      'display': 'inline-block',
+      'color': '#fff',
+      'border': 'none',
+      'font-size': '14px',
+      'padding': '4px 40px',
+      'margin-left': '40px',
+      'background': '#535353',
+      'vertical-align': 'middle',
+    });
+
+    var script = document.createElement('script');
+    script.type = "text/javascript";
+    script.src = "https://ipcheck.blogsys.jp/check.js?t=" + Date.now();
+    script.onerror = function() {
+      $('body').append(banner);
+    };
+    document.body.appendChild(script);
+  });
+})(jQuery);
+</script>
+</body>
 </html>
