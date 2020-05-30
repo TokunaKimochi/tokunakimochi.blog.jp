@@ -17,11 +17,6 @@ export const ghp = () => {
     .pipe(ghPages());
 };
 
-export const cp = () => {
-  return gulp.src('./scripts/loadjsrc.js')
-    .pipe(gulp.dest('./public'));
-};
-
 export const css = () => {
   const plugins = [
     atImport(),
@@ -37,4 +32,4 @@ export const css = () => {
     .pipe(gulp.dest('./public'));
 };
 
-export default gulp.parallel(cp, css);
+export default gulp.parallel(css);

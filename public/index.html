@@ -42,8 +42,6 @@
 <script defer src="./tokunakimochi-blog-jp.iife.min.js"></script>
 <script defer src="https://ajax.googleapis.com/ajax/libs/hammerjs/2.0.8/hammer.min.js"></script>
 <script defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/loadjs@3.6.1/dist/loadjs.min.js"></script>
-<script defer src="./loadjsrc.js"></script>
 
 <!-- // Add Header Tag -->
 
@@ -1225,12 +1223,13 @@ $ echo $PATH | perl -ple 's/:/\n/g'
 <!-- Add Body Tag // --> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script defer src="./tokunakimochi-blog-jp.min.js"></script>
 <script defer src="https://parts.blog.livedoor.jp/js/design.js"></script>
-<script type="text/javascript">
-(function(){
-  var traq = document.createElement('script'); traq.type = 'text/javascript'; traq.async = true;
-  traq.src = 'https://t.blog.livedoor.jp/u.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(traq, s);
-})();
+<script defer src="./ie-buster.init.min.js"></script>
+  <script type="text/javascript">
+  (function(){
+    var traq = document.createElement('script'); traq.type = 'text/javascript'; traq.async = true;
+    traq.src = 'https://t.blog.livedoor.jp/u.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(traq, s);
+  })();
 </script>
 <noscript>
 <img src="https://t.blog.livedoor.jp/u.gif" alt="traq">

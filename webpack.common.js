@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     'tokunakimochi-blog-jp.iife': './scripts/escape-kaomoji.iife.js',
     'tokunakimochi-blog-jp': './scripts/main.js',
+    'ie-buster.init': './scripts/ie-buster.init.js',
   },
   // ファイルの出力設定
   output: {
