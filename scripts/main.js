@@ -3,6 +3,11 @@ import Hammer from 'hammerjs';
 import WebFont from 'webfontloader';
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
+import { dom, library } from '@fortawesome/fontawesome-svg-core';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faLink);
+dom.watch();
 
 const md = new markdownIt('default', {
   html: true,
