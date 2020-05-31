@@ -32,4 +32,6 @@ export const css = () => {
     .pipe(gulp.dest('./public'));
 };
 
-export default gulp.parallel(css);
+export const watch = () => gulp.watch('./styles/*.scss', css);
+
+export default css;

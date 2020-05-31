@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "build": "gulp && webpack --config webpack.prod.js",
+    "dev": "gulp watch & webpack-dev-server --open --config webpack.dev.js"
   },
   "repository": "ssh://git@github.com/TokunaKimochi/tokunakimochi.blog.jp",
   "author": "TokunaKimochi <tokunakimochi@gmail.com>",

@@ -1,3 +1,4 @@
+const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -7,7 +8,8 @@ module.exports = merge(common, {
   // ローカル開発用環境を立ち上げる
   // ブラウザで http://localhost:5000/ でアクセスできるようになる
   devServer: {
-    contentBase: './public',
-    port: 5000
+    contentBase: path.join(__dirname, 'public'),
+    watchContentBase: true,
+    port: 5000,
   }
 });
