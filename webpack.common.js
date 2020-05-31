@@ -26,14 +26,25 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            sourceMaps: true,
+          },
         }
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
-    ]
-  }
+    ],
+  },
 
 };
