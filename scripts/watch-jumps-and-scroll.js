@@ -1,10 +1,10 @@
-jQuery(window).on('load', function() {
+jQuery(window).on('popstate', function() {
   'use strict';
 
   var hash = window.location.hash;
-  go(hash);
+  setTimeout(go(hash), 0);
 
-  jQuery('a[href^="#"]').click(function(e) {
+  jQuery('a[href^="#"]').on('click', function(e) {
     e.preventDefault();
     var href = jQuery(this).attr('href');
     go(href);
