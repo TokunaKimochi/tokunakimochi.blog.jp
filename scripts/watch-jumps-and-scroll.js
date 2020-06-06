@@ -1,20 +1,22 @@
-(function($) {
-  $(window).on('load', function() {
-    'use strict';
+jQuery(window).on('load', function() {
+  'use strict';
 
-    var hash = window.location.hash;
-    go(hash);
+  var hash = window.location.hash;
+  go(hash);
 
-    $('a[href^="#"]').click(function(e) {
-      e.preventDefault();
-      var href = $(this).attr('href');
-      go(href);
-    });
+  jQuery('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+    var href = jQuery(this).attr('href');
+    go(href);
+  });
 
-    function go(str) {
-      var id = str.slice(1);
-      var elem = document.getElementById(id);
-      if (!elem) return;
-      elem.scrollIntoView({behavior: "smooth"});
-    };
-  });}(jQuery));
+  function go(str) {
+    // `#' をカット
+    var id = str.slice(1);
+    // getElementById に空文字列を渡すと警告が出る
+    if (!id) return;
+    var elem = document.getElementById(id);
+    if (!elem) return;
+    elem.scrollIntoView({behavior: "smooth"});
+  }
+});
