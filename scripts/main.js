@@ -82,3 +82,5 @@ WebFont.load({
     families: ['Lily Script One', 'Niconne', 'Vollkorn', 'Roboto Mono']
   }
 });
+
+import './watch-jumps-and-scroll.js';
