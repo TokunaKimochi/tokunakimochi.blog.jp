@@ -3,6 +3,18 @@
     'use strict';
 
     var main = function() {
+
+      var titleIdObj = {};
+      var hasOwnP = Object.prototype.hasOwnProperty;
+      var slugify = function(s) {
+        var i = 2;
+        var titleId = encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+        var uni = titleId;
+        while (hasOwnP.call(titleIdObj, uni)) uni = titleId + '-' + i++;
+        titleIdObj[uni] = true;
+        return uni;
+      };
+
       return dom.each(function() {
 
         var jqueryObj = $(this);
@@ -30,12 +42,14 @@
             body = jqueryObj.html();
           }
           else {
-            body = '<p>' + body + '</p>'
+            body = '<p>' + body + '</p>';
           }
 
           // &>|title| body
           if (title) {
-            jqueryObj.replaceWith('<aside class="note"><h4 class="note">' + title + '</h4>' + body + '</aside>');
+            var tiId = '_note-' + slugify(title);
+            var plink = '<a class="md-header-anchor" href="#' + tiId + '"><i class="fas fa-link"></i></a>';
+            jqueryObj.replaceWith('<aside class="note"><h4 id="' + tiId + '" class="note">' + plink + title + '</h4>' + body + '</aside>');
           }
           // &>|| body
           else if (flag) {

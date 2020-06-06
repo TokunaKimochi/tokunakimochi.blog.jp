@@ -52,7 +52,7 @@ div.article-body-inner {
     }
   }
 
-  h3.filename {
+  h3.filename, h4.note {
 
     a.md-header-anchor {
       display: block;
@@ -73,6 +73,14 @@ div.article-body-inner {
         position: static;
         visibility: visible;
       }
+    }
+  }
+
+  h4.note {
+
+    a.md-header-anchor {
+      margin-left: -1.3em;
+      padding-right: 0.5em;
     }
   }
 }
