@@ -1,4 +1,4 @@
-jQuery(window).on('popstate', function() {
+jQuery(window).on('pageshow', function() {
   'use strict';
 
   var hash = window.location.hash;
