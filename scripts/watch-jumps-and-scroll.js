@@ -10,7 +10,7 @@ jQuery(window).on('pageshow', () => {
     jump(href);
   });
 
-  const jump = sharpStr => {
+  function jump(sharpStr) {
     const str = sharpStr.slice(1);
     // getElementById に空文字列を渡すと警告が出る
     if (!str) return;
@@ -19,6 +19,6 @@ jQuery(window).on('pageshow', () => {
     if (!dom.isConnected) return;
     const top = jQuery(dom).offset().top;
     jQuery('html, body').animate({ scrollTop: top }, 500, 'swing');
-  };
+  }
 
 });
