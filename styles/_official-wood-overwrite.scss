@@ -33,29 +33,7 @@ body {
   border-radius: 4px;
 }
 
-/* 1カラムレイアウトのとき */
-
 body {
-  &.layout-1col {
-    #content {
-      background: #ffffff;
-    }
-
-    #main-inner {
-      padding: 26px 81px;
-    }
-
-    #sidebar-inner {
-      padding: 0 72px;
-    }
-
-    #sidebar .sidewrapper {
-      width: 254px;
-      margin: 0 9px;
-      float: left;
-    }
-  }
-
   &.layout-2col {
     #main {
       margin: 0;
@@ -175,10 +153,6 @@ a {
 
 .first-article {
   border-top: 0;
-}
-
-body.layout-1col .first-article {
-  margin-top: 0;
 }
 
 /* 記事ヘッダー、記事タイトル */
