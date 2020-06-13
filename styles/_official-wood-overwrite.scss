@@ -21,16 +21,22 @@ body {
   font: 14px/1.5 "Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Meiryo UI","メイリオ","Meiryo","ＭＳ Ｐゴシック","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
-#container {
-  margin: 0 auto;
-  width: $container-Width;
+@media (min-width: $pc-min-w) {
+  #container {
+    margin: 0 auto;
+    width: $container-Width;
+  }
 }
 
 #content {
   margin: 0;
   padding: 0;
   position: relative;
-  border-radius: 4px;
+
+  @include pc-min {
+    display: flex;
+    border-radius: 4px;
+  }
 }
 
 body {
@@ -42,32 +48,42 @@ body {
       /* background:url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_50.png);  */
       background: url("http://tokunakimochi.blog.jp/from-parts-blog-livedoor-jp/img/content_back-compressor.jpg") repeat-y scroll left top rgba(0, 0, 0, 0);
       background-color: #fff;
-      width: $main-Width;
-      display: table-cell;
       vertical-align: top;
-      border-radius: 4px 0px 0px 4px;
+
+      @include pc-min {
+        min-width: $main-Width;
+        border-radius: 4px 0px 0px 4px;
+      }
     }
 
     #main-inner {
       padding: 0 40px 26px;
-      /* IE11 対策 */
-      width: $main-Width;
+
+      @include pc-min {
+        /* IE11 対策 */
+        min-width: $main-Width;
+      }
     }
 
     #sidebar {
       margin: 0;
       padding: 0;
       background: url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_80.png);
-      width: $sidebar-Width;
-      display: table-cell;
       vertical-align: top;
-      border-radius: 0px 4px 4px 0px;
+
+      @include pc-min {
+        min-width: $sidebar-Width;
+        border-radius: 0px 4px 4px 0px;
+      }
     }
 
     #sidebar-inner {
       padding: 0 20px 26px;
-      /* IE11 対策 */
-      width: $sidebar-Width;
+
+      @include pc-min {
+        /* IE11 対策 */
+        min-width: $sidebar-Width;
+      }
     }
   }
 
@@ -114,7 +130,11 @@ a {
    ----------------------------------------------- */
 
 #blog-header {
-  padding: 28px 0 28px 63px;
+  padding: 28px 31px;
+
+  @include pc-min {
+    padding: 28px 0 28px 63px;
+  }
 }
 
 #blog-title {

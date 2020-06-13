@@ -9,3 +9,12 @@ $container-Width: 960px;
 $sidebar-Width: 243px;
 
 $main-Width: $container-Width - $sidebar-Width;
+
+/* 端末の想定横幅 */
+$pc-min-w: 780px;
+
+@mixin pc-min {
+  @media (min-width: ($pc-min-w)) {
+    @content;
+  }
+}
