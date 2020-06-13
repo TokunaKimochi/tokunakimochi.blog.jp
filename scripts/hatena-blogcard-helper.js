@@ -19,7 +19,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var dom = jqueryObj.find('p a:only-child');
     main();
     return this;

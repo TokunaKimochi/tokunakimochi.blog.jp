@@ -92,7 +92,7 @@
       }
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var len = selector ? $(selector).length : 0;
     var selector_copy = selector;
 

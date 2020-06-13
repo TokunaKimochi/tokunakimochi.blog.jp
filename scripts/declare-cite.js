@@ -15,7 +15,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var dom = jqueryObj.find('blockquote p:last-child');
     main();
     return this;

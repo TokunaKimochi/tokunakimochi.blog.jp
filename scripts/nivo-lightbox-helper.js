@@ -88,7 +88,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var location_copy = location;
 
     var dom;

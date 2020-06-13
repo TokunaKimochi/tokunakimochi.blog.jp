@@ -63,7 +63,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var dom = jqueryObj.find('blockquote');
     main();
     return this;

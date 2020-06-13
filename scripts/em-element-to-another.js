@@ -24,7 +24,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var dom = jqueryObj.find('em');
     main();
     return this;

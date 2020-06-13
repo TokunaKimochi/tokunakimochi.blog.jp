@@ -20,7 +20,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var dom;
     if (jqueryObj.is('img')) {
       dom = jqueryObj.filter('[title]');

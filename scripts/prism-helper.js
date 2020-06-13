@@ -117,7 +117,7 @@
       });
     };
 
-    var jqueryObj = $(this);
+    var jqueryObj = this;
     var dom = jqueryObj.find('h3');
     main();
     Prism.highlightAll();
