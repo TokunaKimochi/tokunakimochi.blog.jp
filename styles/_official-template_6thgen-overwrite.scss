@@ -429,12 +429,20 @@
         &.article-pager, &.archives-pager {
           list-style: none;
           text-align: center;
-          padding: 20px;
+          padding: 1px;
+
+          @include pc-min {
+            padding: 20px;
+          }
         }
 
         &.article-pager li, &.archives-pager li {
           display: inline;
-          margin: 0 20px;
+          margin: 0 1px;
+
+          @include pc-min {
+            margin: 0 20px;
+          }
         }
 
         &.article-pager li a, &.archives-pager li a {
