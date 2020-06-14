@@ -57,11 +57,12 @@ body {
     }
 
     #main-inner {
-      padding: 0 40px 26px;
+      padding: 0 16px 26px;
 
       @include pc-min {
         /* IE11 対策 */
         min-width: $main-Width;
+        padding: 0 40px 26px;
       }
     }
 
@@ -183,8 +184,12 @@ a {
 }
 
 .article-title {
-  margin: -1px 0 4px 30px;
+  margin: -1px 0 4px 54px;
   text-shadow: 0 1px 0 #fff;
+
+  @include pc-min {
+    margin: -1px 0 4px 30px;
+  }
 
   a {
     color: #333;
@@ -223,9 +228,13 @@ a {
   width: 64px;
   text-align: center;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.6);
-  left: -50px;
+  left: -26px;
   background: #e0282f;
   background: linear-gradient(to bottom, #e0282f 0%, #c31f26 100%);
+
+  @include pc-min {
+    left: -50px;
+  }
 
   span {
     display: block;

@@ -403,6 +403,7 @@
         &.index-navigator {
           height: 36px;
           margin: 18px 0;
+          padding: 0;
           text-align: center;
 
           li {
@@ -412,6 +413,7 @@
             ol {
               display: inline-block;
               margin: 0 !important;
+              padding: 0;
             }
 
             a, &.current span {
