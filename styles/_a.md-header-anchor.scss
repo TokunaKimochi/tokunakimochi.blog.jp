@@ -11,7 +11,7 @@ div.article-body-inner {
     &:hover {
 
       a.md-header-anchor {
-        color: rgba(0, 0, 0, 0.54);
+        color: $pm-link-color;
         display:inline-block;
 
         &:hover {
@@ -72,6 +72,7 @@ div.article-body-inner {
     &:hover {
 
       a.md-header-anchor {
+        color: $pm-link-color;
         position: static;
         visibility: visible;
       }

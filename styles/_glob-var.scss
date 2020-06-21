@@ -19,8 +19,23 @@ $pc-min-w: 780px;
   }
 }
 
-// リンクカラー
+/* リンクカラー */
 $link-color: #D31145;
 $vlink-color: #C54C6D;
 $hlink-color: #DF6105;
 $li-link-color: #B1002F;
+$pm-link-color: rgba(0, 0, 0, 0.54);
+
+/* フォントフェイス */
+@font-face {
+  font-family: blog-jp-emoji-font;
+
+  src: local('Apple Color Emoji'),
+       local('Segoe UI Emoji'),
+       local('Segoe UI Symbol'),
+       local('Noto Color Emoji'),
+       local('Android Emoji');
+
+  /* Emoji unicode blocks */
+  unicode-range: U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+2600-26FF;
+}
