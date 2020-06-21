@@ -57,6 +57,7 @@ div.article-body-inner {
   h3.filename, h4.note {
 
     a.md-header-anchor {
+      color: $pm-link-color;
       display: block;
       margin-left: 0.3em;
       margin-right: -1.6em;
@@ -72,7 +73,6 @@ div.article-body-inner {
     &:hover {
 
       a.md-header-anchor {
-        color: $pm-link-color;
         position: static;
         visibility: visible;
       }
