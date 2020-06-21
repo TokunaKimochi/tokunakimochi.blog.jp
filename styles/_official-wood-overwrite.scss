@@ -18,7 +18,7 @@ body {
   background-position: center top;
   background-color: #fff;
   color: #1f1f1f;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","BIZ UDPGothic",Meiryo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,"Segoe UI","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","BIZ UDPGothic",Meiryo,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
 }
@@ -106,26 +106,29 @@ body {
    ----------------------------------------------- */
 
 a {
-  color: #d31212;
+  color: $link-color;
   text-decoration: none;
+  transition:0.3s;
 
   &:link {
-    color: #d31212;
+    color: $link-color;
     text-decoration: none;
   }
 
   &:visited {
-    color: #d87296;
+    color: $vlink-color;
     text-decoration: none;
   }
 
   &:hover {
-    text-decoration: underline;
+    color: $hlink-color;
+    text-decoration: none;
   }
 
   &:active {
     color: #ffffff;
-    background-color: #d31212;
+    background-color: $link-color;
+    text-shadow: -1px 1px 0 rgba(255,0,0,1);
   }
 }
 
@@ -151,6 +154,10 @@ a {
 
   a {
     color: $blog-title-Color;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -187,7 +194,7 @@ a {
 
 .article-title {
   margin: -1px 0 4px 54px;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: -1px 1px 0 rgba(255,255,255,1);
 
   @include pc-min {
     margin: -1px 0 4px 30px;
@@ -328,10 +335,13 @@ dl.common-theme {
       li {
         > a {
           &:only-child {
-            color: #772a2a;
+            color: $li-link-color;
           }
           &:visited {
-            color: #d87296;
+            color: $vlink-color;
+          }
+          &:active {
+            color: #fff;
           }
         }
       }
