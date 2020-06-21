@@ -1,10 +1,13 @@
 span.menu {
   color: #08c;
-  padding: 0.07em 10px;
+  padding: 0.07em 0.1rem;
   background-color: #fcfcfc;
   background-image: linear-gradient(#fcfcfc, #eee);
   border-bottom: 1px solid #d5d5d5;
-  font: normal 12px/1.4 "Sukhumvit Set", "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+  font-family: "Sukhumvit Set", "Helvetica Neue", "Helvetica", "Arial", "Verdana", sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 1.4em;
   white-space: nowrap;
 }
 span.dialog {
@@ -16,9 +19,12 @@ span.dialog {
   border-width: 5px 1px 1px;
   box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8);
   color: #fff;
-  font: bold 88%/3.3 "Sukhumvit Set","Helvetica Neue","Helvetica","Arial","Verdana",sans-serif;
+  font-family: "Sukhumvit Set","Helvetica Neue","Helvetica","Arial","Verdana",sans-serif;
+  font-weight: bold;
+  font-size: 88%;
+  line-height: 3.3em;
   margin: 0.1em 0.3em;
-  padding: 0.4em 10px;
+  padding: 0.4em 1rem;
   white-space: nowrap;
 }
 span.key-word {
@@ -35,7 +41,10 @@ kbd.from-em {
   box-shadow: 0 0 20px #E8E8E8 inset, 0 1px 0 #C3C3C3, 0 1px 0 #C9C9C9, 0 1px 2px #333;
   color: #666;
   text-shadow: 0 1px 0 #F5F5F5;
-  font: bold 13px/1.25 "Arial", sans-serif;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  line-height: 1.25em;
   text-align: center;
   display: inline-block;
   white-space: nowrap;

@@ -28,28 +28,30 @@ div.article-body-inner {
     }
   }
 
-  h1, h2, h3 {
-
+  @mixin h16($top: .1em, $left: -1em) {
     &:hover {
-
       a.md-header-anchor {
         position: absolute;
-        top: 0.1em;
-        left: -1.05em;
+        top: $top;
+        left: $left;
       }
     }
   }
 
-  h4, h5, h6 {
+  h1, h3 {
+    @include h16(0, -1.05em);
+  }
 
-    &:hover {
+  h2 {
+    @include h16(.05em, -1.05em);
+  }
 
-      a.md-header-anchor {
-        position: absolute;
-        top: -0.1em;
-        left: -1em;
-      }
-    }
+  h4 {
+    @include h16(-0.1em, -1em);
+  }
+
+  h5, h6 {
+    @include h16(-0.2em, -1em);
   }
 
   h3.filename, h4.note {

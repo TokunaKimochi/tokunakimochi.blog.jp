@@ -2,8 +2,8 @@
 
 .markdown {
   width: 100%;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   overflow: scroll;
 }
 
@@ -11,7 +11,7 @@
 
 code, pre {
   font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 h1, h2, h3, h4, h5, h6, p, blockquote, li {
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, li {
     background-color: #F7F7F9;
     border: 1px solid #E1E1E8;
     color: #DD1144;
-    padding: 2px 4px;
+    padding: 0.2rem 0.4rem;
     white-space: pre-wrap;
   }
 }

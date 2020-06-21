@@ -6,7 +6,8 @@ sup.footnote {
   font-size: 110%;
 
   > a {
-    padding-right: 3px;
+    padding-left: .1rem;
+    padding-right: .3rem;
     text-decoration: none;
     color: #189086;
   }
@@ -32,11 +33,11 @@ ol.footnote {
   line-height: 1.2em;
   margin-top: 0;
   margin-bottom: 2em;
-  font-size: 16px;
+  font-size: 1.6rem;
 
   a {
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', Helvetica, Arial, Verdana, sans-serif;
-    font-size: 12px;
+    font-size: 1.2rem;
     text-decoration: none;
     color: #333333;
 

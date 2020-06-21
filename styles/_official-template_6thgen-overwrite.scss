@@ -11,6 +11,20 @@
  :rights "LINE Corporation".
 */
 
+html {
+  font-size: 10px;
+}
+
+@media (min-width: $pc-min-w) {
+  html {
+    font-size: 11px;
+  }
+}
+
+body {
+  font-size: 1.4em;
+}
+
 /* 共通ヘッダー
 ----------------------------------------------- */
 
@@ -21,8 +35,8 @@
   position: relative;
 
   input#header2_query {
-    font-size: 13px;
-    line-height: 15px;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
   }
 
   table#header span.common-header-logo {
@@ -121,22 +135,32 @@
           margin: 0.7em 0;
         }
 
-        h1, h2, h3 {
-          font-size: 20px;
-          padding: 4px 0;
+        h1 {
+          font-size: 2.4rem;
+          padding: 0.5rem 0;
+        }
+
+        h2 {
+          font-size: 2.3rem;
+          padding: 0.5rem 0;
+        }
+
+        h3 {
+          font-size: 2.1rem;
+          padding: 0.4rem 0;
         }
 
         h4 {
-          font-size: 18px;
-          padding: 2px 0;
+          font-size: 1.9rem;
+          padding: 0.2rem 0;
         }
 
         h5 {
-          font-size: 16px;
+          font-size: 1.7rem;
         }
 
         h6 {
-          font-size: 14px;
+          font-size: 1.6rem;
         }
 
         p, pre, dl, ol, ul, blockquote {
@@ -260,8 +284,8 @@
       .article-meta {
         li {
           float: right;
-          font-size: 12px;
-          line-height: 20px;
+          font-size: 1.2rem;
+          line-height: 2rem;
           list-style: none;
           margin: 0 0 0 8px;
         }
@@ -487,7 +511,7 @@
 
         .article-option-title {
           font-weight: bold;
-          font-size: 16px;
+          font-size: 1.6rem;
           letter-spacing: 1px;
         }
 
@@ -558,7 +582,7 @@
 
       .comment-info, .trackback-set {
         margin: 16px 0;
-        font-size: 12px;
+        font-size: 1.2rem;
       }
 
       .comment-author, .comment-date, .ping-title, .ping-info, .ping-blog-name, .ping-date {
@@ -583,7 +607,7 @@
 ----------------------------------------------- */
 
       #comment-form {
-        font-size: 12px;
+        font-size: 1.2rem;
         margin: 2em 0 4em;
 
         dl {
@@ -621,8 +645,8 @@
         border: 1px solid #bbb;
         border-top: 0;
         border-radius: 0 0 3px 3px;
-        font-size: 12px;
-        height: 32px;
+        font-size: 1.2rem;
+        height: 3.2rem;
 
         .facemark a {
           border-right: 1px solid #ddd;
@@ -637,15 +661,15 @@
           color: #808080;
           cursor: pointer;
           display: inline-block;
-          font-size: 12px;
-          height: 26px;
-          line-height: 26px;
+          font-size: 1.2rem;
+          height: 2.6rem;
+          line-height: 2.6rem;
           margin-top: 2px;
           margin-left: 10px;
           position: relative;
           text-align: center;
           vertical-align: top;
-          width: 76px;
+          width: 7.6rem;
           padding: 0 5px;
           background-color: #fff;
           background-image: linear-gradient(#ffffff, #ffffff 25%, #f2f2f2);
@@ -730,11 +754,11 @@
           div {
             float: left;
             cursor: pointer;
-            font-size: 12px;
-            line-height: 26px;
+            font-size: 1.2rem;
+            line-height: 2.6rem;
             text-align: center;
-            width: 34px;
-            height: 26px;
+            width: 3.4rem;
+            height: 2.6rem;
             border-radius: 3px;
             border: 1px solid #bbb;
             color: #808080;
@@ -748,10 +772,10 @@
             background-image: inherit;
             border: none;
             color: #fff;
-            height: 28px;
-            line-height: 28px;
+            height: 2.8rem;
+            line-height: 2.8rem;
             text-shadow: 0 1px 3px #808080;
-            width: 36px;
+            width: 3.6rem;
             filter: none;
           }
         }
@@ -764,7 +788,7 @@
         .memorize {
           float: right;
           margin: 2px;
-          line-height: 28px;
+          line-height: 2.8rem;
           margin-right: 12px;
           color: #808080;
 
@@ -798,42 +822,12 @@
         line-height: 30px;
       }
 
-      /* トラックバック投稿フォーム
------------------------------------------------ */
-
-      #trackback-form {
-        font-size: 12px;
-        margin: 24px 0;
-
-        ul {
-          margin: 16px 0;
-          text-align: center;
-        }
-
-        li {
-          display: inline;
-        }
-
-        .trackback-form-url input {
-          width: 74%;
-        }
-
-        .trackback-form-submit input {
-          line-height: 18px;
-          margin-left: 1%;
-          padding-bottom: 6px;
-          padding-top: 6px;
-          white-space: nowrap;
-          width: 24%;
-        }
-      }
-
       /* ブログのフッター
 ----------------------------------------------- */
 
       #blog-footer {
-        font-size: 12px;
-        min-height: 12px;
+        font-size: 1.2rem;
+        min-height: 1.2rem;
 
         /* PUREプランでフッターテキストが出ないとき用 */
         text-align: center;
@@ -863,9 +857,9 @@
         input {
           &.sf, &.sfbtn {
             border: 1px solid #aaa;
-            font-size: 13px;
-            height: 20px;
-            line-height: 18px;
+            font-size: 1.3rem;
+            height: 2rem;
+            line-height: 1.8rem;
             outline: 0;
           }
 
@@ -955,7 +949,7 @@
       [id^="plugin-monthly"] {
         .side {
           font-family: 'Lily Script One', cursive;
-          font-size: 14px;
+          font-size: 1.4rem;
         }
       }
 
