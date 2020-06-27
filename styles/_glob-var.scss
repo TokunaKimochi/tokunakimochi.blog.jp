@@ -19,10 +19,11 @@ $pc-min-w: 780px;
   }
 }
 
+$text-color: #1f1f1f;
 /* リンクカラー */
 $link-color: #D31145;
-$vlink-color: #C54C6D;
-$hlink-color: #DF6105;
+$vlink-color: #d06682;
+$hlink-color: #f56300;
 $li-link-color: #B1002F;
 $pm-link-color: rgba(0, 0, 0, 0.54);
 
@@ -38,4 +39,17 @@ $pm-link-color: rgba(0, 0, 0, 0.54);
 
   /* Emoji unicode blocks */
   unicode-range: U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+2600-26FF;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: YuMinchoB;
+
+  src: local('YuMincho Demibold'),
+       local('Yu Mincho Demibold');
+  font-weight: 800;
+  font-display: swap;
+}
+
+/* 基本フォントファミリー */
+$common-ffamily: blog-jp-emoji-font,-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","Meiryo UI","Helvetica Neue",Helvetica,Arial,sans-serif;

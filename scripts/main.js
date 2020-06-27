@@ -79,7 +79,7 @@ jQuery(function($){
 
 WebFont.load({
   google: {
-    families: ['Lily Script One', 'Niconne', 'Vollkorn', 'Noto Sans', 'Roboto Mono']
+    families: ['Berkshire Swash', 'Niconne', 'Vollkorn', 'Roboto Mono']
   }
 });
 
