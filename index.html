@@ -171,6 +171,73 @@ if (typeof IMAGE_CACHE == 'object' && IMAGE_CACHE['emoji_palette']) IMAGE_CACHE[
 	<div class="article-body-inner">
 
 	  <textarea id="mdp1077295995" class="markdown" disabled>
+
+### += Cmder [cmd.exe] -S -J ###
+~~~cmd
+λ psql -U postgres
+ユーザ postgres のパスワード:
+psql (12.2)
+&quot;help&quot;でヘルプを表示します。
+
+postgres=# \conninfo
+データベース&quot;postgres&quot;にユーザ&quot;postgres&quot;として、ホスト&quot;localhost&quot;(アドレス&quot;::1&quot;)上のポート&quot;5432&quot;で接続しています。
+postgres=# CREATE ROLE achiki WITH CREATEDB LOGIN PASSWORD 'hirakegoma';
+CREATE ROLE
+postgres=# \du
+                                             ロール一覧
+ ロール名 |                                   属性                                   | 所属グループ
+----------+--------------------------------------------------------------------------+--------------
+ achiki   | DB作成可                                                                 | {}
+ postgres | スーパユーザ, ロール作成可, DB作成可, レプリケーション可, RLS のバイパス | {}
+
+
+postgres=# \q
+
+λ psql -d postgres -U achiki
+ユーザ achiki のパスワード:
+psql (12.2)
+&quot;help&quot;でヘルプを表示します。
+
+postgres=&gt; CREATE DATABASE api_sample;
+CREATE DATABASE
+postgres=&gt; \list
+                                        データベース一覧
+    名前    |  所有者  | エンコーディング | 照合順序 | Ctype(変換演算子) |     アクセス権限
+------------+----------+------------------+----------+-------------------+-----------------------
+ api_sample | achiki   | UTF8             | C        | C                 |
+ postgres   | postgres | UTF8             | C        | C                 |
+ template0  | postgres | UTF8             | C        | C                 | =c/postgres          +
+            |          |                  |          |                   | postgres=CTc/postgres
+ template1  | postgres | UTF8             | C        | C                 | =c/postgres          +
+            |          |                  |          |                   | postgres=CTc/postgres
+(4 行)
+
+
+postgres=&gt; \c api_sample
+データベース&quot;api_sample&quot;にユーザ&quot;achiki&quot;として接続しました。
+api_sample=&gt; CREATE TABLE users (
+api_sample(&gt; id SERIAL PRIMARY KEY,
+api_sample(&gt; name VARCHAR(30),
+api_sample(&gt; email VARCHAR(30)
+api_sample(&gt; );
+CREATE TABLE
+api_sample=&gt; INSERT INTO users (name, email)
+api_sample-&gt; VALUES ('James', 'james@example.com'), ('Mary', 'mary@example.com'),
+api_sample-&gt; ('John', 'john@example.com'), ('Patricia', 'patricia@example.com');
+INSERT 0 4
+api_sample=&gt; SELECT * FROM users;
+ id |   name   |        email
+----+----------+----------------------
+  1 | James    | james@example.com
+  2 | Mary     | mary@example.com
+  3 | John     | john@example.com
+  4 | Patricia | patricia@example.com
+(4 行)
+
+
+api_sample=&gt; \q
+~~~
+
 # エイチ h1 えいち H1 26px
 
 ## エイチ h2 えいち H2 24px
