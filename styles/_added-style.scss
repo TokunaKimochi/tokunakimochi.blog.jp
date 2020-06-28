@@ -7,58 +7,67 @@
   overflow: scroll;
 }
 
-/* bootstrap */
+div.article-body {
 
-code, pre {
-  font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
-  font-size: 86%;
-}
+  /* bootstrap */
 
-div.wrapping-code {
   code, pre {
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    font-size: 86%;
+  }
+
+  div.wrapping-code {
+    code, pre {
+      font-size: 1.2rem;
+    }
+  }
+
+  code[class*="language-"], pre[class*="language-"] {
     font-size: 1.2rem;
   }
-}
 
-code[class*="language-"], pre[class*="language-"] {
-  font-size: 1.2rem;
-}
-
-h1, h2, h3, h4, h5, h6, p, blockquote, li {
-  > code {
-    background-color: #F7F7F9;
-    border: 1px solid #E1E1E8;
-    color: #DD1144;
-    padding: 0.2rem 0.4rem;
-    white-space: pre-wrap;
+  pre[class*="language-"].jp-monospace,
+  pre[class*="language-"].jp-monospace code[class*="language-"] {
+    font-family: blog-jp-monospace,monospace;
   }
-}
 
-/* box-shadow */
+  h1, h2, h3, h4, h5, h6, p, blockquote, li {
+    > code {
+      background-color: #F7F7F9;
+      border: 1px solid #E1E1E8;
+      color: #DD1144;
+      padding: 0.2rem 0.4rem;
+      white-space: pre-wrap;
+    }
+  }
 
-div.wrapping-code.add-box-shadow {
-  margin: 1em 0;
-  padding: 0;
-  border: 0 none;
-  box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8);
+  /* box-shadow */
 
-  &.named {
+  div.wrapping-code.add-box-shadow {
+    margin: 1em 0;
+    padding: 0;
+    border: 0 none;
+    box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8);
+
+    &.named {
       border-top-left-radius: 7px;
       border-top-right-radius: 7px;
-  }
+    }
 
-  > pre[class*="language-"] {
+    > pre[class*="language-"] {
       margin: 0;
+    }
   }
-}
 
-/* prettyprint bootstrap */
+  /* prettyprint bootstrap */
 
-pre.prettyprint {
-  margin: 0;
+  pre.prettyprint {
+    margin: 0;
 
-  &.add-box-shadow {
-    margin: 1em 0;
-    box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8), 40px 0 0 rgba(251, 251, 252, 1) inset, 41px 0 0 rgba(236, 236, 240, 1) inset;
+    &.add-box-shadow {
+      margin: 1em 0;
+      box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8), 40px 0 0 rgba(251, 251, 252, 1) inset, 41px 0 0 rgba(236, 236, 240, 1) inset;
+    }
   }
+
 }
