@@ -126,9 +126,9 @@ a {
   }
 
   &:active {
-    color: #ffffff;
+    color: #fff;
     background-color: $hlink-color;
-    text-shadow: -1px 1px 0 rgba(255,0,0,1);
+    text-shadow: -1px 1px 0 rgba(255,69,0,1);
   }
 }
 
@@ -335,13 +335,19 @@ dl.common-theme {
       li {
         > a {
           &:only-child {
-            color: $li-link-color;
-          }
-          &:visited {
-            color: $vlink-color;
-          }
-          &:active {
-            color: #fff;
+
+            &:link {
+              color: $li-link-color;
+            }
+            &:visited {
+              color: $li-link-color;
+            }
+            &:hover {
+              color: $hlink-color;
+            }
+            &:active {
+              color: #fff;
+            }
           }
         }
       }
@@ -355,7 +361,8 @@ dl.common-theme {
     box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 2px inset, rgba(255, 255, 255, 0.8) 1px 1px 0;
 
     &:before {
-      color: #ddd;
+      color: #D5EBE9;
+      text-shadow: 1px 1px 0 rgba(255,255,255,1);
     }
   }
 
