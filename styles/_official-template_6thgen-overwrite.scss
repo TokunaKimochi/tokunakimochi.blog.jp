@@ -103,17 +103,17 @@ body {
 ----------------------------------------------- */
 
 .article-category dt, .article-comment-count dt, .article-continue a {
-  background: url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/icons.png) 0 0 no-repeat;
+  background: url("https://parts.blog.livedoor.jp/img/usr/default_2012/common/icons.png") 0 0 no-repeat;
                  }
 
   dl {
     &.common-theme dt, &.article-tags dt {
-      background: url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/icons.png) 0 0 no-repeat;
+      background: url("https://parts.blog.livedoor.jp/img/usr/default_2012/common/icons.png") 0 0 no-repeat;
                      }
     }
 
     .sidewrapper input.sf {
-      background: url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/icons.png) 0 0 no-repeat;
+      background: url("https://parts.blog.livedoor.jp/img/usr/default_2012/common/icons.png") 0 0 no-repeat;
                      }
 
       /* 記事本文
@@ -247,7 +247,7 @@ body {
             }
           }
 
-          &[src^="http://parts.blog.livedoor.jp/"] {
+          &[src^="https://parts.blog.livedoor.jp/"] {
             /* 絵文字用 */
             vertical-align: baseline;
           }

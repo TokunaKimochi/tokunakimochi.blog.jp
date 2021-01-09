@@ -13,7 +13,7 @@
    ----------------------------------------------- */
 
 body {
-  background-image: url(http://tokunakimochi.blog.jp/from-parts-blog-livedoor-jp/img/wood-compressor.jpg);
+  background-image: url(https://tokunakimochi.blog.jp/from-parts-blog-livedoor-jp/img/wood-compressor.jpg);
   background-repeat: repeat;
   background-position: center top;
   background-color: #38281a;
@@ -47,8 +47,8 @@ body {
       margin: 0;
       padding: 0;
 
-      /* background:url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_50.png);  */
-      background: url("http://tokunakimochi.blog.jp/from-parts-blog-livedoor-jp/img/content_back-compressor.jpg") repeat-y scroll left top rgba(0, 0, 0, 0);
+      /* background:url(https://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_50.png);  */
+      background: url("https://tokunakimochi.blog.jp/from-parts-blog-livedoor-jp/img/content_back-compressor.jpg") repeat-y scroll left top rgba(0, 0, 0, 0);
       background-color: #fff;
       vertical-align: top;
 
@@ -71,7 +71,7 @@ body {
     #sidebar {
       margin: 0;
       padding: 0;
-      background: url(http://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_80.png);
+      background: url("https://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_80.png");
       vertical-align: top;
 
       @include pc-min {
