@@ -5138,8 +5138,8 @@ nice-try@^1.0.4:
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
 "nivo-lightbox@https://github.com/TokunaKimochi/Nivo-Lightbox.git#gh-pages":
-  version "1.0.0"
-  resolved "https://github.com/TokunaKimochi/Nivo-Lightbox.git#753be95e5e485d4a985534739e0f9aef4999333c"
+  version "1.2.0-p19"
+  resolved "https://github.com/TokunaKimochi/Nivo-Lightbox.git#3398d6647c7426ae3ca486bf3951fb13631a3347"
 
 node-forge@^0.10.0:
   version "0.10.0"
