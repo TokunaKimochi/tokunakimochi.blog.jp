@@ -6278,8 +6278,8 @@ pretty-hrtime@^1.0.0:
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
 "prismjs@https://github.com/TokunaKimochi/prism.git#bootstrap232":
-  version "1.23.0"
-  resolved "https://github.com/TokunaKimochi/prism.git#e8a9ab78c7d4213e9f006cf1986a46e2c67eaede"
+  version "1.24.1"
+  resolved "https://github.com/TokunaKimochi/prism.git#82b6ee198de37ad7ed01691f0297890a1336e1b4"
 
 process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
   version "2.0.1"
