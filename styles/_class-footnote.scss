@@ -10,6 +10,10 @@ sup.footnote {
     padding-right: .3rem;
     text-decoration: none;
     color: #189086;
+
+    &:hover {
+      color: $vlink-color;
+    }
   }
 }
 
@@ -44,6 +48,10 @@ ol.footnote {
     &.another-destination {
       font-style: italic;
       color: #185e90;
+
+      &:hover {
+        color: $hlink-color;
+      }
     }
   }
 }

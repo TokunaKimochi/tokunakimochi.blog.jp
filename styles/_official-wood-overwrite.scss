@@ -108,7 +108,7 @@ body {
 a {
   color: $link-color;
   text-decoration: none;
-  transition:0.3s;
+  transition: 0.3s;
 
   &:link {
     color: $link-color;
@@ -177,7 +177,7 @@ a {
 /* 記事全体 */
 
 .article {
-  padding: 36px 0;
+  padding: 3.6rem 0;
   border-top: 1px solid #e6e6e6;
 }
 
@@ -188,7 +188,7 @@ a {
 /* 記事ヘッダー、記事タイトル */
 
 .article-header {
-  margin-bottom: 38px;
+  margin-bottom: 3.8rem;
   position: relative;
 }
 
@@ -209,6 +209,8 @@ a {
   }
 }
 
+/* リボン日付*/
+
 .article-date {
   &:before {
     border-color: transparent #e0282f #e0282f transparent;
@@ -226,12 +228,12 @@ a {
   box-shadow: 5px 5px 10px rgba(102, 102, 102, 0.8), 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.3) inset;
   color: #fff;
   font-family: Vollkorn, serif;
-  font-size: 14px;
-  line-height: 15px;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
   position: absolute;
-  width: 64px;
+  width: 6.4rem;
   margin: 0;
-  padding: 1px 0;
+  padding: 0.1rem 0;
   text-align: center;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.6);
   left: -26px;
@@ -244,11 +246,11 @@ a {
 
   span {
     display: block;
-    margin: 2px 0;
+    margin: 0.2rem 0;
   }
 
   .article-date-year {
-    padding-top: 1px;
+    padding-top: 0.1rem;
   }
 
   .article-date-month {
@@ -256,12 +258,10 @@ a {
   }
 
   .article-date-day {
-    padding-bottom: 1px;
-    font-size: 22px;
+    padding-bottom: 0.4rem;
+    font-size: 2.2rem;
   }
 }
-
-/* リボン日付*/
 
 /* 記事フッター、カテゴリ、コメント、ソーシャルボタン */
 
@@ -355,7 +355,7 @@ dl.common-theme {
   }
 
   blockquote {
-    background-color: #f0f0f0;
+    background-color: $diff-bcolor;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 2px inset, rgba(255, 255, 255, 0.8) 1px 1px 0;
