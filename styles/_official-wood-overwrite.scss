@@ -436,12 +436,17 @@ ul {
    ----------------------------------------------- */
 
 #blog-footer {
-  color: #f2f2f2;
+  color: rgba(#f2f2f2, 0.7);
   padding: 40px;
 
   a {
     color: #f2f2f2;
   }
+}
+
+#footer {
+  line-height: 2;
+  margin: 1em 0;
 }
 
 /* ブログパーツ
