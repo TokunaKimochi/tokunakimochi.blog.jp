@@ -333,10 +333,10 @@ body {
       /* 続きを読む */
 
       .article-continue {
-        display: block;
+        display: table;
         text-align: center;
         clear: both;
-        margin: 3.6rem 0 2.2rem 0;
+        margin: 3.6rem 0 2.2rem auto;
 
         a {
           display: inline-block;
