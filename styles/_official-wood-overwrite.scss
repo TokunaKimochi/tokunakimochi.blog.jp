@@ -270,12 +270,15 @@ a {
 }
 
 .article-meta {
-  padding: 16px 0 36px;
+  margin: 1.4rem 0 0;
+  padding: 1.4rem 0 0;
+  float: right;
 }
 
 .article-social-btn {
-  padding-top: 1px;
-  padding-bottom: 1px;
+  margin-top: 1.4rem;
+  padding: 1.4rem 0 3.15rem;
+  float: left;
 }
 
 /* 関連記事 */
