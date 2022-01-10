@@ -276,7 +276,9 @@ a {
 }
 
 .article-social-btn {
-  display: inline-table;
+  width: 143px;
+  display: inline-flex;
+  justify-content: space-between;
   margin-top: 1.4rem;
   padding: 1.4rem 0 3.15rem;
 }
