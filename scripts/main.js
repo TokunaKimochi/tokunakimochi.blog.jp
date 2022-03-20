@@ -5,6 +5,9 @@ import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
 import { dom, library } from '@fortawesome/fontawesome-svg-core';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import escapeKaomoji from './escape-kaomoji.iife.js';
+
+escapeKaomoji.usingJSONEscKomoji('/config/init.json');
 
 library.add(faLink);
 dom.watch();

@@ -3,8 +3,7 @@ const path = require('path');
 module.exports = {
   // エントリーポイントの指定
   entry: {
-    'tokunakimochi-blog-jp.iife': './scripts/escape-kaomoji.iife.js',
-    'tokunakimochi-blog-jp': './scripts/main.js',
+    'tokunakimochi-blog-jp': './scripts/main.js'
   },
   // ファイルの出力設定
   output: {

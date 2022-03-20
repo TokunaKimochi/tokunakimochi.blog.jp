@@ -108,5 +108,4 @@ const escapeKaomoji = (function() {
   };
 }());
 
-// デフォルトの動作を指定
-escapeKaomoji.usingJSONEscKomoji('/config/init.json');
+export default escapeKaomoji;
