@@ -17,7 +17,7 @@ import './blockquote-element-to-another.js';
 import './nivo-lightbox-helper.js';
 import './wrap-a-link-around-img.js';
 import './hatena-blogcard-helper.js';
-import './watch-jumps-and-scroll.js';
+import watchJumpScroll from './watch-jumps-and-scroll.js';
 
 WebFont.load({
   google: {
@@ -78,4 +78,5 @@ jQuery(async function($){
   divMd.prismHelper().bq2another().declareCite().em2another().hatenaBlogcardHelper();
   const anchor = divMd.find('a');
   anchor.aEle2fn(selector).nivolboxHelper('livedoorBlog');
+  $(window).on('pageshow', watchJumpScroll());
 });

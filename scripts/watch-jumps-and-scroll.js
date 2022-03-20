@@ -1,6 +1,6 @@
-jQuery(window).on('pageshow', function() {
+const watchJumpScroll = function() {
   'use strict';
-  setTimeout(watch, 0);
+  setTimeout(watch, 1 * 1000);
 
   function watch() {
     const jump = sharpStr => {
@@ -23,4 +23,6 @@ jQuery(window).on('pageshow', function() {
       jump(href);
     });
   }
-});
+};
+
+export default watchJumpScroll;
