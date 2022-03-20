@@ -3,11 +3,27 @@ import Hammer from 'hammerjs';
 import WebFont from 'webfontloader';
 import markdownIt from 'markdown-it';
 import markdownItAnchor from 'markdown-it-anchor';
+import Prism from 'prismjs';
 import { dom, library } from '@fortawesome/fontawesome-svg-core';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import escapeKaomoji from './escape-kaomoji.iife.js';
+import 'jquery-hammerjs';
+import 'nivo-lightbox';
+import './a-element-to-footnote.js';
+import './prism-helper.js';
+import './declare-cite.js';
+import './em-element-to-another.js';
+import './blockquote-element-to-another.js';
+import './nivo-lightbox-helper.js';
+import './wrap-a-link-around-img.js';
+import './hatena-blogcard-helper.js';
+import './watch-jumps-and-scroll.js';
 
-escapeKaomoji.usingJSONEscKomoji('/config/init.json');
+WebFont.load({
+  google: {
+    families: ['Berkshire Swash', 'Niconne', 'Vollkorn', 'Roboto Mono']
+  }
+});
 
 library.add(faLink);
 dom.watch();
@@ -49,29 +65,13 @@ md.use(markdownItAnchor, {
   permalinkBefore: true
 });
 
-jQuery(function($){
+jQuery(async function($){
+  await escapeKaomoji.fetchJSONEscKaomoji('/config/init.json');
   $('textarea.markdown').replaceWith( function() {
     const env = {};
     env.mdTxtId = $(this).attr('id');
     return $('<div/>').html(md.render(this.value, env));
   });
-});
-
-import Prism from 'prismjs';
-
-import 'jquery-hammerjs';
-import 'nivo-lightbox';
-
-import './a-element-to-footnote.js';
-import './prism-helper.js';
-import './declare-cite.js';
-import './em-element-to-another.js';
-import './blockquote-element-to-another.js';
-import './nivo-lightbox-helper.js';
-import './wrap-a-link-around-img.js';
-import './hatena-blogcard-helper.js';
-
-jQuery(function($){
   const selector = ( $('#more').length === 0 ) ? null : '#more > div';
   const divMd = $('div.article-body-inner > div');
   divMd.wrapLinkImg();
@@ -79,11 +79,3 @@ jQuery(function($){
   const anchor = divMd.find('a');
   anchor.aEle2fn(selector).nivolboxHelper('livedoorBlog');
 });
-
-WebFont.load({
-  google: {
-    families: ['Berkshire Swash', 'Niconne', 'Vollkorn', 'Roboto Mono']
-  }
-});
-
-import './watch-jumps-and-scroll.js';

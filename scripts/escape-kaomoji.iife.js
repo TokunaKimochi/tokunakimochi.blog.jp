@@ -16,48 +16,52 @@ const escapeKaomoji = (function() {
       return this;
     },
 
-    usingJSONEscKomoji: function(val) {
-      if (val) this.setJSONURI(val);
+    fetchJSONEscKaomoji: function(val) {
       var that = this;
-      var ajax = new window.XMLHttpRequest();
-      ajax.open('GET', JSONURI, true);
-      ajax.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+      return new Promise(function(res){
+        if (val) that.setJSONURI(val);
+        var ajax = new window.XMLHttpRequest();
+        ajax.open('GET', JSONURI, true);
+        ajax.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        var supportsJSON = (function() {
+          try { ajax.responseType = 'json'; }
+          catch(e) { return false; }
+          return 'response' in ajax && ajax.responseType === 'json';
+        }());
+        ajax.timeout = 5000;
+        ajax.send(null);
 
-      var supportsJSON = (function() {
-        try { ajax.responseType = 'json'; }
-        catch(e) { return false; }
-        return 'response' in ajax && ajax.responseType === 'json';
-      }());
-
-      ajax.timeout = 5000;
-      ajax.send(null);
-
-      ajax.onload = function() {
-        // ステータスコードを調べる
-        if ( (this.status >= 200 && this.status < 300) || (this.status === 304) ) {
-          // ページの更新
-          var data = supportsJSON ? this.response : JSON.parse(this.responseText);
-          var kaomojiFromJSON = data.KaomojiArray;
-          that.addKaomoji(kaomojiFromJSON);
-          that.escKaomoji();
-        }
-        else {
-          console.log('データ取得失敗');
-        }
-      };
-      ajax.ontimeout = function() {
-        if (this) {
-          this.abort();
+        ajax.onload = function() {
+          // ステータスコードを調べる
+          if ( (this.status >= 200 && this.status < 300) || (this.status === 304) ) {
+            // ページの更新
+            var data = supportsJSON ? this.response : JSON.parse(this.responseText);
+            var kaomojiFromJSON = data.KaomojiArray;
+            that.addKaomoji(kaomojiFromJSON);
+            that.escKaomoji();
+            res();
+          }
+          else {
+            console.log('データ取得失敗');
+            res();
+          }
+        };
+        ajax.ontimeout = function() {
+          if (this) {
+            this.abort();
+            ajax = null;
+            console.log('タイムアウト');
+            res();
+          }
+        };
+        ajax.onerror = function() {
           ajax = null;
-          console.log('タイムアウト');
-        }
-      };
-      ajax.onerror = function() {
-        ajax = null;
-        console.log('エラー');
-      };
+          console.log('エラー');
+          res();
+        };
 
-      ajax = null;
+        ajax = null;
+      });
 
     },
 
