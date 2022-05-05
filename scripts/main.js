@@ -65,12 +65,12 @@ md.use(markdownItAnchor, {
   permalinkBefore: true
 });
 
-jQuery(async function($){
-  await escapeKaomoji.fetchJSONEscKaomoji('/config/init.json');
+jQuery(function($){
+  escapeKaomoji.escKaomoji(["Σ（ﾟдﾟlll）", "(-_-;)", "(-。－；)", "(｡+･`ω･´)ｷﾘｯ", "( ﾟдﾟ)ﾊｯ!", "ヽ(´o｀；", "( ；´Д｀)", "(((( ;ﾟДﾟ)))ｶﾞｸｶﾞｸﾌﾞﾙﾌﾞﾙ"]);
   $('textarea.markdown').replaceWith( function() {
     const env = {};
     env.mdTxtId = $(this).attr('id');
-    return $('<div/>').html(md.render(this.value, env));
+    return $('<div class="div-from-markdown" />').html(md.render(this.value, env));
   });
   const selector = ( $('#more').length === 0 ) ? null : '#more > div';
   const divMd = $('div.article-body-inner > div');

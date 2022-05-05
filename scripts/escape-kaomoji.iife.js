@@ -12,7 +12,7 @@ const escapeKaomoji = (function() {
     },
 
     addKaomoji: function(val) {
-      kaomojiArr = kaomojiArr.concat(val);
+      if ( Array.isArray(val) ) { kaomojiArr = kaomojiArr.concat(val); }
       return this;
     },
 
@@ -65,7 +65,9 @@ const escapeKaomoji = (function() {
 
     },
 
-    escKaomoji: function() {
+    escKaomoji: function(val) {
+      if (val) { this.addKaomoji(val); }
+
       var markdownClassArr = document.getElementsByClassName('markdown');
 
       // Markdown で使われる文字を文字参照にする定義

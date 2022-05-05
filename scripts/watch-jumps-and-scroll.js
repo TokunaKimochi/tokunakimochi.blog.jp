@@ -1,6 +1,6 @@
 const watchJumpScroll = function() {
   'use strict';
-  setTimeout(watch, 1 * 1000);
+  setTimeout(watch, 0 * 1000);
 
   function watch() {
     const jump = sharpStr => {
