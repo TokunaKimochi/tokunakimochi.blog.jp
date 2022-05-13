@@ -58,11 +58,13 @@ const mySlugify = (s, env) => {
 };
 
 md.use(markdownItAnchor, {
+  level: 2,
   slugify: mySlugify,
-  permalink: true,
-  permalinkClass: 'md-header-anchor',
-  permalinkSymbol: '<i class="fas fa-link"></i>',
-  permalinkBefore: true
+  permalink: markdownItAnchor.permalink.linkInsideHeader({
+    class: 'md-header-anchor',
+    symbol: '<i class="fas fa-link"></i>',
+    placement: 'before'
+  })
 });
 
 jQuery(function($){
