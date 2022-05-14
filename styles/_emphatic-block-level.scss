@@ -33,6 +33,10 @@ aside.note {
     &:after {
       content: '\00A0 \2014';
     }
+
+    a > svg {
+      font-size: 130%;
+    }
   }
 
   > p {

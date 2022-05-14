@@ -16,6 +16,10 @@ div.article-body {
     margin: 0;
     padding: .4rem 0;
     overflow: visible;
+
+    a > svg {
+      font-size: 1.6rem;
+    }
   }
 
   div.wrapping-code.named {

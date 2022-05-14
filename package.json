@@ -39,8 +39,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "jquery-hammerjs": "https://github.com/TokunaKimochi/jquery.hammer.js.git#alter",
     "markdown-it": "^12.3.2",
     "markdown-it-anchor": "https://github.com/TokunaKimochi/markdown-it-anchor.git#ref-env",

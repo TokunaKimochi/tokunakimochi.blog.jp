@@ -138,29 +138,53 @@ body {
         h1 {
           font-size: 2.4rem;
           padding: 0.5rem 0;
+
+          a > svg {
+            font-size: 2.7rem;
+          }
         }
 
         h2 {
           font-size: 2.3rem;
           padding: 0.5rem 0;
+
+          a > svg {
+            font-size: 2.6rem;
+          }
         }
 
         h3 {
           font-size: 2.1rem;
           padding: 0.4rem 0;
+
+          a > svg {
+            font-size: 2.4rem;
+          }
         }
 
         h4 {
           font-size: 1.9rem;
           padding: 0.2rem 0;
+
+          a > svg {
+            font-size: 2.2rem;
+          }
         }
 
         h5 {
           font-size: 1.7rem;
+
+          a > svg {
+            font-size: 2rem;
+          }
         }
 
         h6 {
           font-size: 1.6rem;
+
+          a > svg {
+            font-size: 1.9rem;
+          }
         }
 
         p, pre, dl, ol, ul, blockquote {

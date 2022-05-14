@@ -48,7 +48,7 @@
           // &>|title| body
           if (title) {
             var tiId = '_note-' + slugify(title);
-            var plink = '<a class="md-header-anchor" href="#' + tiId + '"><i class="fas fa-link"></i></a>';
+            var plink = '<a class="md-header-anchor" href="#' + tiId + '"><i class="fa-solid fa-link"></i></a>';
             jqueryObj.replaceWith('<aside class="note"><h4 id="' + tiId + '" class="note">' + plink + title + '</h4>' + body + '</aside>');
           }
           // &>|| body

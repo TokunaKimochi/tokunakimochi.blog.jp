@@ -26,7 +26,6 @@ WebFont.load({
 });
 
 library.add(faLink);
-dom.watch();
 
 const md = new markdownIt('default', {
   html: true,
@@ -62,7 +61,7 @@ md.use(markdownItAnchor, {
   slugify: mySlugify,
   permalink: markdownItAnchor.permalink.linkInsideHeader({
     class: 'md-header-anchor',
-    symbol: '<i class="fas fa-link"></i>',
+    symbol: '<i class="fa-solid fa-link"></i>',
     placement: 'before'
   })
 });
@@ -80,5 +79,6 @@ jQuery(function($){
   divMd.prismHelper().bq2another().declareCite().em2another().hatenaBlogcardHelper();
   const anchor = divMd.find('a');
   anchor.aEle2fn(selector).nivolboxHelper('livedoorBlog');
+  dom.i2svg();
   $(window).on('pageshow', watchJumpScroll());
 });

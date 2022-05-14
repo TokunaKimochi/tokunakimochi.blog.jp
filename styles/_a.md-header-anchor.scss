@@ -38,20 +38,16 @@ div.article-body-inner {
     }
   }
 
-  h1, h3 {
-    @include h16(0, -1.05em);
+  h1, h2 {
+    @include h16(.05em, -1em);
   }
 
-  h2 {
-    @include h16(.05em, -1.05em);
-  }
-
-  h4 {
-    @include h16(-0.1em, -1em);
+  h3, h4 {
+    @include h16(0, -1em);
   }
 
   h5, h6 {
-    @include h16(-0.2em, -1em);
+    @include h16(-0.1em, -1em);
   }
 
   h3.filename, h4.note {
@@ -60,7 +56,7 @@ div.article-body-inner {
       color: $pm-link-color;
       display: block;
       margin-left: 0.3em;
-      margin-right: -1.6em;
+      margin-right: -1.9em;
       visibility: hidden;
       float: left;
 
@@ -82,7 +78,7 @@ div.article-body-inner {
   h4.note {
 
     a.md-header-anchor {
-      margin-left: -1.3em;
+      margin-left: -1.4em;
       padding-right: 0.5em;
     }
   }
