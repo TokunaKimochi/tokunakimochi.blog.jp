@@ -42,7 +42,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "jquery-hammerjs": "https://github.com/TokunaKimochi/jquery.hammer.js.git#alter",
-    "markdown-it": "^12.3.2",
+    "markdown-it": "^13.0.1",
     "markdown-it-anchor": "https://github.com/TokunaKimochi/markdown-it-anchor.git#ref-env",
     "nivo-lightbox": "https://github.com/TokunaKimochi/Nivo-Lightbox.git#gh-pages",
     "postcss-import": "^12.0.1",
