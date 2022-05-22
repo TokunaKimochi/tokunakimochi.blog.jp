@@ -1,6 +1,7 @@
 ### Add as needed.
 .tern-port
 .publish
+tmp/
 
 
 
