@@ -1,3 +1,5 @@
+@use 'common' as c;
+
 div.output-message {
   color: #eee;
   background-color: #333;
@@ -13,7 +15,7 @@ div.output-message {
 }
 
 aside.note {
-  background-color: $diff-bcolor;
+  background-color: c.$diff-bcolor;
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 2px inset, rgba(255, 255, 255, 0.8) 1px 1px 0;

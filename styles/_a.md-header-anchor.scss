@@ -1,3 +1,5 @@
+@use 'common' as c;
+
 div.article-body-inner {
 
   h1, h2, h3, h4, h5, h6 {
@@ -11,12 +13,12 @@ div.article-body-inner {
     &:hover {
 
       a.md-header-anchor {
-        color: $pm-link-color;
+        color: c.$pm-link-color;
         display:inline-block;
 
         &:hover {
           text-decoration: none;
-          color: $vlink-color;
+          color: c.$vlink-color;
         }
 
         svg {
@@ -53,7 +55,7 @@ div.article-body-inner {
   h3.filename, h4.note {
 
     a.md-header-anchor {
-      color: $pm-link-color;
+      color: c.$pm-link-color;
       display: block;
       margin-left: 0.3em;
       margin-right: -1.9em;

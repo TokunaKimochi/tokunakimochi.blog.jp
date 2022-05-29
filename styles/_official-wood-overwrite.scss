@@ -1,3 +1,5 @@
+@use 'common' as c;
+
 /**
    @prefix : <http://purl.org/net/ns/doas#> .
    <> a :CSSStylesheet;
@@ -17,16 +19,16 @@ body {
   background-repeat: repeat;
   background-position: center top;
   background-color: #38281a;
-  color: $text-color;
-  font-family: $common-ffamily;
+  color: c.$text-color;
+  font-family: c.$common-ffamily;
   font-size: 1.4rem;
   line-height: 1.5;
 }
 
-@media (min-width: $pc-min-w) {
+@media (min-width: c.$pc-min-w) {
   #container {
     margin: 0 auto;
-    width: $container-Width;
+    width: c.$container-Width;
   }
 }
 
@@ -35,7 +37,7 @@ body {
   padding: 0;
   position: relative;
 
-  @include pc-min {
+  @include c.pc-min {
     display: flex;
     border-radius: 4px;
   }
@@ -52,8 +54,8 @@ body {
       background-color: #fff;
       vertical-align: top;
 
-      @include pc-min {
-        min-width: $main-Width;
+      @include c.pc-min {
+        min-width: c.$main-Width;
         border-radius: 4px 0px 0px 4px;
       }
     }
@@ -61,9 +63,9 @@ body {
     #main-inner {
       padding: 0 16px 26px;
 
-      @include pc-min {
+      @include c.pc-min {
         /* IE11 対策 */
-        min-width: $main-Width;
+        min-width: c.$main-Width;
         padding: 0 40px 26px;
       }
     }
@@ -74,8 +76,8 @@ body {
       background: url("https://parts.blog.livedoor.jp/img/usr/default_2012/common/opacity_w_80.png");
       vertical-align: top;
 
-      @include pc-min {
-        min-width: $sidebar-Width;
+      @include c.pc-min {
+        min-width: c.$sidebar-Width;
         border-radius: 0px 4px 4px 0px;
       }
     }
@@ -83,9 +85,9 @@ body {
     #sidebar-inner {
       padding: 0 20px 26px;
 
-      @include pc-min {
+      @include c.pc-min {
         /* IE11 対策 */
-        min-width: $sidebar-Width;
+        min-width: c.$sidebar-Width;
       }
     }
   }
@@ -106,28 +108,28 @@ body {
    ----------------------------------------------- */
 
 a {
-  color: $link-color;
+  color: c.$link-color;
   text-decoration: none;
   transition: 0.3s;
 
   &:link {
-    color: $link-color;
+    color: c.$link-color;
     text-decoration: none;
   }
 
   &:visited {
-    color: $vlink-color;
+    color: c.$vlink-color;
     text-decoration: none;
   }
 
   &:hover {
-    color: $hlink-color;
+    color: c.$hlink-color;
     text-decoration: underline;
   }
 
   &:active {
     color: #fff;
-    background-color: $hlink-color;
+    background-color: c.$hlink-color;
     text-shadow: -1px 1px 0 rgba(255,69,0,1);
   }
 }
@@ -138,7 +140,7 @@ a {
 #blog-header {
   padding: 28px 31px;
 
-  @include pc-min {
+  @include c.pc-min {
     padding: 28px 0 28px 63px;
   }
 }
@@ -196,12 +198,12 @@ a {
   margin: -1px 0 4px 54px;
   text-shadow: -1px 1px 0 rgba(255,255,255,1);
 
-  @include pc-min {
+  @include c.pc-min {
     margin: -1px 0 4px 43px;
   }
 
   a {
-    color: $text-color;
+    color: c.$text-color;
     font-size: 2.4rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -240,7 +242,7 @@ a {
   background: #e0282f;
   background: linear-gradient(to bottom, #e0282f 0%, #c31f26 100%);
 
-  @include pc-min {
+  @include c.pc-min {
     left: -50px;
   }
 
@@ -342,13 +344,13 @@ dl.common-theme {
           &:only-child {
 
             &:link {
-              color: $li-link-color;
+              color: c.$li-link-color;
             }
             &:visited {
-              color: $li-link-color;
+              color: c.$li-link-color;
             }
             &:hover {
-              color: $hlink-color;
+              color: c.$hlink-color;
             }
             &:active {
               color: #fff;
@@ -360,7 +362,7 @@ dl.common-theme {
   }
 
   blockquote {
-    background-color: $diff-bcolor;
+    background-color: c.$diff-bcolor;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, 0.05) 1px 1px 2px inset, rgba(255, 255, 255, 0.8) 1px 1px 0;

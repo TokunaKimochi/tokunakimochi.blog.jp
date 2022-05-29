@@ -1,3 +1,5 @@
+@use 'common' as c;
+
 @charset "utf-8";
 
 /**
@@ -15,7 +17,7 @@ html {
   font-size: 10px;
 }
 
-@media (min-width: $pc-min-w) {
+@media (min-width: c.$pc-min-w) {
   html {
     font-size: 11.4286px;
   }
@@ -342,7 +344,7 @@ body {
         }
 
         dt {
-          @include svg-folder();
+          @include c.svg-folder();
           text-indent: -9999px;
           float: left;
           width: 1.45rem;
@@ -364,7 +366,7 @@ body {
 
         a {
           display: inline-block;
-          @include svg-more();
+          @include c.svg-more();
           background-size: 1.3rem;
           background-position-x: 93%;
           padding: 0.8rem 2.37rem 0.8rem 0.8rem;
@@ -426,7 +428,7 @@ body {
         overflow: hidden;
 
         dt {
-          @include svg-tag();
+          @include c.svg-tag();
           float: left;
           text-indent: -9999px;
           width: 1.22rem;
@@ -503,7 +505,7 @@ body {
           text-align: center;
           padding: 1px;
 
-          @include pc-min {
+          @include c.pc-min {
             padding: 20px;
           }
         }
@@ -512,7 +514,7 @@ body {
           display: inline;
           margin: 0 1px;
 
-          @include pc-min {
+          @include c.pc-min {
             margin: 0 20px;
           }
         }
@@ -910,7 +912,7 @@ body {
           }
 
           &.sf {
-            @include svg-loupe();
+            @include c.svg-loupe();
             background-color: #fff;
             background-position-x: 4px;
             background-size: 1.4rem;

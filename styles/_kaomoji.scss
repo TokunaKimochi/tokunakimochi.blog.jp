@@ -1,5 +1,7 @@
+@use 'common' as c;
+
 span.kaomoji > code {
-  color: $text-color;
+  color: c.$text-color;
   background-color: transparent;
   border: 0 none transparent;
   padding: 0;

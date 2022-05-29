@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "run:Sass": "sass --update --embed-sources --embed-source-map styles/import.scss tmp/tokunakimochi-blog-jp.css",
+    "run:Sass": "sass --update --embed-sources --embed-source-map styles/styles.scss tmp/tokunakimochi-blog-jp.css",
     "run:Postcss": "postcss tmp/tokunakimochi-blog-jp.css --output public/tokunakimochi-blog-jp.min.css",
     "css": "yarn run run:Sass && yarn run run:Postcss",
     "run:Watch": "watch 'yarn run css' styles --interval=1",

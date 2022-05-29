@@ -1,3 +1,5 @@
+@use 'common' as c;
+
 div.article-body {
 
   h3.filename {
@@ -8,7 +10,7 @@ div.article-body {
     border-top-right-radius: 7px;
     color: #444;
     display: block;
-    font-family: $common-ffamily;
+    font-family: c.$common-ffamily;
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
@@ -72,7 +74,7 @@ div.article-body {
 
     &:hover {
 
-      @include pc-min {
+      @include c.pc-min {
         > h3.filename > button.stretch-x {
           visibility: visible;
         }
