@@ -1,23 +1,22 @@
-(function($) {
-  $.fn.declareCite = function() {
-    'use strict';
+import $ from 'jquery';
 
-    var main = function() {
-      return dom.each(function() {
+$.fn.declareCite = function() {
 
-        var jqueryObj = $(this);
-        var txtArr = [];
-        var htm = jqueryObj.html();
+  const main = function() {
+    return dom.each(function() {
 
-        if ((txtArr = htm.match(/^--\s+(\S.*)$/)) !== null) {
-          jqueryObj.replaceWith('<footer><cite>' + txtArr[1] + '</cite></footer>');
-        }
-      });
-    };
+      const jqueryObj = $(this);
+      let txtArr = [];
+      const htm = jqueryObj.html();
 
-    var jqueryObj = this;
-    var dom = jqueryObj.find('blockquote p:last-child');
-    main();
-    return this;
+      if ((txtArr = htm.match(/^--\s+(\S.*)$/)) !== null) {
+        jqueryObj.replaceWith('<footer><cite>' + txtArr[1] + '</cite></footer>');
+      }
+    });
   };
-}(jQuery));
+
+  const jqueryObj = this;
+  const dom = jqueryObj.find('blockquote p:last-child');
+  main();
+  return this;
+};

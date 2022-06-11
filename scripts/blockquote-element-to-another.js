@@ -1,71 +1,70 @@
-(function($) {
-  $.fn.bq2another = function() {
-    'use strict';
+import $ from 'jquery';
 
-    var main = function() {
+$.fn.bq2another = function() {
 
-      var titleIdObj = {};
-      var hasOwnP = Object.prototype.hasOwnProperty;
-      var slugify = function(s) {
-        var i = 2;
-        var titleId = encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
-        var uni = titleId;
-        while (hasOwnP.call(titleIdObj, uni)) uni = titleId + '-' + i++;
-        titleIdObj[uni] = true;
-        return uni;
-      };
+  const main = function() {
 
-      return dom.each(function() {
-
-        var jqueryObj = $(this);
-        var pEle = jqueryObj.children().first();
-        var htm;
-        if (pEle.is('p')) {
-          htm = pEle.html();
-        }
-        // blockquote 要素内だけで完結
-        else {
-          htm = jqueryObj.html();
-        }
-
-        // &>
-        if (/^\s*(&>|&amp;&gt;)(\|([^|]*)\|)*\s*(\S[^\0]*)$/.test(htm)) {
-          var flag = RegExp.$2;
-          var title = RegExp.$3;
-          var body = RegExp.$4;
-
-          // body が <p> の外にある
-          if (/^\|([^|]*)\|\s*$/.test(body)) {
-            flag = true;
-            title = RegExp.$1;
-            pEle.remove();
-            body = jqueryObj.html();
-          }
-          else {
-            body = '<p>' + body + '</p>';
-          }
-
-          // &>|title| body
-          if (title) {
-            var tiId = '_note-' + slugify(title);
-            var plink = '<a class="md-header-anchor" href="#' + tiId + '"><i class="fa-solid fa-link"></i></a>';
-            jqueryObj.replaceWith('<aside class="note"><h4 id="' + tiId + '" class="note">' + plink + title + '</h4>' + body + '</aside>');
-          }
-          // &>|| body
-          else if (flag) {
-            jqueryObj.replaceWith('<aside class="note">' + body + '</aside>');
-          }
-          // &> body
-          else {
-            jqueryObj.replaceWith('<div class="output-message">' + body + '</div>');
-          }
-        }
-      });
+    const titleIdObj = {};
+    const hasOwnP = Object.prototype.hasOwnProperty;
+    const slugify = function(s) {
+      let i = 2;
+      const titleId = encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
+      let uni = titleId;
+      while (hasOwnP.call(titleIdObj, uni)) uni = titleId + '-' + i++;
+      titleIdObj[uni] = true;
+      return uni;
     };
 
-    var jqueryObj = this;
-    var dom = jqueryObj.find('blockquote');
-    main();
-    return this;
+    return dom.each(function() {
+
+      const jqueryObj = $(this);
+      const pEle = jqueryObj.children().first();
+      let htm;
+      if (pEle.is('p')) {
+        htm = pEle.html();
+      }
+      // blockquote 要素内だけで完結
+      else {
+        htm = jqueryObj.html();
+      }
+
+      // &>
+      if (/^\s*(&>|&amp;&gt;)(\|([^|]*)\|)*\s*(\S[^\0]*)$/.test(htm)) {
+        let flag = RegExp.$2;
+        let title = RegExp.$3;
+        let body = RegExp.$4;
+
+        // body が <p> の外にある
+        if (/^\|([^|]*)\|\s*$/.test(body)) {
+          flag = true;
+          title = RegExp.$1;
+          pEle.remove();
+          body = jqueryObj.html();
+        }
+        else {
+          body = '<p>' + body + '</p>';
+        }
+
+        // &>|title| body
+        if (title) {
+          const tiId = '_note-' + slugify(title);
+          const plink = '<a class="md-header-anchor" href="#' + tiId + '"><i class="fa-solid fa-link"></i></a>';
+          jqueryObj.replaceWith('<aside class="note"><h4 id="' + tiId + '" class="note">' + plink + title + '</h4>' + body + '</aside>');
+        }
+        // &>|| body
+        else if (flag) {
+          jqueryObj.replaceWith('<aside class="note">' + body + '</aside>');
+        }
+        // &> body
+        else {
+          jqueryObj.replaceWith('<div class="output-message">' + body + '</div>');
+        }
+      }
+    });
   };
-}(jQuery));
+
+  const jqueryObj = this;
+  const dom = jqueryObj.find('blockquote');
+  main();
+  return this;
+};

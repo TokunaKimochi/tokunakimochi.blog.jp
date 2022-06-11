@@ -7,7 +7,7 @@
     "c:Postcss": "postcss tmp/tokunakimochi-blog-jp.css --output public/tokunakimochi-blog-jp.min.css",
     "css": "run-s c:Sass c:Postcss",
     "js": "webpack --config webpack.prod.js",
-    "c:Watch": "chokidar \"styles/*.scss\" --command \"npm-run-all css\"",
+    "c:Watch": "chokidar \"styles/*.scss\" --command \"npm run css\"",
     "j:DevServer": "webpack serve --open --config webpack.dev.js",
     "dev": "run-p --aggregate-output --print-name c:Watch j:DevServer",
     "build": "run-s css js",
