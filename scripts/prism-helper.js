@@ -118,7 +118,8 @@ $.fn.prismHelper = function() {
             pre.addClass( numberingClassname );
             const splitArr = txtArr[1].split(/\s+/);
             let lineNumArr = [], highlightLineArr = [], titleArr = [];
-            let stretchButton, score, flag;
+            let stretchButton = '';
+            let score, flag;
             for (let i = 0; i < splitArr.length; i++) {
               if (/^\s*$/.test(splitArr[i])) {
                 continue;
